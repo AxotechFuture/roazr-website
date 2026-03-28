@@ -534,6 +534,14 @@ html.reveal-js .reveal.visible { opacity: 1; transform: translateY(0); }
 }
 .footer-links a:hover { color: var(--text-primary); }
 
+.footer-link-text {
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
+  padding: 0.25rem 0;
+  display: inline-flex;
+  align-items: center;
+}
+
 .footer-bottom {
   margin-top: 2.5rem; padding-top: 1.5rem;
   border-top: 1px solid var(--border);
