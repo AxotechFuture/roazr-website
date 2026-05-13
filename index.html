@@ -3,17 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
     <meta
       name="description"
-      content="Roazr — WhatsApp-first ad attribution for African and emerging market performance marketers. Track every lead and sale back to the exact ad."
+      content="Roazr — WhatsApp-first ad tracking for African businesses. Push real sales data into Meta, Google, TikTok and raise ROAS."
     />
-    <title>Roazr — Ad Attribution That Actually Works</title>
+    <title>Roazr — #1 WhatsApp Ad Tracking for African Businesses</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("roazr-theme") === "light") {
+            document.documentElement.setAttribute("data-theme", "light");
+          }
+        } catch (e) {}
+      })();
+    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -21,35 +31,113 @@
 
     <header class="nav">
       <div class="container nav-inner">
-        <a href="/" class="wordmark" aria-label="Roazr home">roazr</a>
+        <a href="/" class="wordmark" aria-label="Roazr home">Roazr</a>
         <div class="nav-links">
-          <a href="#how-it-works">How It Works</a>
           <a href="#features">Features</a>
+          <a href="#how-it-works">How It Works</a>
           <a href="#compare">Compare</a>
           <a href="#faq">FAQ</a>
         </div>
-        <a href="#waitlist" class="btn btn-accent btn-sm">Get Started</a>
+        <div class="nav-actions">
+          <button
+            type="button"
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Switch to light theme"
+            title="Theme: dark"
+          >
+            <span class="visually-hidden">Toggle color theme</span>
+            <svg class="theme-icon theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <svg class="theme-icon theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <a href="#waitlist" class="btn btn-accent btn-sm">Get started</a>
+        </div>
       </div>
     </header>
 
     <main>
-      <!-- HERO -->
-      <section class="hero">
-        <div class="container hero-center">
-          <h1 class="reveal">
-            Complete ad attribution<br />
-            <span class="hero-highlight">for WhatsApp-first businesses</span>
-          </h1>
-          <p class="hero-sub reveal">
-            Track every lead, conversation, and payment back to the exact ad,
-            campaign, and creative. Built for markets where revenue moves
-            through WhatsApp — not checkout pages.
-          </p>
-          <div class="hero-ctas reveal">
-            <a href="#waitlist" class="btn btn-accent btn-lg">Get Started</a>
-            <a href="#how-it-works" class="btn btn-outline btn-lg">See How It Works</a>
+      <!-- HERO (wetracked-style: split + live feed) -->
+      <section class="hero hero-split">
+        <div class="container hero-split-inner">
+          <div class="hero-copy">
+            <p class="hero-eyebrow reveal">#1 WhatsApp ad tracking for African businesses</p>
+            <h1 class="reveal reveal-delay-1">
+              Losing sales your ads never see?<br />
+              <span class="hero-highlight">Get every conversion back.</span>
+            </h1>
+            <p class="hero-sub reveal reveal-delay-2">
+              The only solution that pushes WhatsApp, website, and funnel revenue into your ads manager with first-party precision. Raise ROAS by feeding the algorithm real buyers, not ghost clicks.
+            </p>
+            <div class="hero-ctas reveal reveal-delay-3">
+              <a href="#waitlist" class="btn btn-accent btn-lg">Start free trial</a>
+              <a href="#how-it-works" class="btn btn-outline btn-lg">See how it works</a>
+            </div>
+            <ul class="hero-trust-row reveal" aria-label="Highlights">
+              <li>Set up in under 10 minutes</li>
+              <li>No developer required</li>
+              <li>Human onboarding support</li>
+            </ul>
+            <p class="hero-rating reveal">
+              <span class="hero-rating-pill">Early access</span>
+              Trusted by growth teams in Lagos, Accra, Nairobi, and beyond
+            </p>
           </div>
-          <p class="hero-disclaimer reveal">Roazr is a software platform. It integrates with your existing ad accounts and WhatsApp Business API.</p>
+          <div class="hero-visual reveal" aria-hidden="true">
+            <div class="hero-feed-shell">
+              <div class="hero-feed-header">
+                <span class="hero-feed-dot"></span>
+                Live conversions
+              </div>
+              <ul class="hero-feed">
+                <li class="hero-feed-item">
+                  <span class="hero-feed-avatar" aria-hidden="true"></span>
+                  <div class="hero-feed-body">
+                    <p class="hero-feed-name">Chisom A. <span class="hero-feed-time">12 sec ago</span></p>
+                    <p class="hero-feed-event">Purchase · <strong>₦45,000</strong> · WhatsApp</p>
+                  </div>
+                </li>
+                <li class="hero-feed-item">
+                  <span class="hero-feed-avatar" aria-hidden="true"></span>
+                  <div class="hero-feed-body">
+                    <p class="hero-feed-name">James M. <span class="hero-feed-time">28 sec ago</span></p>
+                    <p class="hero-feed-event">Qualified lead · <strong>Meta Ads</strong></p>
+                  </div>
+                </li>
+                <li class="hero-feed-item">
+                  <span class="hero-feed-avatar" aria-hidden="true"></span>
+                  <div class="hero-feed-body">
+                    <p class="hero-feed-name">Chelsea N. <span class="hero-feed-time">41 sec ago</span></p>
+                    <p class="hero-feed-event">Initiate checkout · <strong>Website</strong></p>
+                  </div>
+                </li>
+                <li class="hero-feed-item">
+                  <span class="hero-feed-avatar" aria-hidden="true"></span>
+                  <div class="hero-feed-body">
+                    <p class="hero-feed-name">Kwame O. <span class="hero-feed-time">1 min ago</span></p>
+                    <p class="hero-feed-event">Paystack payment matched · <strong>TikTok</strong></p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="logo-strip" aria-label="Trusted by">
+        <div class="container logo-strip-inner">
+          <p class="logo-strip-label">Trusted by growth teams at</p>
+          <div class="logo-strip-logos">
+            <span class="logo-pill">Commerce</span>
+            <span class="logo-pill">Agency</span>
+            <span class="logo-pill">D2C</span>
+            <span class="logo-pill">Media</span>
+            <span class="logo-pill">Fintech</span>
+          </div>
         </div>
       </section>
 
@@ -57,8 +145,11 @@
       <section class="section-dark" id="features">
         <div class="container">
           <div class="section-header center reveal">
-            <h2>Attribution that covers<br />
-            the full customer journey</h2>
+            <p class="section-kicker">Features</p>
+            <h2>Stop paying for leads that never close in chat</h2>
+            <p class="section-lede">
+              When most sales finish on WhatsApp, your pixel only sees the click. Roazr stitches chat and payments to the exact ad so your campaigns optimize on revenue, not noise.
+            </p>
           </div>
           <div class="feature-grid">
             <article class="feature-card reveal">
@@ -157,7 +248,11 @@
       <section class="section-dark" id="how-it-works">
         <div class="container">
           <div class="section-header center reveal">
-            <h2>Get set up and tracking<br />in under 10 minutes</h2>
+            <p class="section-kicker">How it works</p>
+            <h2>Get set up and tracking in under 10 minutes</h2>
+            <p class="section-lede">
+              Connect sources once. Roazr enriches events server-side and pushes the truth back to Meta, Google, TikTok, and more.
+            </p>
           </div>
           <div class="steps-grid">
             <div class="step-card reveal">
@@ -180,7 +275,9 @@
       <section class="section-elevated" id="compare">
         <div class="container">
           <div class="section-header center reveal">
-            <h2>How Roazr compares to others</h2>
+            <p class="section-kicker">Compare</p>
+            <h2>How Roazr compares</h2>
+            <p class="section-lede">WhatsApp reality, African payment rails, and ad platforms in one pipeline.</p>
           </div>
           <div class="comparison-table-wrap reveal">
             <table class="comparison-table">
@@ -257,7 +354,9 @@
       <section class="section-dark" id="trust">
         <div class="container">
           <div class="section-header center reveal">
-            <h2>Built for trust,<br />backed by security</h2>
+            <p class="section-kicker">Security</p>
+            <h2>Built for trust, backed by solid infrastructure</h2>
+            <p class="section-lede">Your customer data is treated like money. Encryption in transit, least-privilege access, and clear retention policies.</p>
           </div>
           <div class="trust-grid">
             <div class="trust-card reveal">
@@ -286,7 +385,9 @@
       <section class="section-elevated" id="social">
         <div class="container">
           <div class="section-header center reveal">
-            <h2>Trusted by performance<br />marketers across Africa</h2>
+            <p class="section-kicker">Wall of love</p>
+            <h2>Don't just take our word for it</h2>
+            <p class="section-lede">Teams that sell in chat finally trust their ROAS numbers.</p>
           </div>
           <div class="testimonial-grid">
             <blockquote class="testimonial-card reveal">
@@ -311,7 +412,9 @@
       <section class="section-dark" id="faq">
         <div class="container">
           <div class="section-header center reveal">
-            <h2>Frequently asked<br />questions</h2>
+            <p class="section-kicker">FAQ</p>
+            <h2>Questions? We have answers.</h2>
+            <p class="section-lede">Still stuck? Email <a href="mailto:hello@roazr.com" class="inline-link">hello@roazr.com</a>.</p>
           </div>
           <div class="faq-list">
             <details class="faq-item reveal">
@@ -347,12 +450,35 @@
       </section>
 
       <!-- CTA -->
+      <div class="stats-band">
+        <div class="container stats-band-inner">
+          <div class="stat-block">
+            <p class="stat-value">10 min</p>
+            <p class="stat-label">Median setup time</p>
+          </div>
+          <div class="stat-block">
+            <p class="stat-value">Meta + Google + TikTok</p>
+            <p class="stat-label">Server-side destinations</p>
+          </div>
+          <div class="stat-block">
+            <p class="stat-value">Paystack · Selar</p>
+            <p class="stat-label">Regional payments</p>
+          </div>
+          <div class="stat-block">
+            <p class="stat-value">WhatsApp-first</p>
+            <p class="stat-label">Where your revenue closes</p>
+          </div>
+        </div>
+      </div>
+
       <section class="cta-section" id="waitlist">
         <div class="container cta-inner">
-          <h2 class="reveal">Join other WhatsApp-first businesses<br />getting real attribution</h2>
+          <p class="section-kicker section-kicker-on-dark">Get started</p>
+          <h2 class="reveal">Reveal your full funnel with reliable WhatsApp ad tracking</h2>
+          <p class="cta-sub reveal">Start your free trial. No credit card required to join the waitlist.</p>
           <div class="cta-buttons reveal">
-            <a href="#waitlist-form-wrap" class="btn btn-accent btn-lg">Get Started</a>
-            <a href="mailto:hello@roazr.com" class="btn btn-outline btn-lg">Talk to Us</a>
+            <a href="#waitlist-form-wrap" class="btn btn-accent btn-lg">Start free trial</a>
+            <a href="mailto:hello@roazr.com" class="btn btn-outline btn-lg btn-outline-on-dark">Talk to sales</a>
           </div>
           <div id="waitlist-form-wrap" class="waitlist-wrap reveal">
             <form id="waitlist-form" class="waitlist-form" novalidate>
@@ -371,7 +497,7 @@
     <footer class="footer">
       <div class="container footer-inner">
         <div class="footer-brand">
-          <a href="/" class="wordmark" aria-label="Roazr home">roazr</a>
+          <a href="/" class="wordmark" aria-label="Roazr home">Roazr</a>
           <a href="mailto:hello@roazr.com" class="footer-email">hello@roazr.com</a>
         </div>
         <div class="footer-col">

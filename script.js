@@ -33,6 +33,37 @@
     });
   });
 
+  // Theme toggle
+  var THEME_KEY = "roazr-theme";
+  var root = document.documentElement;
+  var themeBtn = document.getElementById("theme-toggle");
+  if (themeBtn) {
+    function syncThemeToggleUi() {
+      var isLight = root.getAttribute("data-theme") === "light";
+      themeBtn.setAttribute(
+        "aria-label",
+        isLight ? "Switch to dark theme" : "Switch to light theme"
+      );
+      themeBtn.setAttribute("title", isLight ? "Theme: light" : "Theme: dark");
+    }
+    syncThemeToggleUi();
+    themeBtn.addEventListener("click", function () {
+      var isLight = root.getAttribute("data-theme") === "light";
+      if (isLight) {
+        root.removeAttribute("data-theme");
+        try {
+          localStorage.removeItem(THEME_KEY);
+        } catch (e) {}
+      } else {
+        root.setAttribute("data-theme", "light");
+        try {
+          localStorage.setItem(THEME_KEY, "light");
+        } catch (e) {}
+      }
+      syncThemeToggleUi();
+    });
+  }
+
   // Waitlist form
   var form = document.getElementById("waitlist-form");
   var thankYou = document.getElementById("waitlist-thank-you");
