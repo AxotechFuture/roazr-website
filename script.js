@@ -19,20 +19,6 @@
     revealEls.forEach(function (el) { el.classList.add("visible"); });
   }
 
-  // Persona tabs
-  var tabs = document.querySelectorAll(".persona-tab");
-  var panels = document.querySelectorAll(".persona-panel");
-  tabs.forEach(function (tab) {
-    tab.addEventListener("click", function () {
-      var target = tab.getAttribute("data-persona");
-      tabs.forEach(function (t) { t.classList.remove("active"); });
-      panels.forEach(function (p) { p.classList.remove("active"); });
-      tab.classList.add("active");
-      var panel = document.getElementById("panel-" + target);
-      if (panel) panel.classList.add("active");
-    });
-  });
-
   // Theme toggle
   var THEME_KEY = "roazr-theme";
   var root = document.documentElement;
