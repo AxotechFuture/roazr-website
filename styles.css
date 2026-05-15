@@ -25,7 +25,7 @@
   --radius-btn: 10px;
   --max-w: 1120px;
   --font: "Inter", system-ui, -apple-system, sans-serif;
-  --section-pad: clamp(5.25rem, 12vw, 8.5rem);
+  --section-pad: clamp(3.5rem, 8vw, 6rem);
   --container-pad: clamp(1.5rem, 5vw, 3.25rem);
   --nav-bg: rgba(6, 6, 7, 0.88);
   --nav-edge: 0 1px 0 rgba(255, 255, 255, 0.03);
@@ -654,7 +654,7 @@ html[data-theme="light"] .theme-icon-moon {
 }
 
 .section-header {
-  margin-bottom: clamp(3.25rem, 6vw, 4.5rem);
+  margin-bottom: clamp(2.25rem, 4vw, 3.25rem);
 }
 .section-header.center {
   text-align: center;
