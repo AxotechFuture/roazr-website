@@ -713,7 +713,7 @@ html[data-theme="light"] .theme-icon-moon {
   color: var(--accent);
 }
 .feature-card h3 {
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   font-weight: 700;
   margin: 0 0 0.5rem;
   color: var(--text-primary);
@@ -877,7 +877,7 @@ html[data-theme="light"] .theme-icon-moon {
 }
 .step-title {
   margin: 0 0 0.6rem;
-  font-size: 1.2rem;
+  font-size: 1.125rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text-primary);
