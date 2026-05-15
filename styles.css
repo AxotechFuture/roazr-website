@@ -272,6 +272,43 @@ html[data-theme="light"] .theme-icon-moon {
   letter-spacing: -0.04em;
   color: var(--text-primary);
 }
+.nav-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: border-color 0.2s, background 0.2s;
+}
+.nav-toggle:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+}
+.nav-toggle-bar {
+  width: 1.15rem;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 1px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+  transform: translateY(0.45rem) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-0.45rem) rotate(-45deg);
+}
+
 .nav-links {
   display: none;
   gap: 1.75rem;
@@ -289,7 +326,45 @@ html[data-theme="light"] .theme-icon-moon {
 .nav-links a:hover {
   color: var(--text-primary);
 }
+
+/* Mobile drawer */
+@media (max-width: 767px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem var(--container-pad) 1rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    font-size: 1rem;
+    transform: translateY(-12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+  }
+  .nav-links.is-open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .nav-links a {
+    padding: 0.85rem 0.25rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+}
+
 @media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
   .nav-links {
     display: flex;
   }

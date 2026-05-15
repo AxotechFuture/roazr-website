@@ -19,6 +19,33 @@
     revealEls.forEach(function (el) { el.classList.add("visible"); });
   }
 
+  // Mobile nav toggle
+  var navToggle = document.getElementById("nav-toggle");
+  var navLinks = document.getElementById("nav-links");
+  if (navToggle && navLinks) {
+    function setNavOpen(open) {
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      navLinks.classList.toggle("is-open", open);
+    }
+    navToggle.addEventListener("click", function () {
+      var open = navToggle.getAttribute("aria-expanded") !== "true";
+      setNavOpen(open);
+    });
+    navLinks.addEventListener("click", function (e) {
+      var t = e.target;
+      if (t && t.tagName === "A") {
+        setNavOpen(false);
+      }
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && navToggle.getAttribute("aria-expanded") === "true") {
+        setNavOpen(false);
+        navToggle.focus();
+      }
+    });
+  }
+
   // Theme toggle
   var THEME_KEY = "roazr-theme";
   var root = document.documentElement;

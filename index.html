@@ -34,13 +34,25 @@
     <header class="nav">
       <div class="container nav-inner">
         <a href="/" class="wordmark" aria-label="Roazr home">Roazr</a>
-        <div class="nav-links">
+        <div class="nav-links" id="nav-links">
           <a href="#features">Features</a>
           <a href="#how-it-works">How It Works</a>
           <a href="#compare">Compare</a>
           <a href="#faq">FAQ</a>
         </div>
         <div class="nav-actions">
+          <button
+            type="button"
+            class="nav-toggle"
+            id="nav-toggle"
+            aria-label="Open menu"
+            aria-controls="nav-links"
+            aria-expanded="false"
+          >
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+          </button>
           <button
             type="button"
             class="theme-toggle"
