@@ -665,8 +665,11 @@ html[data-theme="light"] .theme-icon-moon {
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 1.05;
+  text-wrap: balance;
   margin: 0;
   color: var(--text-primary);
+  max-width: 22ch;
+  margin-inline: auto;
 }
 
 /* ====================== FEATURE CARDS ====================== */
@@ -1181,6 +1184,7 @@ html[data-theme="light"] .theme-icon-moon {
   font-size: clamp(2rem, 4.5vw, 3.25rem);
   font-weight: 800;
   letter-spacing: -0.04em;
+  text-wrap: balance;
   margin: 0 0 1.25rem;
   color: var(--text-primary);
   line-height: 1.05;
