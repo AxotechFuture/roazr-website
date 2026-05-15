@@ -1427,17 +1427,15 @@ html[data-theme="light"] .theme-icon-moon {
   line-height: 1.6;
 }
 
-.cta-buttons {
-  display: flex;
-  gap: 0.85rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 2.75rem;
+.waitlist-wrap {
+  max-width: 30rem;
+  margin-inline: auto;
 }
 
-.waitlist-wrap {
-  max-width: 28rem;
-  margin-inline: auto;
+.cta-secondary {
+  margin: 1.25rem 0 0;
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
 }
 
 .waitlist-form {
