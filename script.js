@@ -15,6 +15,15 @@
       { root: null, rootMargin: "0px 0px -6% 0px", threshold: 0.08 }
     );
     revealEls.forEach(function (el) { observer.observe(el); });
+    // Failsafe: any element still hidden after 1.5s gets revealed.
+    // Handles full-page screenshot tools, print, and very slow connections.
+    setTimeout(function () {
+      revealEls.forEach(function (el) {
+        if (!el.classList.contains("visible")) {
+          el.classList.add("visible");
+        }
+      });
+    }, 1500);
   } else {
     revealEls.forEach(function (el) { el.classList.add("visible"); });
   }
