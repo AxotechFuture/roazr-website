@@ -1475,7 +1475,8 @@ html[data-theme="light"] .theme-icon-moon {
   margin: 0 0 1rem;
 }
 
-.legal-section ul {
+.legal-section ul,
+.legal-section ol {
   margin: 0 0 1rem;
   padding-left: 1.35rem;
 }

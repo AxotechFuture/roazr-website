@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      name="description"
+      content="Roazr Data Deletion Instructions — how to disconnect your Meta account or request deletion of your Roazr data."
+    />
+    <title>Data Deletion Instructions — Roazr</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("roazr-theme") === "light") {
+            document.documentElement.setAttribute("data-theme", "light");
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="container nav-inner">
+        <a href="/" class="wordmark" aria-label="Roazr home">Roazr</a>
+        <div class="nav-actions">
+          <button
+            type="button"
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Switch to light theme"
+            title="Theme: dark"
+          >
+            <span class="visually-hidden">Toggle color theme</span>
+            <svg class="theme-icon theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <svg class="theme-icon theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <a href="/" class="btn btn-outline btn-sm">Back to home</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="legal-page">
+      <div class="container legal-container">
+        <header class="legal-header">
+          <p class="section-kicker">Legal</p>
+          <h1>Data Deletion Instructions</h1>
+          <p class="legal-meta">Last updated: June 8, 2026</p>
+          <p class="legal-intro">
+            This page explains how to delete your data or disconnect Roazr's access to your Meta (Facebook) account. You can remove the integration yourself at any time, or request full deletion of your Roazr account and associated data.
+          </p>
+        </header>
+
+        <nav class="legal-toc" aria-label="Table of contents">
+          <p class="legal-toc-title">On this page</p>
+          <ol>
+            <li><a href="#disconnect">Option 1 — Disconnect yourself</a></li>
+            <li><a href="#full-deletion">Option 2 — Request full account deletion</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ol>
+        </nav>
+
+        <article class="legal-body">
+          <section id="disconnect" class="legal-section">
+            <h2>1. Option 1 — Disconnect yourself (immediate)</h2>
+            <p>
+              If you only want to stop Roazr from accessing your Meta ad accounts, you can disconnect the integration directly from your Roazr dashboard:
+            </p>
+            <ol>
+              <li>Log in to <a href="https://app.roazr.com">app.roazr.com</a></li>
+              <li>Go to <strong>Settings</strong></li>
+              <li>Click <strong>Disconnect</strong> on the Meta connection</li>
+            </ol>
+            <p>
+              This immediately removes your stored Meta access token and ad-account credentials from Roazr.
+            </p>
+            <p>
+              To also revoke access on Meta's side, go to <strong>Facebook Settings → Business Integrations</strong> and remove Roazr.
+            </p>
+          </section>
+
+          <section id="full-deletion" class="legal-section">
+            <h2>2. Option 2 — Request full account deletion</h2>
+            <p>
+              If you want Roazr to delete your entire account and all associated data, email us from the address tied to your account:
+            </p>
+            <ul>
+              <li>Send an email to <a href="mailto:privacy@roazr.com">privacy@roazr.com</a></li>
+              <li>Use the subject line: <strong>Delete my data</strong></li>
+              <li>Send the request from your Roazr account email so we can verify ownership</li>
+            </ul>
+            <p>
+              We will delete all associated data within <strong>30 days</strong> and confirm completion by email.
+            </p>
+            <p>
+              Please note: conversion events already delivered to Meta are subject to Meta's own data retention and deletion processes. Removing your Roazr account does not automatically delete data Meta has already received.
+            </p>
+          </section>
+
+          <section id="contact" class="legal-section">
+            <h2>3. Contact</h2>
+            <p>
+              If you have questions about data deletion or need help disconnecting an integration, contact us at <a href="mailto:privacy@roazr.com">privacy@roazr.com</a>.
+            </p>
+            <address class="legal-contact">
+              <strong>Etin Media, Inc.</strong><br />
+              Attn: Privacy<br />
+              Email: <a href="mailto:privacy@roazr.com">privacy@roazr.com</a>
+            </address>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="wordmark" aria-label="Roazr home">Roazr</a>
+          <a href="mailto:hello@roazr.com" class="footer-email">hello@roazr.com</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Legal</p>
+          <div class="footer-links">
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/data-deletion" aria-current="page">Data Deletion</a>
+            <span class="footer-link-text">Terms of Service</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Support</p>
+          <nav class="footer-links" aria-label="Support">
+            <a href="mailto:hello@roazr.com">Contact</a>
+            <a href="/#faq">FAQ</a>
+          </nav>
+        </div>
+      </div>
+      <div class="container">
+        <div class="footer-bottom">
+          <p class="footer-disclaimer">Roazr is a software platform by Etin Media, Inc. It integrates with your existing ad platforms and WhatsApp Business API to provide attribution data.</p>
+          <p class="copyright">© 2026 Etin Media, Inc.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>
