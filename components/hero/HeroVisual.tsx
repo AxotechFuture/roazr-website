@@ -15,9 +15,11 @@ import { Mark } from "@/components/Wordmark";
 /* ================================================================== */
 
 function RoasStat() {
+  const reduced = useReducedMotion();
   const [roas, setRoas] = useState(4.82);
 
   useEffect(() => {
+    if (reduced) return;
     const id = setInterval(() => {
       setRoas((v) => {
         const next = v + (Math.random() - 0.45) * 0.05;
@@ -25,7 +27,7 @@ function RoasStat() {
       });
     }, 2400);
     return () => clearInterval(id);
-  }, []);
+  }, [reduced]);
 
   return (
     <div className="min-w-0">
@@ -46,15 +48,17 @@ function RoasStat() {
 }
 
 function EventsStat() {
+  const reduced = useReducedMotion();
   const [count, setCount] = useState(128_441);
 
   useEffect(() => {
+    if (reduced) return;
     const id = setInterval(
       () => setCount((c) => c + 1 + Math.floor(Math.random() * 3)),
       1900,
     );
     return () => clearInterval(id);
-  }, []);
+  }, [reduced]);
 
   return (
     <div className="min-w-0">
@@ -212,7 +216,9 @@ function RevenueChart() {
 
         {/* live endpoint */}
         <circle cx="460" cy="10" r="9" fill="rgba(23,232,143,0.15)">
-          <animate attributeName="r" values="5;11;5" dur="2.6s" repeatCount="indefinite" />
+          {!reduced && (
+            <animate attributeName="r" values="5;11;5" dur="2.6s" repeatCount="indefinite" />
+          )}
         </circle>
         <circle cx="460" cy="10" r="3.5" fill="#17e88f" />
       </svg>
@@ -510,6 +516,7 @@ function Pulse({ path, begin, dur = 2.2 }: { path: string; begin: number; dur?: 
 }
 
 function Beams() {
+  const reduced = useReducedMotion();
   return (
     <svg
       viewBox="0 0 1120 620"
@@ -523,9 +530,13 @@ function Beams() {
           <path d={d} stroke="rgba(23,232,143,0.45)" strokeWidth="1.5" className="beam" />
         </g>
       ))}
-      <Pulse path={BEAMS[0]} begin={0.2} />
-      <Pulse path={BEAMS[1]} begin={0.9} />
-      <Pulse path={BEAMS[2]} begin={1.6} />
+      {!reduced && (
+        <>
+          <Pulse path={BEAMS[0]} begin={0.2} />
+          <Pulse path={BEAMS[1]} begin={0.9} />
+          <Pulse path={BEAMS[2]} begin={1.6} />
+        </>
+      )}
     </svg>
   );
 }
