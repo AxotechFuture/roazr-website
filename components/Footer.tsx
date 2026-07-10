@@ -27,24 +27,24 @@ export function Footer() {
             <p className="mb-4 text-xs font-medium uppercase tracking-widest text-muted">
               Product
             </p>
-            <ul className="flex flex-col gap-3 text-sm">
+            <ul className="flex flex-col gap-1 text-sm">
               <li>
-                <Link href="/#how-it-works" className="text-muted-strong transition-colors hover:text-foreground">
+                <Link href="/#how-it-works" className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
                   How it works
                 </Link>
               </li>
               <li>
-                <Link href="/#features" className="text-muted-strong transition-colors hover:text-foreground">
+                <Link href="/#features" className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
                   Features
                 </Link>
               </li>
               <li>
-                <Link href="/demo" className="text-muted-strong transition-colors hover:text-foreground">
+                <Link href="/demo" className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
                   Book a demo
                 </Link>
               </li>
               <li>
-                <a href={site.appUrl} className="text-muted-strong transition-colors hover:text-foreground">
+                <a href={site.appUrl} className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
                   Sign in
                 </a>
               </li>
@@ -55,19 +55,19 @@ export function Footer() {
             <p className="mb-4 text-xs font-medium uppercase tracking-widest text-muted">
               Legal
             </p>
-            <ul className="flex flex-col gap-3 text-sm">
+            <ul className="flex flex-col gap-1 text-sm">
               <li>
-                <Link href="/privacy-policy" className="text-muted-strong transition-colors hover:text-foreground">
+                <Link href="/privacy-policy" className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms-of-service" className="text-muted-strong transition-colors hover:text-foreground">
+                <Link href="/terms-of-service" className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link href="/data-deletion" className="text-muted-strong transition-colors hover:text-foreground">
+                <Link href="/data-deletion" className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
                   Data Deletion
                 </Link>
               </li>
@@ -78,19 +78,19 @@ export function Footer() {
             <p className="mb-4 text-xs font-medium uppercase tracking-widest text-muted">
               Support
             </p>
-            <ul className="flex flex-col gap-3 text-sm">
+            <ul className="flex flex-col gap-1 text-sm">
               <li>
-                <a href={`mailto:${site.emails.hello}`} className="text-muted-strong transition-colors hover:text-foreground">
+                <a href={`mailto:${site.emails.hello}`} className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
                   Contact
                 </a>
               </li>
               <li>
-                <Link href="/#faq" className="text-muted-strong transition-colors hover:text-foreground">
+                <Link href="/#faq" className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
                   FAQ
                 </Link>
               </li>
               <li>
-                <a href={`mailto:${site.emails.privacy}`} className="text-muted-strong transition-colors hover:text-foreground">
+                <a href={`mailto:${site.emails.privacy}`} className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
                   Privacy requests
                 </a>
               </li>

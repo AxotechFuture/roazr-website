@@ -60,7 +60,7 @@ export function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm text-muted transition-colors hover:text-foreground"
+              className="py-2 text-sm text-muted transition-colors hover:text-foreground"
             >
               {l.label}
             </Link>
@@ -79,7 +79,7 @@ export function Nav() {
         <ThemeToggle />
         <button
           type="button"
-          className="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-foreground"
+          className="relative flex h-10 w-10 items-center justify-center rounded-lg border border-line text-foreground after:absolute after:-inset-0.5 after:content-['']"
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}
@@ -103,7 +103,7 @@ export function Nav() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="rounded-lg px-3 py-2.5 text-[15px] text-muted-strong hover:bg-wash-strong"
+                className="rounded-lg px-3 py-3 text-[15px] text-muted-strong hover:bg-wash-strong"
                 onClick={() => setOpen(false)}
               >
                 {l.label}
