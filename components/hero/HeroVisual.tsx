@@ -459,9 +459,9 @@ function WhatsAppCard() {
 }
 
 const PLATFORMS = [
-  { key: "meta", monogram: "M", color: "#0866ff", name: "Meta CAPI", status: "Purchase · ₦68,500" },
-  { key: "google", monogram: "G", color: "#4285f4", name: "Google Ads", status: "Conversion imported" },
-  { key: "tiktok", monogram: "T", color: "#25f4ee", name: "TikTok Events", status: "Event received" },
+  { key: "meta", monogram: "M", color: "var(--meta)", name: "Meta CAPI", status: "Purchase · ₦68,500" },
+  { key: "google", monogram: "G", color: "var(--google)", name: "Google Ads", status: "Conversion imported" },
+  { key: "tiktok", monogram: "T", color: "var(--tiktok)", name: "TikTok Events", status: "Event received" },
 ] as const;
 
 function PlatformChip({ p }: { p: (typeof PLATFORMS)[number] }) {
@@ -471,8 +471,8 @@ function PlatformChip({ p }: { p: (typeof PLATFORMS)[number] }) {
         className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-[13px] font-bold"
         style={{
           color: p.color,
-          backgroundColor: `${p.color}1f`,
-          border: `1px solid ${p.color}33`,
+          backgroundColor: `color-mix(in srgb, ${p.color} 12%, transparent)`,
+          border: `1px solid color-mix(in srgb, ${p.color} 20%, transparent)`,
         }}
       >
         {p.monogram}
