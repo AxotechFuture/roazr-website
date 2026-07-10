@@ -128,9 +128,9 @@ function HumanVisual() {
         {["E", "K", "T"].map((c, i) => (
           <span
             key={c}
-            className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-background text-[12px] font-semibold text-[#03110a]"
+            className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-background text-[12px] font-semibold text-background"
             style={{
-              backgroundColor: ["#17e88f", "#0fd4c4", "#46f5ac"][i],
+              backgroundColor: ["var(--accent)", "var(--whatsapp)", "var(--accent-strong)"][i],
             }}
           >
             {c}
