@@ -158,7 +158,7 @@ function UnqualifiedScreen() {
         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
           <path
             d="M15 8v8M15 20v.5"
-            stroke="#f2f7f5"
+            stroke="var(--foreground)"
             strokeWidth="2.4"
             strokeLinecap="round"
           />
