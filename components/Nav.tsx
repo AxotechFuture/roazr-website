@@ -23,10 +23,29 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
   return (
+    <>
+      {/* mobile menu scrim — outside <header> because its backdrop-filter
+          creates a containing block that would trap fixed positioning */}
+      {open && (
+        <div
+          className="fixed inset-0 z-40 bg-black/45 md:hidden"
+          aria-hidden="true"
+          onClick={() => setOpen(false)}
+        />
+      )}
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
+        scrolled || open
           ? "border-b border-line bg-background/75 backdrop-blur-xl"
           : "border-b border-transparent bg-transparent"
       }`}
@@ -101,5 +120,6 @@ export function Nav() {
         </div>
       )}
     </header>
+    </>
   );
 }
