@@ -31,10 +31,10 @@ export function Testimonials() {
                     transform="scale(0.96)"
                   />
                 </svg>
-                <blockquote className="text-[15px] leading-relaxed text-muted-strong">
+                <blockquote className="mb-6 text-[15px] leading-relaxed text-muted-strong">
                   {t.quote}
                 </blockquote>
-                <figcaption className="mt-6 border-t border-line pt-4">
+                <figcaption className="mt-auto border-t border-line pt-4">
                   <p className="text-sm font-medium text-foreground">{t.name}</p>
                   <p className="mt-0.5 text-[12.5px] text-muted">{t.role}</p>
                 </figcaption>
