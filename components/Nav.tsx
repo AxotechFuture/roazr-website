@@ -120,14 +120,14 @@ export function Nav() {
             <a
               href={site.signupUrl}
               rel="noopener"
-              className="btn btn-primary btn-md mt-3"
+              className="btn btn-primary btn-md mt-3 min-h-11"
               onClick={() => setOpen(false)}
             >
               {site.cta.signup}
             </a>
             <Link
               href="/demo"
-              className="btn btn-ghost btn-md mt-2"
+              className="btn btn-ghost btn-md mt-2 min-h-11"
               onClick={() => setOpen(false)}
             >
               {site.cta.demo}
