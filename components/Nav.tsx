@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Wordmark } from "@/components/Wordmark";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { site } from "@/lib/site";
 
 const links = [
   { href: "/#how-it-works", label: "How it works" },
@@ -67,11 +68,18 @@ export function Nav() {
           ))}
         </div>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-4 md:flex">
           <ThemeToggle />
-          <Link href="/demo" className="btn btn-primary btn-sm">
-            Book a demo
-          </Link>
+          <a
+            href={site.signinUrl}
+            rel="noopener"
+            className="py-2 text-sm text-muted transition-colors hover:text-foreground"
+          >
+            {site.cta.signin}
+          </a>
+          <a href={site.signupUrl} rel="noopener" className="btn btn-primary btn-sm">
+            {site.cta.signup}
+          </a>
         </div>
 
         {/* mobile toggle */}
@@ -109,13 +117,29 @@ export function Nav() {
                 {l.label}
               </Link>
             ))}
-            <Link
-              href="/demo"
+            <a
+              href={site.signupUrl}
+              rel="noopener"
               className="btn btn-primary btn-md mt-3"
               onClick={() => setOpen(false)}
             >
-              Book a demo
+              {site.cta.signup}
+            </a>
+            <Link
+              href="/demo"
+              className="btn btn-ghost btn-md mt-2"
+              onClick={() => setOpen(false)}
+            >
+              {site.cta.demo}
             </Link>
+            <a
+              href={site.signinUrl}
+              rel="noopener"
+              className="mt-3 rounded-lg px-3 py-3 text-center text-[15px] text-muted transition-colors hover:text-foreground"
+              onClick={() => setOpen(false)}
+            >
+              {site.cta.signin}
+            </a>
           </div>
         </div>
       )}
