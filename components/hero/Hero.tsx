@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { HeroVisual } from "@/components/hero/HeroVisual";
 import { Particles } from "@/components/hero/Particles";
 import { MagneticLink } from "@/components/ui/MagneticLink";
+import { site } from "@/lib/site";
 
 function Enter({
   children,
@@ -77,18 +78,37 @@ export function Hero() {
           </Enter>
 
           <Enter delay={0.24} className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <MagneticLink href="/demo" className="btn btn-primary btn-lg w-full sm:w-auto">
-              Book a demo
+            <MagneticLink href={site.signupUrl} className="btn btn-primary btn-lg w-full sm:w-auto">
+              {site.cta.signup}
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </MagneticLink>
-            <Link href="/#how-it-works" className="btn btn-ghost btn-lg w-full sm:w-auto">
-              See how it works
+            <Link href="/demo" className="btn btn-ghost btn-lg w-full sm:w-auto">
+              {site.cta.demo}
             </Link>
           </Enter>
 
-          <Enter delay={0.32}>
+          <Enter delay={0.3} className="mt-6">
+            <Link
+              href="/#how-it-works"
+              className="group inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-foreground"
+            >
+              See how it works
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 16 16"
+                fill="none"
+                aria-hidden="true"
+                className="transition-transform group-hover:translate-y-0.5"
+              >
+                <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+          </Enter>
+
+          <Enter delay={0.36}>
             <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-2 font-mono text-[11px] uppercase tracking-widest text-muted">
               {["10-minute setup", "No developer required", "Human onboarding"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
