@@ -91,7 +91,7 @@ export default function OgImage() {
           }}
         >
           <span>roazr.com</span>
-          <span style={{ color: "#17E88F" }}>Book a demo →</span>
+          <span style={{ color: "#17E88F" }}>Get started →</span>
         </div>
       </div>
     ),

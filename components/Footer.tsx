@@ -39,13 +39,18 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <a href={site.signupUrl} rel="noopener" className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
+                  {site.cta.signup}
+                </a>
+              </li>
+              <li>
                 <Link href="/demo" className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
-                  Book a demo
+                  {site.cta.demo}
                 </Link>
               </li>
               <li>
-                <a href={site.appUrl} className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
-                  Sign in
+                <a href={site.signinUrl} rel="noopener" className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
+                  {site.cta.signin}
                 </a>
               </li>
             </ul>
