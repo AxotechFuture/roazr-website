@@ -35,6 +35,8 @@ export function MagneticLink({
     y.set(0);
   };
 
+  const external = /^https?:\/\//.test(href);
+
   return (
     <motion.div
       ref={ref}
@@ -43,9 +45,15 @@ export function MagneticLink({
       onMouseLeave={reset}
       className="inline-flex w-full sm:w-auto"
     >
-      <Link href={href} className={className}>
-        {children}
-      </Link>
+      {external ? (
+        <a href={href} className={className} rel="noopener">
+          {children}
+        </a>
+      ) : (
+        <Link href={href} className={className}>
+          {children}
+        </Link>
+      )}
     </motion.div>
   );
 }

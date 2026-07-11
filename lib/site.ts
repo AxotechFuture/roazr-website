@@ -22,10 +22,25 @@ export const site = {
     privacy: "privacy@roazr.com",
   },
   appUrl: "https://app.roazr.com",
+  /** Self-serve signup entry (create an account in the product). */
+  signupUrl: "https://app.roazr.com/signup",
+  /** Returning-user sign in. */
+  signinUrl: "https://app.roazr.com",
   /** PLACEHOLDER — booking link for qualified demo leads. */
   schedulerUrl: "",
   /** PLACEHOLDER — WhatsApp business number, digits only. */
   whatsappNumber: "",
+  /**
+   * Canonical CTA labels. Signup is the primary path, demo the secondary.
+   * NOTE: label is "Get started", NOT "Start free" — free/no-card signup is
+   * not yet confirmed, and an unverified free claim on paid traffic is a
+   * trust liability. Upgrade to a "free" label only once verified end to end.
+   */
+  cta: {
+    signup: "Get started",
+    demo: "Book a demo",
+    signin: "Sign in",
+  },
 } as const;
 
 export function whatsappLink(text?: string): string | null {
