@@ -22,6 +22,12 @@ function FlowChip({
   );
 }
 
+/* Arrow + following chip wrap as one unit so a line-break never strands
+   a connector pointing at nothing. */
+function FlowStep({ children }: { children: React.ReactNode }) {
+  return <span className="flex shrink-0 items-center gap-2.5">{children}</span>;
+}
+
 function Arrow({
   broken = false,
   flow = false,
@@ -98,10 +104,14 @@ export function Problem() {
               </div>
               <div className="flex flex-wrap items-center gap-2.5">
                 <FlowChip label="Ad shown" />
-                <Arrow />
-                <FlowChip label="Click" />
-                <Arrow broken />
-                <FlowChip label="…silence" tone="bad" />
+                <FlowStep>
+                  <Arrow />
+                  <FlowChip label="Click" />
+                </FlowStep>
+                <FlowStep>
+                  <Arrow broken />
+                  <FlowChip label="…silence" tone="bad" />
+                </FlowStep>
               </div>
               <p className="mt-5 text-sm leading-relaxed text-muted">
                 The customer clicked, chatted, negotiated, and paid ₦68,500 by
@@ -128,14 +138,22 @@ export function Problem() {
               </div>
               <div className="flex flex-wrap items-center gap-2.5">
                 <FlowChip label="Ad shown" />
-                <Arrow flow />
-                <FlowChip label="Click" />
-                <Arrow flow />
-                <FlowChip label="WhatsApp chat" />
-                <Arrow flow />
-                <FlowChip label="Transfer received" />
-                <Arrow flow />
-                <FlowChip label="Fed to Meta CAPI" tone="good" />
+                <FlowStep>
+                  <Arrow flow />
+                  <FlowChip label="Click" />
+                </FlowStep>
+                <FlowStep>
+                  <Arrow flow />
+                  <FlowChip label="WhatsApp chat" />
+                </FlowStep>
+                <FlowStep>
+                  <Arrow flow />
+                  <FlowChip label="Transfer received" />
+                </FlowStep>
+                <FlowStep>
+                  <Arrow flow />
+                  <FlowChip label="Fed to Meta CAPI" tone="good" />
+                </FlowStep>
               </div>
               <p className="mt-5 text-sm leading-relaxed text-muted">
                 Roazr connects the click to the conversation to the payment —
