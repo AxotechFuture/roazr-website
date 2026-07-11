@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { MagneticLink } from "@/components/ui/MagneticLink";
+import { site } from "@/lib/site";
 
 export function FinalCta() {
   return (
@@ -28,19 +30,23 @@ export function FinalCta() {
             </span>
           </h2>
           <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted sm:text-lg">
-            See your real ROAS — including every WhatsApp sale — on a live
-            walkthrough with our team.
+            See your real ROAS — every WhatsApp sale included. Set it up
+            yourself in about 10 minutes, or book a walkthrough and we&rsquo;ll
+            do it with you.
           </p>
-          <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row">
-            <MagneticLink href="/demo" className="btn btn-primary btn-lg">
-              Book a demo
+          <div className="mt-9 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
+            <MagneticLink href={site.signupUrl} className="btn btn-primary btn-lg">
+              {site.cta.signup}
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </MagneticLink>
+            <Link href="/demo" className="btn btn-ghost btn-lg w-full sm:w-auto">
+              {site.cta.demo}
+            </Link>
           </div>
           <p className="mt-6 font-mono text-[11px] uppercase tracking-widest text-muted">
-            20-minute walkthrough · exact pricing on the call · no commitment
+            10-minute setup · no developer required · a human whenever you want one
           </p>
         </Reveal>
       </div>
