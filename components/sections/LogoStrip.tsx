@@ -15,10 +15,10 @@ function Row() {
           key={i.name}
           className="mx-8 inline-flex items-baseline gap-2.5 whitespace-nowrap"
         >
-          <span className="text-lg font-semibold tracking-tight text-muted-strong/70">
+          <span className="text-lg font-semibold tracking-tight text-muted-strong/85">
             {i.name}
           </span>
-          <span className="font-mono text-[10px] uppercase tracking-widest text-muted/60">
+          <span className="font-mono text-[10px] uppercase tracking-widest text-muted">
             {i.detail}
           </span>
         </span>
