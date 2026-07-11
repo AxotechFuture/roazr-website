@@ -35,7 +35,7 @@ export function FinalCta() {
             do it with you.
           </p>
           <div className="mt-9 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
-            <MagneticLink href={site.signupUrl} className="btn btn-primary btn-lg">
+            <MagneticLink href={site.signupUrl} className="btn btn-primary btn-lg w-full sm:w-auto">
               {site.cta.signup}
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
