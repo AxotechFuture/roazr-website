@@ -20,19 +20,19 @@ export function Mark({ size = 26 }: { size?: number }) {
       {/* signal arcs radiating from the dot — attribution "ping" */}
       <path
         d="M12 21.5c0-4.14 3.36-7.5 7.5-7.5"
-        stroke="#17E88F"
+        stroke="#FFFFFF"
         strokeWidth="2.4"
         strokeLinecap="round"
         opacity="0.45"
       />
       <path
         d="M12 16c0-2.9 2.35-5.25 5.25-5.25"
-        stroke="#17E88F"
+        stroke="#FFFFFF"
         strokeWidth="2.4"
         strokeLinecap="round"
         opacity="0.75"
       />
-      <circle cx="12" cy="21.5" r="3.1" fill="#17E88F" />
+      <circle cx="12" cy="21.5" r="3.1" fill="#FFFFFF" />
     </svg>
   );
 }
