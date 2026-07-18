@@ -69,7 +69,11 @@ switcher so the direction can be picked before any code changes.
 - LogoStrip: kill marquee → static row, grayscale ink chips, mono label.
 - Problem: two flat cards (pixel-blind vs Roazr-connected), semantic red only for "lost" state.
 - HowItWorks: 3 hairline cards, big mono numerals, flat mini-visuals.
-- Features: bento of 6 flat cards, redraw mini-visuals without glow.
+- Features → **demo bento** (Ramp's signature): large light-gray cards, two-tone
+  headline (ink lead + ash rest), corner ↗, each card containing an embedded product
+  demo that bleeds off the card edge — chat pop + dark "verified purchase" card,
+  event-stream window, payment-matching table, ROAS dashboard window, integrations
+  tile grid. 2 wide cards on top, 3 below.
 - Metrics: hairline-divided columns, huge tabular numerals (keep CountUp).
 - Testimonials: editorial quotes — large text, hairline rules, mono attribution.
 - FAQ: keep two-col accordion, hairline dividers, plus/minus indicators.
