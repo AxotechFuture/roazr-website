@@ -7,7 +7,7 @@
 <meta name="description" content="An AI system trained on our top 100 ads that have generated over ₦233M for our clients' businesses. Get the AI Ads System for ₦9,900.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;900&family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@600;800&family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500&family=Inter:wght@400;600&family=Roboto&family=Quicksand:wght@500&family=Source+Sans+3:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;900&family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@600;800&family=Open+Sans:wght@400;700&family=Poppins:wght@400;600&family=Inter:wght@600&family=Roboto&display=swap" rel="stylesheet">
 <style>
 :root{
   --navy:#071F2F;
@@ -47,7 +47,7 @@ a{color:inherit}
 .cta-btn{display:block;width:100%;max-width:730px;margin:0 auto;background:var(--red);color:#fff;border:none;border-radius:15px;box-shadow:none;padding:28px 40px;text-align:center;text-decoration:none;font-family:var(--font-btn);cursor:pointer;transition:background .15s ease,transform .15s ease}
 .cta-btn:hover{background:var(--red-hover);transform:scale(1.015)}
 .cta-btn .cta-main{display:block;font-size:clamp(20px,4vw,27px);font-weight:700;text-transform:uppercase;line-height:1.25}
-.cta-btn .cta-sub{display:block;font-size:clamp(13px,3vw,15px);font-weight:400;line-height:1.4;margin-top:8px;opacity:.95}
+.cta-btn .cta-sub{display:block;font-size:clamp(14px,3vw,15px);font-weight:400;line-height:1.4;margin-top:8px}
 .cta-under{max-width:730px;margin:14px auto 0;text-align:center;font-size:15px;line-height:1.5}
 
 /* ---------- placeholders ---------- */
@@ -68,8 +68,9 @@ a{color:inherit}
 .topbar-help{font-family:'Poppins',sans-serif;font-size:13px;text-decoration:none;white-space:nowrap;opacity:.95}
 .topbar-help:hover{text-decoration:underline}
 @media(max-width:767px){
-  .topbar-inner{flex-direction:column;gap:4px;padding:10px 15px}
-  .topbar-phone,.topbar-help{font-size:12px}
+  .topbar-inner{flex-wrap:wrap;justify-content:space-between;row-gap:2px;padding:7px 12px}
+  .topbar-logo{order:-1;width:100%;font-size:16px;letter-spacing:3px}
+  .topbar-phone,.topbar-help{font-size:11.5px}
 }
 
 /* ================= SECTION 1 — HERO ================= */
@@ -80,9 +81,9 @@ a{color:inherit}
 .trust-strip{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;padding:14px 0 26px;font-weight:700;font-size:14px;letter-spacing:.5px;text-transform:uppercase}
 .trust-stars{display:flex;gap:2px}
 .hero-eyebrow-wrap{text-align:center;margin-bottom:22px}
-.hero-eyebrow{display:inline-block;background:var(--yellow);color:var(--navy);font-family:'Poppins',sans-serif;font-weight:500;font-size:13.5px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;padding:7px 16px}
-.hero h1{font-family:var(--font-head);font-weight:900;font-size:clamp(36px,6vw,64px);line-height:1.08;text-transform:uppercase;text-align:center;max-width:1100px;margin:0 auto 24px}
-.hero h1 .underline{text-decoration:underline;text-decoration-thickness:5px;text-underline-offset:8px;text-decoration-color:var(--yellow)}
+.hero-eyebrow{display:inline-block;background:var(--yellow);color:var(--navy);font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;padding:7px 16px}
+.hero h1{font-family:var(--font-head);font-weight:900;font-size:clamp(36px,6vw,64px);line-height:1.12;text-transform:uppercase;text-align:center;max-width:1100px;margin:0 auto 24px}
+.hero h1 .underline{text-decoration:underline;text-decoration-thickness:.09em;text-underline-offset:.09em;text-decoration-color:var(--yellow)}
 .hero-subhead{font-size:clamp(17px,2.5vw,20px);line-height:1.5;text-align:center;max-width:938px;margin:0 auto 34px;opacity:.96}
 .vsl{max-width:900px;margin:0 auto;aspect-ratio:16/9;background:#120101;border:0;border-radius:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;color:#c9b6b6;font-family:'Inter',sans-serif;font-weight:600;font-size:15px}
 .vsl-play{width:84px;height:84px;flex:0 0 auto}
@@ -91,6 +92,10 @@ a{color:inherit}
 .proof-item{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;line-height:1.3;padding:8px 22px;border-right:1px solid rgba(255,255,255,.25)}
 .proof-item:last-child{border-right:0}
 .proof-item svg{flex:0 0 auto}
+@media(min-width:1024px){
+  .proof-strip{display:grid;grid-template-columns:repeat(4,1fr);max-width:1250px}
+  .proof-item{font-size:14.5px;padding:4px 18px;justify-content:flex-start}
+}
 @media(max-width:767px){
   .proof-strip{flex-direction:column;align-items:center;gap:10px}
   .proof-item{border-right:0;padding:0;justify-content:flex-start;width:100%;max-width:360px}
@@ -206,8 +211,7 @@ a{color:inherit}
 .faq-list{max-width:800px;margin:0 auto}
 .faq-item{border:1px solid #E5E7EB;border-radius:10px;margin-bottom:12px;background:#fff;overflow:hidden}
 .faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:0;padding:20px 22px;font-family:var(--font-body);font-size:18px;font-weight:700;color:var(--navy);text-align:left;cursor:pointer}
-.faq-icon{flex:0 0 auto;font-size:26px;font-weight:400;line-height:1;color:var(--red);transition:transform .2s ease}
-.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-icon{flex:0 0 auto;font-size:26px;font-weight:400;line-height:1;color:var(--red)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
 .faq-a-inner{padding:0 22px 22px;font-size:17px;line-height:1.55}
 
@@ -241,6 +245,7 @@ a{color:inherit}
   </div>
 </header>
 
+<main>
 <!-- ============ SECTION 1 — TOP OFFER BLOCK (HERO) ============ -->
 <section class="hero">
   <div class="trust-strip">
@@ -616,6 +621,7 @@ a{color:inherit}
     <p>P.S. Quick recap. You get the AI Ad Machine that builds winning ads for your business in 90 seconds, the complete Daily Bank Alert Traffic System course, the 100 Winning Ads Vault behind ₦233M+ in client sales, the WhatsApp Closing Scripts, and the ₦10K to ₦2.3M Case Study. All for ₦9,900, backed by the No-Mugu Guarantee: make at least ₦150,000 in 7 days or you get your ₦9,900 back.. And if you're one of the first 10 students to hit 100 verified sales, an iPhone 15 Pro Max is yours. The longer you wait, the more weeks your business spends behaving like NEPA light.</p>
   </div>
 </section>
+</main>
 
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
@@ -624,23 +630,42 @@ a{color:inherit}
 </footer>
 
 <script>
-document.querySelectorAll('.faq-q').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    var item=btn.closest('.faq-item');
+(function(){
+  function closeItem(item){
+    var a=item.querySelector('.faq-a');
+    /* if the height cap was released after opening, restore a pixel value so the collapse can animate */
+    if(a.style.maxHeight==='none'){a.style.maxHeight=a.scrollHeight+'px';void a.offsetHeight;}
+    item.classList.remove('open');
+    a.style.maxHeight=null;
+    a.setAttribute('aria-hidden','true');
+    item.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    item.querySelector('.faq-icon').textContent='+';
+  }
+  function openItem(item){
+    var a=item.querySelector('.faq-a');
+    item.classList.add('open');
+    a.style.maxHeight=a.scrollHeight+'px';
+    a.setAttribute('aria-hidden','false');
+    item.querySelector('.faq-q').setAttribute('aria-expanded','true');
+    item.querySelector('.faq-icon').textContent='−';
+  }
+  document.querySelectorAll('.faq-item').forEach(function(item,i){
+    var btn=item.querySelector('.faq-q');
     var answer=item.querySelector('.faq-a');
-    var isOpen=item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(function(openItem){
-      openItem.classList.remove('open');
-      openItem.querySelector('.faq-a').style.maxHeight=null;
-      openItem.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    answer.id='faq-answer-'+(i+1);
+    btn.setAttribute('aria-controls',answer.id);
+    answer.setAttribute('aria-hidden','true');
+    /* release the pixel cap once open, so text reflow (rotate, resize, late font swap) never clips */
+    answer.addEventListener('transitionend',function(){
+      if(item.classList.contains('open'))answer.style.maxHeight='none';
     });
-    if(!isOpen){
-      item.classList.add('open');
-      answer.style.maxHeight=answer.scrollHeight+'px';
-      btn.setAttribute('aria-expanded','true');
-    }
+    btn.addEventListener('click',function(){
+      var wasOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(closeItem);
+      if(!wasOpen)openItem(item);
+    });
   });
-});
+})();
 </script>
 </body>
 </html>

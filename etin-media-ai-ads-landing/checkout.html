@@ -7,7 +7,7 @@
 <meta name="description" content="You're one step away. Card or bank transfer, both give instant access. Get the AI Ads System for ₦9,900.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;900&family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@600;800&family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;700&family=Inter:wght@400;600&family=Roboto&family=Quicksand:wght@500&family=Source+Sans+3:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;900&family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@800&family=Poppins:wght@400;700&family=Inter:wght@600&family=Quicksand:wght@500&family=Source+Sans+3:wght@600&display=swap" rel="stylesheet">
 <style>
 :root{
   --navy:#071F2F;
@@ -41,8 +41,9 @@ a{color:inherit}
 .topbar-help{font-family:'Poppins',sans-serif;font-size:13px;text-decoration:none;white-space:nowrap;opacity:.95}
 .topbar-help:hover{text-decoration:underline}
 @media(max-width:767px){
-  .topbar-inner{flex-direction:column;gap:4px;padding:10px 15px}
-  .topbar-phone,.topbar-help{font-size:12px}
+  .topbar-inner{flex-wrap:wrap;justify-content:space-between;row-gap:2px;padding:7px 12px}
+  .topbar-logo{order:-1;width:100%;font-size:16px;letter-spacing:3px}
+  .topbar-phone,.topbar-help{font-size:11.5px}
 }
 
 /* ---------- banner ---------- */
@@ -62,14 +63,14 @@ a{color:inherit}
 
 .product-box{border:2px solid var(--yellow-border);background:#FEFCE8;border-radius:5px;padding:14px 16px;display:flex;gap:14px;align-items:flex-start;justify-content:space-between}
 .product-box .pb-title{font-weight:700;font-size:17px;margin-bottom:6px}
-.product-box .pb-desc{font-size:13px;line-height:1.5;color:#3d5261}
+.product-box .pb-desc{font-size:13px;line-height:1.5;color:var(--navy)}
 .product-box .pb-price{font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;white-space:nowrap}
 
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:420px){.field-row{grid-template-columns:1fr}}
 .input{width:100%;height:55px;border:1px solid var(--input-border);border-radius:5px;padding:0 16px;font-family:var(--font-body);font-size:18px;color:var(--navy);background:#fff;margin-bottom:12px}
 .input:focus{outline:2px solid var(--yellow-border);outline-offset:-1px}
-.input::placeholder{color:#9CA3AF}
+.input::placeholder{color:#6B7280}
 .input.invalid{border-color:var(--red-soft);outline:1px solid var(--red-soft);outline-offset:-1px}
 .phone-wrap{display:flex;margin-bottom:12px}
 .phone-prefix{flex:0 0 auto;display:flex;align-items:center;padding:0 14px;background:#F3F4F6;border:1px solid var(--input-border);border-right:0;border-radius:5px 0 0 5px;font-size:15px;font-weight:700;white-space:nowrap}
@@ -83,7 +84,7 @@ a{color:inherit}
 .bump-label .bump-lead{font-weight:700}
 
 .summary{border:1px solid var(--input-border);border-radius:6px;padding:16px;margin-bottom:22px}
-.summary h3{font-family:'Inter',sans-serif;font-weight:600;font-size:15px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:12px}
+.summary .summary-title{font-family:'Inter',sans-serif;font-weight:600;font-size:15px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:12px}
 .summary-row{display:flex;justify-content:space-between;gap:14px;font-size:15.5px;margin-bottom:8px}
 .summary-row .amt{font-weight:700;white-space:nowrap}
 .summary-total{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--input-border);margin-top:10px;padding-top:12px;font-weight:700;font-size:18px}
@@ -96,8 +97,9 @@ a{color:inherit}
 
 .below-btn{text-align:center;margin-top:16px}
 .below-btn .secure-line{font-size:14.5px;line-height:1.6;margin-bottom:12px}
-.trust-line{display:flex;align-items:center;justify-content:center;gap:7px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:.3px;color:#4B5563;text-transform:uppercase;margin-bottom:12px}
-.reassure-line{font-size:13.5px;font-style:italic;color:#4B5563;line-height:1.5}
+.trust-line{display:block;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:.3px;color:#4B5563;text-transform:uppercase;margin-bottom:12px}
+.trust-line svg{vertical-align:-2px;margin-right:5px}
+.reassure-line{font-size:13.5px;font-style:italic;color:var(--navy);line-height:1.5}
 
 /* ---------- success state ---------- */
 .success-card{display:none;background:#fff;border:3px solid var(--green);border-radius:10px;padding:50px 26px;text-align:center}
@@ -186,14 +188,14 @@ a{color:inherit}
 
       <!-- SUMMARY -->
       <div class="summary">
-        <h3>Summary</h3>
+        <p class="summary-title">Summary</p>
         <div class="summary-row"><span>The Complete AI Ads System</span><span class="amt">₦9,900</span></div>
         <div class="summary-row" id="bump-row"><span>Banned Ad Account Recovery Protocol</span><span class="amt">₦4,900</span></div>
         <div class="summary-total"><span>Total</span><span class="amt" id="total-amt">₦14,800</span></div>
       </div>
 
       <button class="pay-btn" type="submit" id="pay-btn">Get Instant Access — Pay ₦14,800</button>
-      <p class="form-error" id="form-error">Please fill in your name, a valid email, and phone number to continue.</p>
+      <p class="form-error" id="form-error" role="alert">Please fill in your name, a valid email, and phone number to continue.</p>
 
       <div class="below-btn">
         <p class="secure-line">Secured by Paystack · Your login details enter your email immediately after payment.</p>
@@ -246,7 +248,7 @@ a{color:inherit}
   <p><a href="#">Privacy Policy</a> | <a href="#">Terms Of Service</a></p>
 </footer>
 
-<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="https://js.paystack.co/v1/inline.js" onerror="window.__paystackLoadFailed=true"></script>
 <script>
 /* ============================================================
    !!! PAYSTACK SETUP — ACTION REQUIRED BEFORE GOING LIVE !!!
@@ -281,38 +283,88 @@ function refreshTotals(){
 bump.addEventListener('change', refreshTotals);
 refreshTotals();
 
+var MSG_VALIDATION = 'Please fill in your name, a valid email, and phone number to continue.';
+var MSG_PAYSTACK_LOADING = 'Secure checkout is still loading. Check your connection and tap the button again — or email support@etinmedia.com.';
+
+function showError(msg){ formError.textContent = msg; formError.classList.add('show'); }
+function hideError(){ formError.classList.remove('show'); }
+
+function setInvalid(el, invalid){
+  el.classList.toggle('invalid', invalid);
+  if(invalid){ el.setAttribute('aria-invalid','true'); } else { el.removeAttribute('aria-invalid'); }
+}
+
+/* Nigerian numbers arrive as 0803..., +234803..., or 803... — normalize to one +234 form */
+function normalizedPhone(){
+  var digits = document.getElementById('phone').value.replace(/\D/g, '');
+  if(digits.indexOf('234') === 0) digits = digits.slice(3);
+  if(digits.indexOf('0') === 0) digits = digits.slice(1);
+  return { digits: digits, display: '+234 ' + digits };
+}
+
 function validate(){
-  var ok = true;
-  ['first-name','last-name','phone'].forEach(function(id){
+  var firstInvalid = null;
+  ['first-name','last-name'].forEach(function(id){
     var el = document.getElementById(id);
     var valid = el.value.trim().length > 0;
-    el.classList.toggle('invalid', !valid);
-    if(!valid) ok = false;
+    setInvalid(el, !valid);
+    if(!valid && !firstInvalid) firstInvalid = el;
   });
   var email = document.getElementById('email');
   var emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
-  email.classList.toggle('invalid', !emailValid);
-  if(!emailValid) ok = false;
-  formError.classList.toggle('show', !ok);
-  return ok;
+  setInvalid(email, !emailValid);
+  if(!emailValid && !firstInvalid) firstInvalid = email;
+  var phoneEl = document.getElementById('phone');
+  var phoneDigits = normalizedPhone().digits;
+  var phoneValid = phoneDigits.length >= 7 && phoneDigits.length <= 15;
+  setInvalid(phoneEl, !phoneValid);
+  if(!phoneValid && !firstInvalid) firstInvalid = phoneEl;
+  if(firstInvalid){
+    showError(MSG_VALIDATION);
+    firstInvalid.focus();
+    return false;
+  }
+  hideError();
+  return true;
+}
+
+var paystackInjectedRetry = false;
+function paystackAvailable(){
+  return typeof window.PaystackPop !== 'undefined' && window.PaystackPop && typeof window.PaystackPop.setup === 'function';
 }
 
 form.addEventListener('submit', function(e){
   e.preventDefault();
+  if(payBtn.disabled) return;                     /* in-flight guard: no double-open */
   if(!validate()) return;
 
-  var amount = currentAmountKobo();
+  if(!paystackAvailable()){
+    /* Paystack JS blocked/timed out (flaky network) — tell the visitor and retry the script */
+    showError(MSG_PAYSTACK_LOADING);
+    if(!paystackInjectedRetry){
+      paystackInjectedRetry = true;
+      var s = document.createElement('script');
+      s.src = 'https://js.paystack.co/v1/inline.js';
+      s.onload = function(){ paystackInjectedRetry = false; hideError(); };
+      s.onerror = function(){ paystackInjectedRetry = false; };
+      document.head.appendChild(s);
+    }
+    return;
+  }
+
+  hideError();
+  payBtn.disabled = true;
   var handler = PaystackPop.setup({
     key: PAYSTACK_PUBLIC_KEY,
     email: document.getElementById('email').value.trim(),
-    amount: amount,
+    amount: currentAmountKobo(),
     currency: 'NGN',
     ref: 'ETIN-AIADS-' + Date.now() + '-' + Math.floor(Math.random()*1000000),
     metadata: {
       custom_fields: [
         { display_name: 'First Name', variable_name: 'first_name', value: document.getElementById('first-name').value.trim() },
         { display_name: 'Last Name', variable_name: 'last_name', value: document.getElementById('last-name').value.trim() },
-        { display_name: 'Phone', variable_name: 'phone', value: '+234 ' + document.getElementById('phone').value.trim() },
+        { display_name: 'Phone', variable_name: 'phone', value: normalizedPhone().display },
         { display_name: 'Order Bump: Banned Ad Account Recovery Protocol', variable_name: 'order_bump', value: bump.checked ? 'Yes (₦4,900)' : 'No' }
       ]
     },
@@ -321,7 +373,7 @@ form.addEventListener('submit', function(e){
       document.getElementById('success-card').classList.add('show');
       document.getElementById('success-card').scrollIntoView({behavior:'smooth', block:'center'});
     },
-    onClose: function(){ /* visitor closed the popup — form stays as-is so they can retry */ }
+    onClose: function(){ payBtn.disabled = false; /* visitor closed the popup — let them retry */ }
   });
   handler.openIframe();
 });
