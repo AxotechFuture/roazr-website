@@ -258,6 +258,16 @@ var PAYSTACK_PUBLIC_KEY = "pk_live_REPLACE_ME";
 var BASE_AMOUNT_KOBO = 990000;   /* ₦9,900  */
 var BUMP_AMOUNT_KOBO = 490000;   /* ₦4,900  */
 
+/* Prefill from the landing-page lead modal (?fn=&em=&ph=) so the buyer never types twice */
+(function(){
+  try{
+    var q = new URLSearchParams(window.location.search);
+    if(q.get('fn')) document.getElementById('first-name').value = q.get('fn');
+    if(q.get('em')) document.getElementById('email').value = q.get('em');
+    if(q.get('ph')) document.getElementById('phone').value = q.get('ph');
+  }catch(e){}
+})();
+
 var bump = document.getElementById('bump');
 var bumpRow = document.getElementById('bump-row');
 var totalAmt = document.getElementById('total-amt');

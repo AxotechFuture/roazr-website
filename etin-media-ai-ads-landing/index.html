@@ -81,7 +81,6 @@ a{color:inherit}
 .hero-eyebrow-wrap{text-align:center;margin-bottom:22px}
 .hero-eyebrow{display:inline-block;background:var(--yellow);color:var(--navy);font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;padding:7px 16px}
 .hero h1{font-family:var(--font-head);font-weight:900;font-size:clamp(36px,6vw,64px);line-height:1.12;text-transform:uppercase;text-align:center;max-width:1100px;margin:0 auto 24px}
-.hero h1 .underline{text-decoration:underline;text-decoration-thickness:.09em;text-underline-offset:.09em;text-decoration-color:var(--yellow)}
 .hero-subhead{font-size:clamp(17px,2.5vw,20px);line-height:1.5;text-align:center;max-width:938px;margin:0 auto 34px;opacity:.96}
 .vsl{max-width:900px;margin:0 auto;aspect-ratio:16/9;background:#120101;border:0;border-radius:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;color:#c9b6b6;font-family:'Inter',sans-serif;font-weight:600;font-size:15px}
 .vsl-play{width:84px;height:84px;flex:0 0 auto}
@@ -235,6 +234,25 @@ a{color:inherit}
 .option-3{text-align:center;font-weight:700;font-size:19px;margin:34px 0 46px}
 .ps-block{max-width:800px;margin:60px auto 0;font-style:italic;font-size:17px;line-height:1.65;background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:30px}
 
+/* ---------- CTA lead-capture modal ---------- */
+.cta-modal-overlay{position:fixed;inset:0;z-index:10000;background:rgba(7,31,47,.78);display:none;align-items:center;justify-content:center;padding:20px}
+.cta-modal-overlay.open{display:flex}
+.cta-modal{position:relative;background:#fff;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.45);width:100%;max-width:430px;padding:30px 26px 26px}
+.cta-modal h3{font-family:var(--font-head);font-weight:700;font-size:clamp(20px,4.5vw,25px);line-height:1.25;text-align:center;margin-bottom:20px}
+.cta-modal .cm-input{width:100%;height:55px;border:1px solid #E5E7EB;border-radius:5px;padding:0 16px;font-family:var(--font-body);font-size:18px;color:var(--navy);margin-bottom:12px}
+.cta-modal .cm-input:focus{outline:2px solid var(--yellow);outline-offset:-1px}
+.cta-modal .cm-input::placeholder{color:#6B7280}
+.cta-modal .cm-input.invalid{border-color:var(--red-soft);outline:1px solid var(--red-soft);outline-offset:-1px}
+.cm-phone{display:flex;margin-bottom:12px}
+.cm-prefix{flex:0 0 auto;display:flex;align-items:center;padding:0 13px;background:#F3F4F6;border:1px solid #E5E7EB;border-right:0;border-radius:5px 0 0 5px;font-size:15px;font-weight:700;white-space:nowrap}
+.cm-phone .cm-input{border-radius:0 5px 5px 0;margin-bottom:0}
+.cm-continue{display:block;width:100%;background:var(--red);color:#fff;border:0;border-radius:8px;padding:18px;font-family:var(--font-btn);font-weight:700;font-size:21px;cursor:pointer;transition:background .15s ease}
+.cm-continue:hover{background:var(--red-hover)}
+.cm-error{display:none;color:var(--red-soft);font-size:14px;font-weight:700;text-align:center;margin-top:10px}
+.cm-error.show{display:block}
+.cm-secure{text-align:center;font-size:13px;color:#4B5563;margin-top:12px}
+.cm-close{position:absolute;top:10px;right:14px;background:none;border:0;color:#9CA3AF;font-size:22px;line-height:1;cursor:pointer;padding:4px}
+
 /* ---------- sales-proof popup (bottom-left) ---------- */
 .proof-pop{position:fixed;left:14px;bottom:14px;z-index:9999;display:flex;align-items:center;gap:12px;background:#fff;border-radius:999px;box-shadow:0 8px 28px rgba(0,0,0,.2);padding:9px 44px 9px 9px;max-width:min(92vw,390px);transform:translateY(calc(100% + 24px));opacity:0;transition:transform 2s cubic-bezier(.22,.9,.35,1),opacity 2s ease;font-family:'Inter','Noto Sans JP',sans-serif;color:#111827;pointer-events:none}
 .proof-pop.pp-show{transform:translateY(0);opacity:1;pointer-events:auto}
@@ -288,7 +306,7 @@ a{color:inherit}
     <span class="hero-eyebrow">For Nigerian Business Owners Who Are Tired of Inconsistent Sales</span>
   </div>
 
-  <h1>Steal Our <span class="underline">₦233M AI Ads System</span> to Generate Ads That Convert Every Single Time</h1>
+  <h1>Steal Our ₦233M AI Ads System to Generate Ads That Convert Every Single Time</h1>
 
   <p class="hero-subhead">An AI system trained on our top 100 ads that have generated over ₦233M for our clients' businesses. While you are struggling to get customers online, small business owners are using this system to make ₦2M in sales every month selling their products and services.</p>
 
@@ -485,7 +503,6 @@ a{color:inherit}
   </div>
 
   <div class="reading s4-notice">
-    <p>Notice something? These people aren't tech savvy.</p>
     <p>Some members didn't even have laptops when they started; they built their empires on a cracked Infinix phone.</p>
     <p>These aren't "gurus" with special connections. These are regular Nigerians... entrepreneurs, freelancers, students, mothers, 9-5 workers... who simply installed the system.</p>
     <p>They went from Struggling Hustler, avoiding family calls... to Reliable Provider who stopped stressing about money.</p>
@@ -743,6 +760,62 @@ a{color:inherit}
       document.querySelectorAll('.faq-item.open').forEach(closeItem);
       if(!wasOpen)openItem(item);
     });
+  });
+})();
+</script>
+
+<!-- ============ CTA LEAD-CAPTURE MODAL (opens on every CTA, then continues to checkout with details prefilled) ============ -->
+<div class="cta-modal-overlay" id="cta-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cm-title">
+  <form class="cta-modal" id="cta-modal-form" novalidate>
+    <button class="cm-close" type="button" id="cm-close" aria-label="Close">×</button>
+    <h3 id="cm-title">Get the AI Ads System for ₦9,900</h3>
+    <input class="cm-input" type="text" id="cm-name" placeholder="First Name" aria-label="First Name" autocomplete="given-name" required>
+    <input class="cm-input" type="email" id="cm-email" placeholder="Email" aria-label="Email" autocomplete="email" required>
+    <div class="cm-phone">
+      <span class="cm-prefix">Nigeria +234</span>
+      <input class="cm-input" type="tel" id="cm-phone" placeholder="Phone" aria-label="Phone" autocomplete="tel-national" required>
+    </div>
+    <button class="cm-continue" type="submit">Continue →</button>
+    <p class="cm-error" id="cm-error" role="alert">Please enter your first name, a valid email, and phone number to continue.</p>
+    <p class="cm-secure">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4B5563" stroke-width="2" stroke-linecap="square" style="vertical-align:-1px"><rect x="4" y="10" width="16" height="11" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+      Paystack Secure (Card or Transfer) · Instant Access
+    </p>
+  </form>
+</div>
+<script>
+(function(){
+  var overlay=document.getElementById('cta-modal-overlay');
+  var formEl=document.getElementById('cta-modal-form');
+  var errEl=document.getElementById('cm-error');
+  var target='checkout.html';
+  document.querySelectorAll('a.cta-btn').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();                       /* href stays as no-JS fallback */
+      target=a.getAttribute('href');
+      overlay.classList.add('open');
+      document.getElementById('cm-name').focus();
+    });
+  });
+  function close(){overlay.classList.remove('open');errEl.classList.remove('show');}
+  document.getElementById('cm-close').addEventListener('click',close);
+  overlay.addEventListener('click',function(e){if(e.target===overlay)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  formEl.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=document.getElementById('cm-name');
+    var email=document.getElementById('cm-email');
+    var phone=document.getElementById('cm-phone');
+    var digits=phone.value.replace(/\D/g,'');
+    var ok=true;
+    function mark(el,bad){el.classList.toggle('invalid',bad);if(bad)ok=false;}
+    mark(name,name.value.trim().length===0);
+    mark(email,!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()));
+    mark(phone,digits.length<7||digits.length>15);
+    errEl.classList.toggle('show',!ok);
+    if(!ok)return;
+    var q='fn='+encodeURIComponent(name.value.trim())+'&em='+encodeURIComponent(email.value.trim())+'&ph='+encodeURIComponent(phone.value.trim());
+    window.location.href=target+(target.indexOf('?')>-1?'&':'?')+q;
   });
 })();
 </script>
