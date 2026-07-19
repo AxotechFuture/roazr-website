@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;900&family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@600;800&family=Open+Sans:wght@400;700&family=Poppins:wght@400;600&family=Inter:wght@600&family=Roboto&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#071F2F;
+  --navy:#000000;
   --red:#EB0000;
   --red-hover:#C70000;
   --red-soft:#EF4444;
@@ -44,7 +44,7 @@ a{color:inherit}
 .yellow-bar{display:inline-block;background:var(--yellow);border-radius:0;padding:10px 15px;font-family:var(--font-accent);font-weight:800;font-size:clamp(22px,4.5vw,41px);line-height:1.15;color:var(--navy);text-align:center}
 
 /* ---------- CTA buttons ---------- */
-.cta-btn{display:block;width:100%;max-width:730px;margin:0 auto;background:var(--red);color:#fff;border:none;border-radius:15px;box-shadow:none;padding:28px 40px;text-align:center;text-decoration:none;font-family:var(--font-btn);cursor:pointer;transition:background .15s ease,transform .15s ease}
+.cta-btn{display:block;width:100%;max-width:730px;margin:0 auto;background:var(--red);color:#fff;border:none;border-radius:4px;box-shadow:none;padding:28px 40px;text-align:center;text-decoration:none;font-family:var(--font-btn);cursor:pointer;transition:background .15s ease,transform .15s ease}
 .cta-btn:hover{background:var(--red-hover);transform:scale(1.015)}
 .cta-btn .cta-main{display:block;font-size:clamp(20px,4vw,27px);font-weight:700;text-transform:uppercase;line-height:1.25}
 .cta-btn .cta-sub{display:block;font-size:clamp(14px,3vw,15px);font-weight:400;line-height:1.4;margin-top:8px}
@@ -120,19 +120,21 @@ a{color:inherit}
 .s2{background:#fff;padding:80px 15px}
 .s2 .section-heading{margin-bottom:36px}
 .s2 .reading p{margin-bottom:18px}
-.tired-box{border-left:4px solid var(--red-soft);background:rgba(239,68,68,0.05);padding:16px 20px;margin-bottom:12px}
-.s2-close{text-align:center;font-weight:700;font-size:clamp(20px,3.5vw,26px);line-height:1.35;margin-top:40px}
+.tired-list{list-style:disc;padding-left:28px;margin-bottom:8px;font-size:20.4px;line-height:30.6px}
+.tired-list li{margin-bottom:14px}
+.s2-close{background:var(--yellow);border-radius:4px;padding:32px 26px;text-align:center;font-weight:700;font-size:clamp(20px,3.5vw,26px);line-height:1.35;margin-top:40px}
 .s2-close p{margin-bottom:10px}
+.s2-close p:last-child{margin-bottom:0}
 
 /* ================= SECTION 3 — THE STACK ================= */
 .s3{background:var(--bg-off);padding:80px 15px}
 .s3-sub{text-align:center;font-size:clamp(17px,2.5vw,21px);font-weight:700;margin:22px auto 46px;max-width:800px}
-.module-card{background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:30px;max-width:800px;margin:0 auto 26px}
+.module-card{background:#fff;border:1px solid #E5E7EB;border-radius:4px;padding:30px;max-width:800px;margin:0 auto 26px}
 .module-head{display:flex;align-items:center;gap:16px;margin-bottom:14px}
-.module-num{flex:0 0 auto;width:52px;height:52px;background:var(--navy);color:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-accent);font-weight:800;font-size:26px}
+.module-num{flex:0 0 auto;width:52px;height:52px;background:var(--navy);color:#fff;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:var(--font-accent);font-weight:800;font-size:26px}
 .module-title{font-weight:700;font-size:24px;line-height:1.2}
 .module-body{margin-bottom:16px}
-.value-pill{display:inline-block;background:var(--green-bg);color:var(--green-dark);border-radius:100px;padding:7px 18px;font-family:var(--font-accent);font-weight:600;font-size:15.5px;margin-bottom:18px}
+.value-pill{display:inline-block;background:var(--green-bg);color:var(--green-dark);border-radius:4px;padding:7px 18px;font-family:var(--font-accent);font-weight:600;font-size:15.5px;margin-bottom:18px}
 .module-card .ph{aspect-ratio:16/9}
 .s3-totals{text-align:center;margin:44px 0}
 .s3-total-value{font-family:var(--font-accent);font-weight:600;font-size:clamp(19px,3vw,24px);margin-bottom:10px}
@@ -148,7 +150,7 @@ a{color:inherit}
 .s4-claim{text-align:center;font-weight:700;font-size:clamp(20px,3.5vw,27px);line-height:1.35;max-width:860px;margin:0 auto 64px}
 .wall-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;max-width:1100px;margin:44px auto 60px}
 @media(max-width:1023px){.wall-grid{grid-template-columns:repeat(2,1fr)}}
-.wall-card .ph{aspect-ratio:9/16;border-radius:24px;border:1px dashed var(--ph-border);box-shadow:0 14px 28px rgba(7,31,47,.14)}
+.wall-card .ph{aspect-ratio:9/16;border-radius:4px;border:1px dashed var(--ph-border);box-shadow:0 14px 28px rgba(7,31,47,.14)}
 .s4-notice p{margin-bottom:18px}
 .s4-award{max-width:420px;margin:56px auto 0}
 .s4-award .ph{aspect-ratio:4/5}
@@ -165,7 +167,7 @@ a{color:inherit}
 
 /* ================= SECTION 6 — GUARANTEE ================= */
 .s6{background:#fff;padding:80px 15px}
-.guarantee-card{max-width:800px;margin:0 auto;background:#F0FDF4;border:3px solid var(--green);border-radius:12px;padding:46px 30px;text-align:center}
+.guarantee-card{max-width:800px;margin:0 auto;background:#F0FDF4;border:3px solid var(--green);border-radius:4px;padding:46px 30px;text-align:center}
 .guarantee-card .shield{margin-bottom:18px}
 .guarantee-card h2{font-family:var(--font-head);font-weight:700;font-size:clamp(26px,4.5vw,38px);margin-bottom:18px}
 .guarantee-card p{font-size:18px;line-height:1.6;text-align:center}
@@ -174,16 +176,16 @@ a{color:inherit}
 .s7{background:#0A1622;color:#fff;padding:80px 15px}
 .s7-grid{display:grid;grid-template-columns:360px 1fr;gap:44px;max-width:1050px;margin:0 auto;align-items:start}
 @media(max-width:860px){.s7-grid{grid-template-columns:1fr;max-width:520px}}
-.s7-photo .ph{aspect-ratio:4/5;border-radius:12px}
+.s7-photo .ph{aspect-ratio:4/5;border-radius:4px}
 .s7 h2{font-family:var(--font-head);font-weight:700;font-size:clamp(26px,4vw,36px);line-height:1.2;margin-bottom:22px}
 .s7 p{margin-bottom:18px;opacity:.95}
 
 /* ================= SECTION 8 — BONUSES + PRIZE ================= */
 .s8{background:var(--bg-off);padding:80px 15px}
-.iphone-card{background:#fff;border:1px solid #E5E7EB;border-radius:12px;box-shadow:0 10px 24px rgba(7,31,47,.08);padding:34px 30px;max-width:800px;margin:40px auto 56px;text-align:center}
+.iphone-card{background:#fff;border:1px solid #E5E7EB;border-radius:4px;box-shadow:0 10px 24px rgba(7,31,47,.08);padding:34px 30px;max-width:800px;margin:40px auto 56px;text-align:center}
 .iphone-card .ic-title{font-weight:700;font-size:clamp(21px,3.5vw,26px);margin-bottom:12px}
 .iphone-card p{font-size:18px;line-height:1.55}
-.bonus-card{position:relative;background:#fff;border:2px dashed var(--red);border-radius:12px;padding:38px 30px 30px;max-width:800px;margin:0 auto 40px}
+.bonus-card{position:relative;background:#fff;border:2px dashed var(--red);border-radius:4px;padding:38px 30px 30px;max-width:800px;margin:0 auto 40px}
 .bonus-badge{position:absolute;top:-16px;left:26px;background:var(--red);color:#fff;font-family:var(--font-accent);font-weight:800;font-size:14px;letter-spacing:1px;padding:6px 16px}
 .bonus-title{font-weight:700;font-size:clamp(19px,3vw,24px);line-height:1.3;margin-bottom:12px}
 .bonus-card p{margin-bottom:16px}
@@ -206,7 +208,7 @@ a{color:inherit}
 .s10-today{font-family:var(--font-accent);font-weight:800;font-size:clamp(44px,8vw,72px);line-height:1.1;margin-bottom:8px}
 .s10-today .price{color:var(--yellow)}
 .s10-save{font-family:'Roboto',sans-serif;font-size:clamp(17px,2.5vw,22px);font-weight:400;margin-bottom:44px}
-.s10-card{background:#fff;color:var(--navy);border-radius:16px;max-width:800px;margin:0 auto 40px;padding:36px 30px;text-align:left;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.s10-card{background:#fff;color:var(--navy);border-radius:4px;max-width:800px;margin:0 auto 40px;padding:36px 30px;text-align:left;box-shadow:0 24px 60px rgba(0,0,0,.45)}
 .s10-card h3{font-family:var(--font-head);font-weight:700;font-size:clamp(20px,3vw,25px);margin-bottom:18px}
 .s10-card .check-list{font-size:18px;line-height:1.5}
 .s10-card .check-list li{margin-bottom:12px}
@@ -218,7 +220,7 @@ a{color:inherit}
 .s11 .section-heading{margin-bottom:26px}
 .faq-intro{max-width:800px;margin:0 auto 36px;text-align:center;font-size:18px;line-height:1.55}
 .faq-list{max-width:800px;margin:0 auto}
-.faq-item{border:1px solid #E5E7EB;border-radius:10px;margin-bottom:12px;background:#fff;overflow:hidden}
+.faq-item{border:1px solid #E5E7EB;border-radius:4px;margin-bottom:12px;background:#fff;overflow:hidden}
 .faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:0;padding:20px 22px;font-family:var(--font-body);font-size:18px;font-weight:700;color:var(--navy);text-align:left;cursor:pointer}
 .faq-icon{flex:0 0 auto;font-size:26px;font-weight:400;line-height:1;color:var(--red)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
@@ -227,26 +229,26 @@ a{color:inherit}
 /* ================= SECTION 12 — FINAL CLOSE ================= */
 .s12{background:var(--bg-off);padding:80px 15px}
 .s12 .section-heading{margin-bottom:40px}
-.option-box{max-width:800px;margin:0 auto 22px;border-radius:12px;padding:26px 26px;display:flex;gap:16px;align-items:flex-start;font-size:18px;line-height:1.55}
+.option-box{max-width:800px;margin:0 auto 22px;border-radius:4px;padding:26px 26px;display:flex;gap:16px;align-items:flex-start;font-size:18px;line-height:1.55}
 .option-box svg{flex:0 0 auto;margin-top:3px}
 .option-1{background:rgba(239,68,68,0.06);border:2px solid var(--red-soft)}
 .option-2{background:#F0FDF4;border:2px solid var(--green);box-shadow:0 16px 36px rgba(21,128,61,.16)}
 .option-3{text-align:center;font-weight:700;font-size:19px;margin:34px 0 46px}
-.ps-block{max-width:800px;margin:60px auto 0;font-style:italic;font-size:17px;line-height:1.65;background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:30px}
+.ps-block{max-width:800px;margin:60px auto 0;font-style:italic;font-size:17px;line-height:1.65;background:#fff;border:1px solid #E5E7EB;border-radius:4px;padding:30px}
 
 /* ---------- CTA lead-capture modal ---------- */
 .cta-modal-overlay{position:fixed;inset:0;z-index:10000;background:rgba(7,31,47,.78);display:none;align-items:center;justify-content:center;padding:20px}
 .cta-modal-overlay.open{display:flex}
-.cta-modal{position:relative;background:#fff;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.45);width:100%;max-width:430px;padding:30px 26px 26px}
+.cta-modal{position:relative;background:#fff;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.45);width:100%;max-width:430px;padding:30px 26px 26px}
 .cta-modal h3{font-family:var(--font-head);font-weight:700;font-size:clamp(20px,4.5vw,25px);line-height:1.25;text-align:center;margin-bottom:20px}
-.cta-modal .cm-input{width:100%;height:55px;border:1px solid #E5E7EB;border-radius:5px;padding:0 16px;font-family:var(--font-body);font-size:18px;color:var(--navy);margin-bottom:12px}
+.cta-modal .cm-input{width:100%;height:55px;border:1px solid #E5E7EB;border-radius:4px;padding:0 16px;font-family:var(--font-body);font-size:18px;color:var(--navy);margin-bottom:12px}
 .cta-modal .cm-input:focus{outline:2px solid var(--yellow);outline-offset:-1px}
 .cta-modal .cm-input::placeholder{color:#6B7280}
 .cta-modal .cm-input.invalid{border-color:var(--red-soft);outline:1px solid var(--red-soft);outline-offset:-1px}
 .cm-phone{display:flex;margin-bottom:12px}
-.cm-prefix{flex:0 0 auto;display:flex;align-items:center;padding:0 13px;background:#F3F4F6;border:1px solid #E5E7EB;border-right:0;border-radius:5px 0 0 5px;font-size:15px;font-weight:700;white-space:nowrap}
-.cm-phone .cm-input{border-radius:0 5px 5px 0;margin-bottom:0}
-.cm-continue{display:block;width:100%;background:var(--red);color:#fff;border:0;border-radius:8px;padding:18px;font-family:var(--font-btn);font-weight:700;font-size:21px;cursor:pointer;transition:background .15s ease}
+.cm-prefix{flex:0 0 auto;display:flex;align-items:center;padding:0 13px;background:#F3F4F6;border:1px solid #E5E7EB;border-right:0;border-radius:4px 0 0 4px;font-size:15px;font-weight:700;white-space:nowrap}
+.cm-phone .cm-input{border-radius:0 4px 4px 0;margin-bottom:0}
+.cm-continue{display:block;width:100%;background:var(--red);color:#fff;border:0;border-radius:4px;padding:18px;font-family:var(--font-btn);font-weight:700;font-size:21px;cursor:pointer;transition:background .15s ease}
 .cm-continue:hover{background:var(--red-hover)}
 .cm-error{display:none;color:var(--red-soft);font-size:14px;font-weight:700;text-align:center;margin-top:10px}
 .cm-error.show{display:block}
@@ -413,13 +415,15 @@ a{color:inherit}
   <h2 class="section-heading">Aren't You Tired Of Your Business Doing You Like This?</h2>
   <div class="reading">
     <p>I've spoken to over 2,000 Nigerian business owners who were exactly where you are right now. If any of these hit you, keep reading.</p>
-    <div class="tired-box">Aren't you tired of going days, sometimes weeks, wondering where your next sale will come from?</div>
-    <div class="tired-box">Aren't you tired of posting every single day, doing giveaways, begging people to share your link, while a competitor with a worse product is selling more than you?</div>
-    <div class="tired-box">Aren't you tired of people DMing you "how much" and leaving your replies on read?</div>
-    <div class="tired-box">Aren't you tired of boosting posts with your last ₦10K and getting likes from people who won't buy?</div>
-    <div class="tired-box">Aren't you tired of watching your parents grow old, knowing they sacrificed everything, and still not being able to give them the life they deserve?</div>
-    <div class="tired-box">Aren't you tired of borrowing in silence, or being too proud to borrow, while pretending everything is fine online?</div>
-    <div class="tired-box">Aren't you tired of watching someone who started their business yesterday fly past you, while all you can do is watch them and ask God "when??"</div>
+    <ul class="tired-list">
+      <li>Aren't you tired of going days, sometimes weeks, wondering where your next sale will come from?</li>
+      <li>Aren't you tired of posting every single day, doing giveaways, begging people to share your link, while a competitor with a worse product is selling more than you?</li>
+      <li>Aren't you tired of people DMing you "how much" and leaving your replies on read?</li>
+      <li>Aren't you tired of boosting posts with your last ₦10K and getting likes from people who won't buy?</li>
+      <li>Aren't you tired of watching your parents grow old, knowing they sacrificed everything, and still not being able to give them the life they deserve?</li>
+      <li>Aren't you tired of borrowing in silence, or being too proud to borrow, while pretending everything is fine online?</li>
+      <li>Aren't you tired of watching someone who started their business yesterday fly past you, while all you can do is watch them and ask God "when??"</li>
+    </ul>
     <div class="s2-close">
       <p>That thing you feel right now?</p>
       <p>It's why this AI Ads System exists.</p>

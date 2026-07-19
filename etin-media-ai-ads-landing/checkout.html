@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;900&family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@800&family=Poppins:wght@400;700&family=Inter:wght@600&family=Quicksand:wght@500&family=Source+Sans+3:wght@600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#071F2F;
+  --navy:#000000;
   --red:#EB0000;
   --red-hover:#C70000;
   --red-soft:#EF4444;
@@ -54,40 +54,40 @@ a{color:inherit}
 @media(max-width:900px){.checkout-grid{grid-template-columns:1fr}}
 
 /* ---------- left form card ---------- */
-.form-card{background:#fff;border:1px solid var(--input-border);border-radius:10px;padding:26px 22px}
+.form-card{background:#fff;border:1px solid var(--input-border);border-radius:4px;padding:26px 22px}
 .form-label{display:flex;align-items:center;gap:14px;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;letter-spacing:.5px;color:var(--navy);text-transform:uppercase;margin:26px 0 14px}
 .form-label:first-child{margin-top:0}
 .form-label::after{content:"";flex:1;height:1px;background:var(--input-border)}
 
-.product-box{border:2px solid var(--yellow-border);background:#FEFCE8;border-radius:5px;padding:14px 16px;display:flex;gap:14px;align-items:flex-start;justify-content:space-between}
+.product-box{border:2px solid var(--yellow-border);background:#FEFCE8;border-radius:4px;padding:14px 16px;display:flex;gap:14px;align-items:flex-start;justify-content:space-between}
 .product-box .pb-title{font-weight:700;font-size:17px;margin-bottom:6px}
 .product-box .pb-desc{font-size:13px;line-height:1.5;color:var(--navy)}
 .product-box .pb-price{font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;white-space:nowrap}
 
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:420px){.field-row{grid-template-columns:1fr}}
-.input{width:100%;height:55px;border:1px solid var(--input-border);border-radius:5px;padding:0 16px;font-family:var(--font-body);font-size:18px;color:var(--navy);background:#fff;margin-bottom:12px}
+.input{width:100%;height:55px;border:1px solid var(--input-border);border-radius:4px;padding:0 16px;font-family:var(--font-body);font-size:18px;color:var(--navy);background:#fff;margin-bottom:12px}
 .input:focus{outline:2px solid var(--yellow-border);outline-offset:-1px}
 .input::placeholder{color:#6B7280}
 .input.invalid{border-color:var(--red-soft);outline:1px solid var(--red-soft);outline-offset:-1px}
 .phone-wrap{display:flex;margin-bottom:12px}
-.phone-prefix{flex:0 0 auto;display:flex;align-items:center;padding:0 14px;background:#F3F4F6;border:1px solid var(--input-border);border-right:0;border-radius:5px 0 0 5px;font-size:15px;font-weight:700;white-space:nowrap}
-.phone-wrap .input{border-radius:0 5px 5px 0;margin-bottom:0}
+.phone-prefix{flex:0 0 auto;display:flex;align-items:center;padding:0 14px;background:#F3F4F6;border:1px solid var(--input-border);border-right:0;border-radius:4px 0 0 4px;font-size:15px;font-weight:700;white-space:nowrap}
+.phone-wrap .input{border-radius:0 4px 4px 0;margin-bottom:0}
 
 .payment-note{font-size:16px;font-weight:700;line-height:1.5;margin-bottom:16px}
 
-.bump-box{border:2px dashed var(--red);background:#FFF7F7;border-radius:6px;padding:16px;margin-bottom:22px}
+.bump-box{border:2px dashed var(--red);background:#FFF7F7;border-radius:4px;padding:16px;margin-bottom:22px}
 .bump-label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;font-size:15px;line-height:1.55}
 .bump-label input{flex:0 0 auto;width:22px;height:22px;margin-top:2px;accent-color:var(--red);cursor:pointer}
 .bump-label .bump-lead{font-weight:700}
 
-.summary{border:1px solid var(--input-border);border-radius:6px;padding:16px;margin-bottom:22px}
+.summary{border:1px solid var(--input-border);border-radius:4px;padding:16px;margin-bottom:22px}
 .summary .summary-title{font-family:'Inter',sans-serif;font-weight:600;font-size:15px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:12px}
 .summary-row{display:flex;justify-content:space-between;gap:14px;font-size:15.5px;margin-bottom:8px}
 .summary-row .amt{font-weight:700;white-space:nowrap}
 .summary-total{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--input-border);margin-top:10px;padding-top:12px;font-weight:700;font-size:18px}
 
-.pay-btn{display:block;width:100%;background:var(--red);color:#fff;border:0;border-radius:6px;box-shadow:none;padding:22px 20px;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:clamp(19px,4vw,23px);line-height:1.3;cursor:pointer;transition:background .15s ease,transform .15s ease}
+.pay-btn{display:block;width:100%;background:var(--red);color:#fff;border:0;border-radius:4px;box-shadow:none;padding:22px 20px;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:clamp(19px,4vw,23px);line-height:1.3;cursor:pointer;transition:background .15s ease,transform .15s ease}
 .pay-btn:hover{background:var(--red-hover);transform:scale(1.01)}
 .pay-btn:disabled{opacity:.6;cursor:wait;transform:none}
 .form-error{display:none;color:var(--red-soft);font-size:14.5px;font-weight:700;text-align:center;margin-top:12px}
@@ -100,7 +100,7 @@ a{color:inherit}
 .reassure-line{font-size:13.5px;font-style:italic;color:var(--navy);line-height:1.5}
 
 /* ---------- success state ---------- */
-.success-card{display:none;background:#fff;border:3px solid var(--green);border-radius:10px;padding:50px 26px;text-align:center}
+.success-card{display:none;background:#fff;border:3px solid var(--green);border-radius:4px;padding:50px 26px;text-align:center}
 .success-card.show{display:block}
 .success-card h2{font-family:'Raleway',sans-serif;font-weight:700;font-size:clamp(24px,4vw,32px);margin:16px 0 6px}
 .success-card p{font-size:18px}
@@ -113,7 +113,7 @@ a{color:inherit}
 .check-list{list-style:none}
 .check-list li{display:flex;align-items:flex-start;gap:12px;font-size:17.5px;line-height:1.5;margin-bottom:12px}
 .check-list li svg{flex:0 0 auto;margin-top:4px}
-.mini-guarantee{background:#F0FDF4;border:3px solid var(--green);border-radius:12px;padding:30px 24px;text-align:center;margin-top:34px}
+.mini-guarantee{background:#F0FDF4;border:3px solid var(--green);border-radius:4px;padding:30px 24px;text-align:center;margin-top:34px}
 .mini-guarantee h3{font-family:'Raleway',sans-serif;font-weight:700;font-size:clamp(21px,3.5vw,27px);margin:12px 0 12px}
 .mini-guarantee p{font-size:16px;line-height:1.6}
 
