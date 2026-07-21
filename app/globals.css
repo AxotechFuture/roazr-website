@@ -559,9 +559,10 @@ html[data-theme="light"] * {
   }
 }
 
-/* ---------- legal pages ---------- */
+/* ---------- long-form prose (legal pages, product guides) ---------- */
 
-.legal-body h2 {
+.legal-body h2,
+.article-body h2 {
   font-size: 1.35rem;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -571,7 +572,8 @@ html[data-theme="light"] * {
   scroll-margin-top: 6rem;
 }
 
-.legal-body h3 {
+.legal-body h3,
+.article-body h3 {
   font-size: 1.05rem;
   font-weight: 600;
   margin-top: 1.75rem;
@@ -579,14 +581,21 @@ html[data-theme="light"] * {
   color: var(--muted-strong);
 }
 
-.legal-body p {
+.legal-body p,
+.article-body p {
   color: var(--muted);
   line-height: 1.75;
   margin-bottom: 0.9rem;
 }
 
+.article-body p:last-child {
+  margin-bottom: 0;
+}
+
 .legal-body ul,
-.legal-body ol {
+.legal-body ol,
+.article-body ul,
+.article-body ol {
   color: var(--muted);
   line-height: 1.75;
   padding-left: 1.4rem;
@@ -596,29 +605,35 @@ html[data-theme="light"] * {
   gap: 0.4rem;
 }
 
-.legal-body ul {
+.legal-body ul,
+.article-body ul {
   list-style: disc;
 }
 
-.legal-body ol {
+.legal-body ol,
+.article-body ol {
   list-style: decimal;
 }
 
-.legal-body strong {
+.legal-body strong,
+.article-body strong {
   color: var(--muted-strong);
   font-weight: 600;
 }
 
-.legal-body a {
+.legal-body a,
+.article-body a {
   color: var(--accent);
   text-decoration: none;
 }
 
-.legal-body a:hover {
+.legal-body a:hover,
+.article-body a:hover {
   text-decoration: underline;
 }
 
-.legal-body code {
+.legal-body code,
+.article-body code {
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.85em;
   background: var(--wash-strong);

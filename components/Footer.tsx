@@ -95,6 +95,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/form-mode" className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
+                  Form Mode guide
+                </Link>
+              </li>
+              <li>
                 <a href={`mailto:${site.emails.privacy}`} className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
                   Privacy requests
                 </a>
