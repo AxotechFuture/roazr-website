@@ -205,16 +205,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 .trust-line{display:block;font-family:var(--font-sys);font-size:13px;font-weight:600;letter-spacing:.3px;color:#4B5563;text-transform:uppercase}
 .trust-line svg{vertical-align:-2px;margin-right:5px}
 
-/* ---------- stock bar ---------- */
-.stock{margin-top:28px;text-align:center}
-.stock-cap{font-family:var(--font-sys);font-weight:800;font-size:clamp(13px,2.4vw,15.5px);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px}
-.stock-bar{display:flex;justify-content:center;gap:4px;flex-wrap:wrap}
-.stock-bar i{width:17px;height:30px;border-radius:2px;background:#2B2F36;display:block}
-.stock-bar i.gone{background:#D7DBE2}
-.stock-bar i.live{background:var(--green);animation:stockBlink 1.6s ease-in-out infinite}
-@keyframes stockBlink{0%,58%,100%{opacity:1}66%,92%{opacity:.25}}
-@media(prefers-reduced-motion:reduce){.stock-bar i.live{animation:none}}
-
 /* ---------- success / pending states ---------- */
 .state-card{display:none;background:#fff;border:3px solid var(--green);border-radius:8px;padding:50px 26px;text-align:center}
 .state-card.show{display:block}
@@ -447,14 +437,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4B5563" stroke-width="2" stroke-linecap="square"><rect x="4" y="10" width="16" height="11" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
         100% Secure 256-Bit Encrypted Checkout
       </p>
-    </div>
-
-    <!-- scarcity bar -->
-    <div class="stock">
-      <p class="stock-cap">Hurry — 7 of 10 still unclaimed</p>
-      <div class="stock-bar" role="img" aria-label="7 of 10 iPhone prizes still unclaimed">
-        <i></i><i></i><i></i><i></i><i></i><i></i><i class="live"></i><i class="gone"></i><i class="gone"></i><i class="gone"></i>
-      </div>
     </div>
   </div>
 </main>
