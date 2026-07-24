@@ -305,27 +305,23 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
     </div>
     <p class="pay-consent" id="pay-consent">By continuing, you allow Etin Media to charge your card for this payment. You're one step away. Card or bank transfer, both give instant access.</p>
 
-    <!-- =========================================================
-         !!! BANK DETAILS — ACTION REQUIRED BEFORE GOING LIVE !!!
-         Replace the three placeholder values below with the real
-         Etin Media account. Nothing else needs to change — the
-         amount updates itself from the order bump.
-         ========================================================= -->
+    <!-- BANK DETAILS — live Etin Media receiving account. If the account ever
+         changes, edit the three values below; the amount is calculated. -->
     <div class="bank-panel" id="bank-panel" hidden>
       <p class="bank-intro">Send exactly <strong id="bank-amount">₦14,800</strong> to the account below.</p>
       <div class="bank-rows">
         <div class="bank-row">
           <span class="bk">Bank</span>
-          <span class="bv" id="bank-name">[BANK NAME — REPLACE ME]</span>
+          <span class="bv" id="bank-name">UBA</span>
         </div>
         <div class="bank-row">
           <span class="bk">Account Number</span>
-          <span class="bv acct" id="bank-account">[0000000000 — REPLACE ME]</span>
+          <span class="bv acct" id="bank-account">1029972736</span>
           <button class="copy-btn" type="button" id="copy-acct">Copy</button>
         </div>
         <div class="bank-row">
           <span class="bk">Account Name</span>
-          <span class="bv" id="bank-holder">[ACCOUNT NAME — REPLACE ME]</span>
+          <span class="bv" id="bank-holder">Etin Consult</span>
         </div>
         <div class="bank-row">
           <span class="bk">Amount To Send</span>
@@ -467,16 +463,11 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 
 <script src="https://js.paystack.co/v1/inline.js" onerror="window.__paystackLoadFailed=true"></script>
 <script>
-/* ============================================================
-   !!! PAYSTACK SETUP — ACTION REQUIRED BEFORE GOING LIVE !!!
-   Replace "pk_live_REPLACE_ME" below with your REAL Paystack
-   PUBLIC key (Paystack Dashboard → Settings → API Keys & Webhooks).
-   It starts with "pk_live_". Nothing else needs to change.
-
-   Bank transfer account details are in the HTML above, in the
-   block marked "BANK DETAILS — ACTION REQUIRED".
-   ============================================================ */
-var PAYSTACK_PUBLIC_KEY = "pk_live_REPLACE_ME";
+/* Paystack LIVE publishable key. This is the public key and is meant to be
+   visible in the page; the secret key (sk_live_...) must never appear here.
+   Source: Paystack Dashboard → Settings → API Keys & Webhooks.
+   Bank transfer details live in the HTML above, marked "BANK DETAILS". */
+var PAYSTACK_PUBLIC_KEY = "pk_live_69fa35a1d0202674ef4c186ab8a7fa34cdcc7cc9";
 
 var BASE_AMOUNT_KOBO = 990000;   /* ₦9,900  */
 var BUMP_AMOUNT_KOBO = 490000;   /* ₦4,900  */
