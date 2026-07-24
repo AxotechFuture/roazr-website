@@ -80,8 +80,13 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.028) 1px,transparent 1px);background-size:5px 5px;opacity:.55}
 .hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(90% 70% at 50% 30%,transparent 55%,rgba(0,0,0,.5) 100%)}
 .hero>*{position:relative;z-index:1}
-.trust-strip{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;padding:14px 0 26px;font-weight:700;font-size:12.5px;letter-spacing:1.2px;text-transform:uppercase;opacity:.95;text-align:center}
-.trust-stars{display:flex;gap:2px}
+.trust-strip{display:flex;justify-content:center;padding:4px 12px 28px}
+.trust-pill{display:inline-flex;align-items:center;gap:11px;background:#fff;border-radius:999px;padding:9px 22px;box-shadow:0 8px 24px rgba(0,0,0,.3);flex-wrap:wrap;justify-content:center;max-width:100%}
+.trust-laurel{flex:0 0 auto;width:23px;height:31px;color:#B08D2E}
+.trust-laurel.right{transform:scaleX(-1)}
+.trust-stars{display:inline-flex;gap:2px}
+.trust-stars svg{width:19px;height:19px}
+.trust-rating{font-family:var(--font-sys);font-weight:800;font-size:clamp(12px,2.6vw,13.5px);letter-spacing:.4px;text-transform:uppercase;color:var(--navy)}
 .hero-eyebrow-wrap{text-align:center;margin-bottom:22px}
 .hero-eyebrow{display:inline-block;background:var(--yellow);color:#000;font-family:var(--font-sys);font-size:12.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:8px 18px}
 .hero h1{font-family:var(--font-head);font-weight:900;font-size:clamp(33px,5.6vw,60px);line-height:1.1;letter-spacing:-0.015em;text-transform:uppercase;text-align:center;max-width:1100px;margin:0 auto 24px}
@@ -353,19 +358,12 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 <!-- ============ SECTION 1 — TOP OFFER BLOCK (HERO) ============ -->
 <section class="hero">
   <div class="trust-strip">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="#22C55E"><path d="M12 1l2.4 5.3 5.8.6-4.3 3.9 1.2 5.7L12 13.6l-5.1 2.9 1.2-5.7L3.8 6.9l5.8-.6z" opacity="0"/><path d="M12 2a7 7 0 0 1 7 7c0 2.4-1.2 4.5-3 5.7V21l-4-2-4 2v-6.3A7 7 0 0 1 12 2z"/></svg>
-    <span class="trust-stars" aria-label="5 star rating">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="#22C55E"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="#22C55E"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="#22C55E"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="#22C55E"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="#22C55E"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg>
-    </span>
-    <span>Trusted by 4,000+ Nigerian Businesses</span>
-  </div>
-
-  <div class="hero-eyebrow-wrap">
-    <span class="hero-eyebrow">For Nigerian Business Owners Who Are Tired of Inconsistent Sales</span>
+    <div class="trust-pill">
+      <svg class="trust-laurel" viewBox="0 0 52 34" aria-hidden="true"><path d="M 16.1 26.9 L 13.5 23.4 L 12.2 19.2 L 12.2 14.8 L 13.5 10.6 L 16.1 7.1" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><g transform="translate(15.4 27.6) rotate(110.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(12.6 23.8) rotate(128.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(11.2 19.3) rotate(146.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(11.2 14.7) rotate(164.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(12.6 10.2) rotate(182.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(15.4 6.4) rotate(200.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g></svg>
+      <span class="trust-stars" aria-label="5 star rating"><svg viewBox="0 0 24 24" fill="#F5A623"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg><svg viewBox="0 0 24 24" fill="#F5A623"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg><svg viewBox="0 0 24 24" fill="#F5A623"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg><svg viewBox="0 0 24 24" fill="#F5A623"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg><svg viewBox="0 0 24 24" fill="#F5A623"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg></span>
+      <svg class="trust-laurel right" viewBox="0 0 52 34" aria-hidden="true"><path d="M 16.1 26.9 L 13.5 23.4 L 12.2 19.2 L 12.2 14.8 L 13.5 10.6 L 16.1 7.1" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><g transform="translate(15.4 27.6) rotate(110.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(12.6 23.8) rotate(128.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(11.2 19.3) rotate(146.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(11.2 14.7) rotate(164.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(12.6 10.2) rotate(182.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(15.4 6.4) rotate(200.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g></svg>
+      <span class="trust-rating">Trusted by 4,000+ Nigerian Businesses</span>
+    </div>
   </div>
 
   <h1>Steal Our ₦233M AI Ads System to Generate Ads That Convert Every Single Time</h1>
@@ -568,7 +566,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
     </div>
     <p class="module-body">The actual 100 ads. The exact pictures, hooks and copy that produced over ₦233M for our clients. Steal the structures. Model the winners. Never start from a blank page again.</p>
     <span class="value-pill">(Value: ₦150,000)</span>
-    <div class="ph">GIF: scrolling through the winning ad creatives</div>
+    <img src="assets/proof/module-vault.jpg" alt="The 100 Winning Ads Vault and the Etin-Media Facebook Ads Swipe Files">
   </div>
 
   <div class="s3-totals">
