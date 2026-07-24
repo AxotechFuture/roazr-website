@@ -11,16 +11,16 @@
   --red:#EB0000;
   --red-hover:#C70000;
   --red-soft:#EF4444;
-  --yellow:#22C55E;
-  --yellow-border:#16A34A;
   --green:#22C55E;
+  --green-btn:#2CB742;
+  --green-btn-hover:#249B37;
   --green-dark:#15803D;
   --green-bg:#DCFCE7;
   --page-bg:#F6F7FB;
   --ph-bg:#E5E7EB;
   --ph-border:#9CA3AF;
   --ph-text:#6B7280;
-  --input-border:#E5E7EB;
+  --input-border:#DDE1E8;
   --line:#E3E6EC;
   --muted:#6B7280;
   --font-sys:-apple-system,"system-ui","Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
@@ -33,94 +33,88 @@ img,svg{max-width:100%;vertical-align:middle}
 a{color:inherit}
 a,button{touch-action:manipulation}
 h1,h2,h3{text-wrap:balance}
-::selection{background:var(--yellow);color:#000}
+::selection{background:var(--green);color:#000}
 a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:3px}
-.pay-btn:focus-visible{outline:3px solid #000;outline-offset:3px}
+.pay-btn:focus-visible,.bump-yes:focus-visible{outline:3px solid #000;outline-offset:3px}
 
 /* ---------- top bar ---------- */
-.topbar{background:#000;color:#fff}
-.topbar-inner{max-width:1250px;margin:0 auto;padding:12px 15px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px}
-.topbar-phone{display:flex;align-items:center;gap:7px;font-family:var(--font-sys);font-size:13px;white-space:nowrap;justify-self:start;color:#fff;text-decoration:none}
-.topbar-logo{font-family:var(--font-sys);font-weight:900;font-size:20px;letter-spacing:4px;text-transform:uppercase;text-align:center;grid-column:2}
-.topbar-logo span{color:var(--red)}
-.topbar-help{justify-self:end;font-family:var(--font-sys);font-size:13px;white-space:nowrap;color:#fff;text-decoration:none;display:flex;align-items:center;gap:7px}
+.topbar{background:var(--red);color:#fff}
+.topbar-inner{max-width:1250px;margin:0 auto;padding:11px 15px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px}
+.topbar-phone{display:flex;align-items:center;gap:7px;font-family:var(--font-sys);font-weight:700;font-size:13px;letter-spacing:.3px;white-space:nowrap;justify-self:start;color:#fff;text-decoration:none;text-transform:uppercase}
+.topbar-mid{display:flex;align-items:center;gap:8px;font-family:var(--font-sys);font-weight:700;font-size:13px;letter-spacing:.3px;text-transform:uppercase;grid-column:2}
+.topbar-help{justify-self:end;display:flex;align-items:center;gap:7px;font-family:var(--font-sys);font-weight:700;font-size:13px;letter-spacing:.3px;white-space:nowrap;color:#fff;text-decoration:none;text-transform:uppercase}
 .topbar-help u{text-underline-offset:3px}
 @media(max-width:900px){
-  .topbar-inner{display:flex;flex-wrap:wrap;justify-content:center;row-gap:2px;padding:7px 12px}
-  .topbar-logo{order:-1;width:100%;font-size:16px;letter-spacing:3px}
-  .topbar-phone{font-size:11.5px}
+  .topbar-inner{display:flex;flex-wrap:wrap;justify-content:center;row-gap:4px;padding:8px 12px}
+  .topbar-phone,.topbar-help{font-size:11px}
+  .topbar-mid{order:-1;width:100%;justify-content:center;font-size:11.5px}
   .topbar-help{display:none}
 }
 
 /* ---------- progress steps ---------- */
-.steps{max-width:1180px;margin:0 auto;padding:30px 15px 4px;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:start}
+.steps{max-width:1180px;margin:0 auto;padding:32px 15px 6px;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:start}
 .step{position:relative;text-align:center}
-.step-dot{width:34px;height:34px;border-radius:50%;background:#C9CED8;color:#fff;font-family:var(--font-sys);font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;position:relative;z-index:1}
+.step-dot{width:36px;height:36px;border-radius:50%;background:#C9CED8;color:#fff;font-family:var(--font-sys);font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;position:relative;z-index:1}
 .step.is-on .step-dot{background:var(--red)}
-.step-label{font-family:var(--font-sys);font-size:15px;color:var(--muted)}
-.step.is-on .step-label{color:var(--navy);font-weight:600}
-/* connector sits behind the dots, from this dot's centre to the next */
-.step:not(:last-child)::after{content:"";position:absolute;top:17px;left:calc(50% + 26px);right:calc(-50% + 26px);height:2px;background:#D8DDE5}
+.step-label{font-family:var(--font-sys);font-size:15.5px;color:#9BA2AE}
+.step.is-on .step-label{color:var(--navy)}
+.step:not(:last-child)::after{content:"";position:absolute;top:18px;left:calc(50% + 28px);right:calc(-50% + 28px);height:2px;background:#D8DDE5}
 @media(max-width:560px){
   .steps{padding-top:20px}
   .step-dot{width:28px;height:28px;font-size:14px}
-  .step-label{font-size:12.5px}
+  .step-label{font-size:12px}
   .step:not(:last-child)::after{top:14px;left:calc(50% + 22px);right:calc(-50% + 22px)}
 }
 
-/* ---------- banner ---------- */
-.banner{max-width:1180px;margin:22px auto 0;padding:0 15px}
-.banner-inner{background:#EAF9EF;border:2px dashed #16A34A;padding:22px 20px;text-align:center;border-radius:4px}
-.banner-inner h1{font-family:var(--font-sys);font-weight:800;font-size:clamp(21px,4vw,27px);line-height:1.3;letter-spacing:-0.01em;color:var(--navy)}
-
 /* ---------- layout ---------- */
-.checkout-grid{max-width:1180px;margin:26px auto 60px;padding:0 15px;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:34px;align-items:start}
-@media(max-width:900px){.checkout-grid{grid-template-columns:1fr;gap:28px}}
+.checkout-grid{max-width:1180px;margin:24px auto 60px;padding:0 15px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start}
+@media(max-width:900px){.checkout-grid{grid-template-columns:1fr;gap:34px}}
 
-/* ---------- left form card ---------- */
-.form-card{background:#fff;border:1px solid var(--input-border);border-radius:6px;padding:26px 22px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
-.form-label{display:flex;align-items:center;gap:12px;font-family:var(--font-sys);font-weight:700;font-size:19px;letter-spacing:0;color:var(--navy);margin:30px 0 16px}
-.form-label:first-child{margin-top:0}
-.form-label>svg{flex:0 0 auto}
-.form-label::after{content:"";flex:1;height:1px;background:var(--line)}
-.field-lab{display:block;font-family:var(--font-sys);font-weight:700;font-size:15px;margin-bottom:7px}
+/* ---------- section headings ---------- */
+.sec-head{display:flex;align-items:center;gap:11px;font-family:var(--font-sys);font-weight:700;font-size:21px;margin:34px 0 18px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.sec-head:first-child{margin-top:0}
+.sec-head>svg{flex:0 0 auto}
+
+.field-lab{display:block;font-family:var(--font-sys);font-weight:700;font-size:15.5px;margin-bottom:7px}
 .field-lab .req{color:var(--red)}
-
-.product-box{border:2px solid var(--yellow-border);background:#F0FDF4;border-radius:4px;padding:14px 16px;display:flex;gap:14px;align-items:flex-start;justify-content:space-between}
-.product-box .pb-title{font-weight:700;font-size:17px;margin-bottom:6px}
-.product-box .pb-desc{font-size:13px;line-height:1.5;color:var(--navy)}
-.product-box .pb-price{font-family:var(--font-sys);font-weight:800;font-size:20px;white-space:nowrap;font-variant-numeric:tabular-nums}
-
-.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:420px){.field-row{grid-template-columns:1fr}}
-.input{width:100%;height:55px;border:1px solid var(--input-border);border-radius:4px;padding:0 16px;font-family:var(--font-body);font-size:18px;color:var(--navy);background:#fff;margin-bottom:14px;transition:border-color .15s ease}
-.input:focus{outline:2px solid var(--yellow-border);outline-offset:-1px;border-color:var(--yellow-border)}
-.input::placeholder{color:#9AA1AC}
+.input{width:100%;height:56px;border:1px solid var(--input-border);border-radius:6px;padding:0 16px;font-family:var(--font-body);font-size:18px;color:var(--navy);background:#fff;margin-bottom:16px;transition:border-color .15s ease}
+.input:focus{outline:2px solid var(--green-dark);outline-offset:-1px;border-color:var(--green-dark)}
+.input::placeholder{color:#A6ADB8}
 .input.invalid{border-color:var(--red-soft);outline:1px solid var(--red-soft);outline-offset:-1px}
-.phone-wrap{display:flex;margin-bottom:14px}
-.phone-prefix{flex:0 0 auto;display:flex;align-items:center;gap:7px;padding:0 14px;background:#F3F4F6;border:1px solid var(--input-border);border-right:0;border-radius:4px 0 0 4px;font-size:15px;font-weight:700;white-space:nowrap}
-.phone-wrap .input{border-radius:0 4px 4px 0;margin-bottom:0}
+.phone-wrap{position:relative;display:flex;margin-bottom:16px}
+.phone-prefix{flex:0 0 auto;display:flex;align-items:center;gap:7px;padding:0 14px;background:#fff;border:1px solid var(--input-border);border-right:0;border-radius:6px 0 0 6px;font-size:16px;font-weight:600;white-space:nowrap}
+.phone-wrap .input{border-radius:0 6px 6px 0;margin-bottom:0}
+.phone-ok{position:absolute;right:14px;top:50%;transform:translateY(-50%);opacity:0;transition:opacity .15s ease}
+.phone-wrap.ok .phone-ok{opacity:1}
+.phone-wrap.ok .input{border-color:var(--green)}
 
-.payment-note{font-size:16px;font-weight:700;line-height:1.5;margin-bottom:16px}
+/* ---------- product box ---------- */
+.product-box{border:2px solid var(--green);background:#F0FDF4;border-radius:6px;padding:15px 16px;display:flex;gap:14px;align-items:flex-start;justify-content:space-between}
+.product-box .pb-title{font-weight:700;font-size:17px;margin-bottom:6px}
+.product-box .pb-desc{font-size:13px;line-height:1.5}
+.product-box .pb-price{font-family:var(--font-sys);font-weight:800;font-size:21px;white-space:nowrap;font-variant-numeric:tabular-nums}
 
 /* ---------- payment method tabs ---------- */
-.pay-methods{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.pay-methods{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
 @media(max-width:420px){.pay-methods{grid-template-columns:1fr}}
-.pay-tab{position:relative;display:flex;flex-direction:column;gap:8px;border:1px solid var(--line);border-radius:6px;padding:14px 15px;cursor:pointer;background:#fff;transition:border-color .15s ease,box-shadow .15s ease}
+.pay-tab{position:relative;display:flex;flex-direction:column;gap:9px;border:1px solid var(--input-border);border-radius:8px;padding:15px 16px;cursor:pointer;background:#fff;transition:border-color .15s ease,box-shadow .15s ease}
 .pay-tab:hover{border-color:#B9C0CC}
 .pay-tab input{position:absolute;opacity:0;width:0;height:0}
-.pay-tab .pt-name{font-family:var(--font-sys);font-weight:700;font-size:16px;color:#3B4250}
+.pay-tab .pt-name{font-family:var(--font-sys);font-weight:700;font-size:16.5px;color:#3B4250}
 .pay-tab.is-on{border-color:#2563EB;box-shadow:0 0 0 1px #2563EB inset}
 .pay-tab.is-on .pt-name{color:#2563EB}
-.pay-tab .pt-icon{width:34px;height:23px;border:1px solid #CBD2DC;border-radius:3px;display:flex;align-items:center;justify-content:center;background:#fff}
-.pay-tab.is-on .pt-icon{border-color:#2563EB}
+.pay-tab .pt-icon{width:36px;height:24px;border:1px solid #CBD2DC;border-radius:4px;display:flex;align-items:center;justify-content:center;background:#fff;color:#5B6472}
+.pay-tab.is-on .pt-icon{border-color:#2563EB;color:#2563EB}
+.pay-consent{font-size:14.5px;line-height:1.55;color:var(--muted);margin-bottom:18px}
 
 /* ---------- bank transfer panel ---------- */
-.bank-panel{border:1px solid #BBD3F6;background:#F4F8FF;border-radius:6px;padding:18px 16px;margin-bottom:18px}
+.bank-panel{border:1px solid #BBD3F6;background:#F4F8FF;border-radius:8px;padding:18px 16px;margin-bottom:18px}
 .bank-panel[hidden]{display:none}
 .bank-intro{font-size:15.5px;line-height:1.55;margin-bottom:14px}
 .bank-intro strong{font-variant-numeric:tabular-nums}
-.bank-rows{background:#fff;border:1px solid #DCE6F5;border-radius:4px;padding:4px 14px;margin-bottom:14px}
+.bank-rows{background:#fff;border:1px solid #DCE6F5;border-radius:6px;padding:4px 14px;margin-bottom:14px}
 .bank-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EEF2F8}
 .bank-row:last-child{border-bottom:0}
 .bank-row .bk{font-size:14px;color:var(--muted);font-family:var(--font-sys)}
@@ -128,64 +122,106 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 /* an account number must never split across lines — a misread digit sends money to the wrong place */
 .bank-row .bv.acct{letter-spacing:1.2px;font-variant-numeric:tabular-nums;white-space:nowrap;word-break:normal}
 .bank-row .bv.amt{color:var(--green-dark)}
-.copy-btn{flex:0 0 auto;border:1px solid #C9D6EA;background:#fff;border-radius:4px;padding:7px 11px;font-family:var(--font-sys);font-weight:700;font-size:13px;cursor:pointer;color:#2563EB;transition:background .15s ease}
+.copy-btn{flex:0 0 auto;border:1px solid #C9D6EA;background:#fff;border-radius:5px;padding:7px 11px;font-family:var(--font-sys);font-weight:700;font-size:13px;cursor:pointer;color:#2563EB;transition:background .15s ease}
 .copy-btn:hover{background:#EFF5FF}
 .copy-btn.done{color:var(--green-dark);border-color:var(--green)}
 .bank-note{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;line-height:1.55;color:#1F2937}
 .bank-note svg{flex:0 0 auto;margin-top:2px}
-/* narrow screens: stack label over value so the number gets the full width */
 @media(max-width:560px){
   .bank-row{flex-wrap:wrap;gap:4px 10px;padding:12px 0}
   .bank-row .bk{width:100%}
   .bank-row .bv{text-align:left;flex:1 1 auto;min-width:0}
 }
 
-.bump-box{border:2px dashed var(--red);background:#FFF7F7;border-radius:4px;padding:16px;margin-bottom:22px}
-.bump-label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;font-size:15px;line-height:1.55}
-.bump-label input{flex:0 0 auto;width:22px;height:22px;margin-top:2px;accent-color:var(--red);cursor:pointer}
-.bump-label .bump-lead{font-weight:700;color:var(--red)}
+/* ---------- trust badges ---------- */
+.badge-row{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin:26px 0 22px}
+.safe-badge{flex:0 0 auto;background:#000;color:#fff;border-radius:4px;padding:9px 10px;text-align:center;font-family:var(--font-sys);line-height:1.15}
+.safe-badge .sb-1{display:block;font-weight:800;font-size:12px;letter-spacing:.4px}
+.safe-badge .sb-2{display:block;background:#F2A93B;color:#000;font-weight:800;font-size:9.5px;letter-spacing:.6px;margin-top:5px;padding:2px 4px;border-radius:2px}
+.ssl-box{flex:1 1 300px;max-width:400px;border:1px solid var(--line);border-radius:6px;background:#fff;padding:12px 14px}
+.ssl-top{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:10px}
+.ssl-item{display:flex;align-items:center;gap:7px;font-family:var(--font-sys);font-size:11.5px;line-height:1.2;color:#374151;letter-spacing:.2px}
+.ssl-item b{display:block;font-weight:800;font-size:11.5px}
+.ssl-cards{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:9px;font-family:var(--font-sys);font-weight:800;font-size:11.5px;letter-spacing:.3px;color:#5B6472}
 
-.summary{border:1px solid var(--input-border);border-radius:4px;padding:16px;margin-bottom:22px}
-.summary .summary-title{font-family:var(--font-sys);font-weight:600;font-size:15px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:12px}
-.summary-row{display:flex;justify-content:space-between;gap:14px;font-size:15.5px;margin-bottom:8px;font-variant-numeric:tabular-nums}
-.summary-row .amt{font-weight:700;white-space:nowrap}
-.summary-total{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--input-border);margin-top:10px;padding-top:12px;font-weight:800;font-size:19px;font-variant-numeric:tabular-nums}
+/* ---------- guarantee emblem + box ---------- */
+.guarantee-wrap{text-align:center;margin:26px 0 8px}
+.gtee-emblem{display:inline-flex;align-items:center;justify-content:center;gap:8px;color:#000}
+.gtee-laurel{flex:0 0 auto;width:52px;height:78px}
+.gtee-laurel.right{transform:scaleX(-1)}
+.gtee-words{font-family:var(--font-sys);font-weight:800;text-transform:uppercase;line-height:1.02;letter-spacing:.2px}
+.gtee-words .g1{display:block;font-size:clamp(21px,3.6vw,26px)}
+.gtee-words .g2{display:block;font-size:clamp(15px,2.6vw,19px);letter-spacing:.6px}
+.gtee-words .g3{display:block;font-size:clamp(15px,2.6vw,19px);letter-spacing:2.6px}
+.guarantee-box{border:1px solid #C9CED8;border-radius:2px;padding:16px 18px;font-size:15.5px;line-height:1.62;margin-top:14px}
 
-.pay-btn{display:block;width:100%;background:var(--red);color:#fff;border:0;border-radius:4px;box-shadow:none;padding:22px 20px;font-family:var(--font-sys);font-weight:700;font-size:clamp(19px,4vw,23px);line-height:1.3;cursor:pointer;transition:background .15s ease,transform .15s ease}
+/* ---------- rating ---------- */
+.rating-line{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:22px;font-family:var(--font-sys);font-weight:700;font-size:14.5px;letter-spacing:.3px;text-transform:uppercase}
+.rating-stars{display:inline-flex;gap:2px}
+.rating-stars svg{width:19px;height:19px}
+
+/* ---------- right column ---------- */
+.right-col h2{font-family:var(--font-sys);font-weight:800;font-size:clamp(26px,4.2vw,36px);line-height:1.12;letter-spacing:-0.01em;color:#5c0a0a;margin-bottom:20px}
+.ph{background:var(--ph-bg);border:1px dashed var(--ph-border);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--ph-text);font-family:var(--font-sys);font-size:15px;font-weight:600;padding:12px}
+.mockup{aspect-ratio:4/3;margin-bottom:26px;border-radius:8px}
+.right-col h3{font-family:var(--font-sys);font-weight:800;font-size:clamp(19px,3vw,25px);margin:24px 0 16px;text-transform:uppercase;letter-spacing:.2px}
+.check-list{list-style:none}
+.check-list li{display:flex;align-items:flex-start;gap:13px;font-size:17px;line-height:1.5;margin-bottom:15px}
+.tick{flex:0 0 auto;width:27px;height:27px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.tick.green{background:var(--green)}
+
+/* ---------- most-popular bump ---------- */
+.popular-wrap{margin:30px 0 26px}
+.popular-ribbon{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:-13px;position:relative;z-index:2}
+.popular-ribbon .pr-tag{background:var(--red);color:#fff;font-family:var(--font-sys);font-weight:800;font-size:clamp(12px,2.2vw,15px);letter-spacing:.6px;text-transform:uppercase;padding:9px 18px;border-radius:3px}
+.popular-ribbon .pr-fire{font-size:19px;line-height:1}
+.bump-card{border:2px dashed var(--red);background:#fff;border-radius:4px;padding:26px 18px 20px}
+.bump-label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;margin-bottom:16px}
+.bump-label input{flex:0 0 auto;width:23px;height:23px;margin-top:2px;accent-color:var(--red);cursor:pointer}
+.bump-label .bump-lead{font-family:var(--font-sys);font-weight:800;font-size:clamp(15px,2.6vw,17px);line-height:1.35;color:var(--red);text-transform:uppercase}
+.bump-body{font-size:15.5px;line-height:1.6;margin-bottom:18px}
+.bump-yes{display:block;width:100%;background:var(--green-btn);color:#fff;border:0;border-radius:4px;padding:19px 16px;font-family:var(--font-sys);font-weight:800;font-size:clamp(17px,3.2vw,22px);letter-spacing:.3px;text-transform:uppercase;cursor:pointer;transition:background .15s ease,transform .15s ease}
+.bump-yes:hover{background:var(--green-btn-hover);transform:scale(1.01)}
+.bump-yes.is-added{background:#0F8F3E}
+
+/* ---------- order summary ---------- */
+.sum{margin-top:26px}
+.sum-row{display:flex;justify-content:space-between;gap:14px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--line);font-size:16.5px;font-variant-numeric:tabular-nums}
+.sum-row .sl{color:#374151}
+.sum-row.normal .sl{color:var(--red);font-family:var(--font-sys);font-weight:800}
+.sum-row.normal .sv{color:var(--red);font-family:var(--font-sys);font-weight:800;text-decoration:line-through}
+.sum-row.total{border-bottom:0;padding-top:15px;font-family:var(--font-sys);font-weight:800;font-size:clamp(19px,3.2vw,23px)}
+.sum-row .sv{white-space:nowrap}
+
+.pay-btn{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;background:var(--red);color:#fff;border:0;border-radius:4px;padding:24px 18px;margin-top:16px;font-family:var(--font-sys);font-weight:800;font-size:clamp(19px,3.6vw,26px);letter-spacing:.3px;text-transform:uppercase;line-height:1.2;cursor:pointer;transition:background .15s ease,transform .15s ease}
 .pay-btn:hover{background:var(--red-hover);transform:scale(1.01)}
 .pay-btn:active{transform:scale(.995)}
 .pay-btn:disabled{opacity:.6;cursor:wait;transform:none}
+.pay-btn svg{flex:0 0 auto}
 .form-error{display:none;color:var(--red-soft);font-size:14.5px;font-weight:700;text-align:center;margin-top:12px}
 .form-error.show{display:block}
-
 .below-btn{text-align:center;margin-top:16px}
-.below-btn .secure-line{font-size:14.5px;line-height:1.6;margin-bottom:12px}
-.trust-line{display:block;font-family:var(--font-sys);font-size:13px;font-weight:600;letter-spacing:.3px;color:#4B5563;text-transform:uppercase;margin-bottom:12px}
+.below-btn .secure-line{font-size:14.5px;line-height:1.6;margin-bottom:10px}
+.trust-line{display:block;font-family:var(--font-sys);font-size:13px;font-weight:600;letter-spacing:.3px;color:#4B5563;text-transform:uppercase}
 .trust-line svg{vertical-align:-2px;margin-right:5px}
-.reassure-line{font-size:13.5px;font-style:italic;color:var(--navy);line-height:1.5}
+
+/* ---------- stock bar ---------- */
+.stock{margin-top:28px;text-align:center}
+.stock-cap{font-family:var(--font-sys);font-weight:800;font-size:clamp(13px,2.4vw,15.5px);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px}
+.stock-bar{display:flex;justify-content:center;gap:4px;flex-wrap:wrap}
+.stock-bar i{width:17px;height:30px;border-radius:2px;background:#2B2F36;display:block}
+.stock-bar i.gone{background:#D7DBE2}
+.stock-bar i.live{background:var(--green);animation:stockBlink 1.6s ease-in-out infinite}
+@keyframes stockBlink{0%,58%,100%{opacity:1}66%,92%{opacity:.25}}
+@media(prefers-reduced-motion:reduce){.stock-bar i.live{animation:none}}
 
 /* ---------- success / pending states ---------- */
-.success-card{display:none;background:#fff;border:3px solid var(--green);border-radius:6px;padding:50px 26px;text-align:center}
-.success-card.show{display:block}
-.success-card h2{font-family:var(--font-sys);font-weight:700;font-size:clamp(24px,4vw,32px);margin:16px 0 6px}
-.success-card p{font-size:18px}
-.success-card p+p{margin-top:10px;font-size:16px;color:#374151}
-.success-card .amt-line{font-weight:700;font-variant-numeric:tabular-nums}
-
-/* ---------- right column ---------- */
-.right-col h2{font-family:var(--font-sys);font-weight:800;font-size:clamp(28px,4.5vw,40px);line-height:1.12;letter-spacing:-0.01em;color:#5c0a0a;margin-bottom:24px}
-.ph{background:var(--ph-bg);border:1px dashed var(--ph-border);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--ph-text);font-family:var(--font-sys);font-size:15px;font-weight:600;padding:12px}
-.mockup{aspect-ratio:4/3;margin-bottom:28px;border-radius:6px}
-.right-col h3{font-family:var(--font-sys);font-weight:700;font-size:clamp(19px,3vw,24px);margin:26px 0 14px}
-.check-list{list-style:none}
-.check-list li{display:flex;align-items:flex-start;gap:12px;font-size:17.5px;line-height:1.5;margin-bottom:12px}
-.check-list li svg{flex:0 0 auto;margin-top:2px;width:26px;height:26px;border-radius:50%;padding:5px;background:var(--green-bg)}
-.check-list li svg[stroke="#B91C1C"]{background:#FEE2E2}
-.mini-guarantee{position:relative;background:#F0FDF4;border:3px solid var(--green);border-radius:4px;padding:34px 24px;text-align:center;margin-top:34px}
-.mini-guarantee::before{content:"";position:absolute;inset:8px;border:1px dashed rgba(34,197,94,.55);border-radius:2px;pointer-events:none}
-.mini-guarantee>svg{background:#fff;border-radius:50%;padding:12px;width:76px;height:76px;box-shadow:0 6px 18px rgba(21,128,61,.18)}
-.mini-guarantee h3{font-family:var(--font-sys);font-weight:700;font-size:clamp(21px,3.5vw,27px);margin:12px 0 12px}
-.mini-guarantee p{font-size:16px;line-height:1.6}
+.state-card{display:none;background:#fff;border:3px solid var(--green);border-radius:8px;padding:50px 26px;text-align:center}
+.state-card.show{display:block}
+.state-card h2{font-family:var(--font-sys);font-weight:800;font-size:clamp(24px,4vw,32px);margin:16px 0 8px;color:var(--navy)}
+.state-card p{font-size:18px}
+.state-card p+p{margin-top:10px;font-size:16px;color:#374151}
+.state-card .amt-line{font-weight:700;font-variant-numeric:tabular-nums}
 
 /* ---------- footer ---------- */
 .footer{background:#000;color:#fff;text-align:center;padding:48px 15px 44px;font-size:13.5px;line-height:2}
@@ -204,12 +240,15 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
   <div class="topbar-inner">
     <a class="topbar-phone" href="tel:+2349167637825">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      +234 916 763 7825
+      Order by phone: +234 916 763 7825
     </a>
-    <span class="topbar-logo">ETIN<span>&nbsp;MEDIA</span></span>
+    <span class="topbar-mid">
+      Exclusive offer for:
+      <svg width="22" height="15" viewBox="0 0 30 21" aria-label="Nigeria"><rect width="30" height="21" fill="#fff"/><rect width="10" height="21" fill="#008751"/><rect x="20" width="10" height="21" fill="#008751"/></svg>
+    </span>
     <a class="topbar-help" href="mailto:support@etinmedia.com">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
-      Need help? <u>support@etinmedia.com</u>
+      Need help? <u>Click here to contact us</u>
     </a>
   </div>
 </header>
@@ -221,182 +260,220 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
   <div class="step"><span class="step-dot">3</span><span class="step-label">Instant Access</span></div>
 </nav>
 
-<!-- ============ TOP BANNER ============ -->
-<div class="banner">
-  <div class="banner-inner">
-    <h1>Get the AI Ads System for ₦9,900</h1>
-  </div>
-</div>
-
-<!-- ============ CHECKOUT GRID ============ -->
+<form id="checkout-form" novalidate>
 <main class="checkout-grid">
 
-  <!-- ===== LEFT: ORDER FORM ===== -->
-  <div>
-    <form class="form-card" id="checkout-form" novalidate>
-      <!-- SELECT PRODUCT -->
-      <p class="form-label">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="square"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/></svg>
-        Select Product
-      </p>
-      <div class="product-box">
-        <div>
-          <p class="pb-title">The Complete AI Ads System</p>
-          <p class="pb-desc">You get the AI Ad Machine that builds winning ads for your business in 90 seconds, the complete Daily Bank Alert Traffic System course, the 100 Winning Ads Vault behind ₦233M+ in client sales, the WhatsApp Closing Scripts, and the ₦10K to ₦2.3M Case Study.</p>
-        </div>
-        <span class="pb-price">₦9,900</span>
-      </div>
+  <!-- ===== LEFT COLUMN ===== -->
+  <div id="left-col">
 
-      <!-- CONTACT DETAILS -->
-      <p class="form-label">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="square"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
-        Contact Details
-      </p>
-      <div class="field-row">
-        <div>
-          <label class="field-lab" for="first-name">First Name <span class="req">*</span></label>
-          <input class="input" type="text" id="first-name" name="first-name" placeholder="First Name" autocomplete="given-name" required>
+    <p class="sec-head">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="square"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+      Contact Details
+    </p>
+    <label class="field-lab" for="first-name">First Name <span class="req">*</span></label>
+    <input class="input" type="text" id="first-name" name="first-name" placeholder="First Name" autocomplete="given-name" required>
+    <label class="field-lab" for="email">Email Address <span class="req">*</span></label>
+    <input class="input" type="email" id="email" name="email" placeholder="Email" autocomplete="email" required>
+    <label class="field-lab" for="phone">Phone Number <span class="req">*</span></label>
+    <div class="phone-wrap" id="phone-wrap">
+      <span class="phone-prefix">
+        <svg width="21" height="15" viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#fff"/><rect width="10" height="21" fill="#008751"/><rect x="20" width="10" height="21" fill="#008751"/></svg>
+        +234
+      </span>
+      <input class="input" type="tel" id="phone" name="phone" placeholder="Phone" autocomplete="tel-national" required>
+      <svg class="phone-ok" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round"><path d="M4 12.5l5 5L20 6.5"/></svg>
+    </div>
+
+    <p class="sec-head">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="square"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/></svg>
+      Your Order
+    </p>
+    <div class="product-box">
+      <div>
+        <p class="pb-title">The Complete AI Ads System</p>
+        <p class="pb-desc">You get the AI Ad Machine that builds winning ads for your business in 90 seconds, the complete Daily Bank Alert Traffic System course, the 100 Winning Ads Vault behind ₦233M+ in client sales, the WhatsApp Closing Scripts, and the ₦10K to ₦2.3M Case Study.</p>
+      </div>
+      <span class="pb-price">₦9,900</span>
+    </div>
+
+    <p class="sec-head">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="square"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+      Billing Information
+    </p>
+
+    <div class="pay-methods" role="radiogroup" aria-label="Payment method">
+      <label class="pay-tab is-on" id="tab-card" for="pm-card">
+        <input type="radio" name="paymethod" id="pm-card" value="card" checked>
+        <span class="pt-icon"><svg width="21" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
+        <span class="pt-name">Card</span>
+      </label>
+      <label class="pay-tab" id="tab-transfer" for="pm-transfer">
+        <input type="radio" name="paymethod" id="pm-transfer" value="transfer">
+        <span class="pt-icon"><svg width="21" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M3 10l9-6 9 6"/><path d="M5 10v8M12 10v8M19 10v8"/><path d="M3 20h18"/></svg></span>
+        <span class="pt-name">Bank Transfer</span>
+      </label>
+    </div>
+    <p class="pay-consent" id="pay-consent">By continuing, you allow Etin Media to charge your card for this payment. You're one step away. Card or bank transfer, both give instant access.</p>
+
+    <!-- =========================================================
+         !!! BANK DETAILS — ACTION REQUIRED BEFORE GOING LIVE !!!
+         Replace the three placeholder values below with the real
+         Etin Media account. Nothing else needs to change — the
+         amount updates itself from the order bump.
+         ========================================================= -->
+    <div class="bank-panel" id="bank-panel" hidden>
+      <p class="bank-intro">Send exactly <strong id="bank-amount">₦14,800</strong> to the account below.</p>
+      <div class="bank-rows">
+        <div class="bank-row">
+          <span class="bk">Bank</span>
+          <span class="bv" id="bank-name">[BANK NAME — REPLACE ME]</span>
         </div>
-        <div>
-          <label class="field-lab" for="last-name">Last Name <span class="req">*</span></label>
-          <input class="input" type="text" id="last-name" name="last-name" placeholder="Last Name" autocomplete="family-name" required>
+        <div class="bank-row">
+          <span class="bk">Account Number</span>
+          <span class="bv acct" id="bank-account">[0000000000 — REPLACE ME]</span>
+          <button class="copy-btn" type="button" id="copy-acct">Copy</button>
+        </div>
+        <div class="bank-row">
+          <span class="bk">Account Name</span>
+          <span class="bv" id="bank-holder">[ACCOUNT NAME — REPLACE ME]</span>
+        </div>
+        <div class="bank-row">
+          <span class="bk">Amount To Send</span>
+          <span class="bv amt" id="bank-amount-row">₦14,800</span>
         </div>
       </div>
-      <label class="field-lab" for="email">Email Address <span class="req">*</span></label>
-      <input class="input" type="email" id="email" name="email" placeholder="Email" autocomplete="email" required>
-      <label class="field-lab" for="phone">Phone Number <span class="req">*</span></label>
-      <div class="phone-wrap">
-        <span class="phone-prefix">
-          <svg width="20" height="14" viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#fff"/><rect width="10" height="21" fill="#008751"/><rect x="20" width="10" height="21" fill="#008751"/></svg>
-          +234
+      <p class="bank-note">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2" stroke-linecap="square"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span>Once you have sent it, your payment is confirmed within 10 minutes and the email with your access is sent to the email address you entered above.</span>
+      </p>
+    </div>
+
+    <!-- trust badges -->
+    <div class="badge-row">
+      <div class="safe-badge">
+        <span class="sb-1">SAFE<br>CHECKOUT</span>
+        <span class="sb-2">GUARANTEED</span>
+      </div>
+      <div class="ssl-box">
+        <div class="ssl-top">
+          <span class="ssl-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="square"><rect x="4" y="10" width="16" height="11" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            <span>SECURE CHECKOUT<b>SSL ENCRYPTION</b></span>
+          </span>
+          <span class="ssl-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="square"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg>
+            <span>PRIVACY<b>PROTECTED</b></span>
+          </span>
+        </div>
+        <div class="ssl-cards"><span>VISA</span><span>Mastercard</span><span>Verve</span><span>Paystack</span></div>
+      </div>
+    </div>
+
+    <!-- guarantee emblem + box -->
+    <div class="guarantee-wrap">
+      <span class="gtee-emblem">
+        <svg class="gtee-laurel" viewBox="0 0 52 78" aria-hidden="true"><path d="M34 71 L27 60 L23.5 47 L23.5 31 L27 18 L34 7" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round"/><g transform="translate(32 72) rotate(112)"><ellipse rx="9.5" ry="3.6" fill="currentColor"/></g><g transform="translate(26 61) rotate(126)"><ellipse rx="9.5" ry="3.6" fill="currentColor"/></g><g transform="translate(22 48) rotate(142)"><ellipse rx="9.5" ry="3.6" fill="currentColor"/></g><g transform="translate(21 33) rotate(160)"><ellipse rx="9.5" ry="3.6" fill="currentColor"/></g><g transform="translate(25 19) rotate(178)"><ellipse rx="9.5" ry="3.6" fill="currentColor"/></g><g transform="translate(32 7) rotate(196)"><ellipse rx="9.5" ry="3.6" fill="currentColor"/></g></svg>
+        <span class="gtee-words">
+          <span class="g1">7 Day</span>
+          <span class="g2">Money Back</span>
+          <span class="g3">Guarantee</span>
         </span>
-        <input class="input" type="tel" id="phone" name="phone" placeholder="Phone" autocomplete="tel-national" required>
-      </div>
-
-      <!-- BILLING INFORMATION -->
-      <p class="form-label">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="square"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
-        Billing Information
-      </p>
-      <p class="payment-note">You're one step away. Card or bank transfer, both give instant access.</p>
-
-      <div class="pay-methods" role="radiogroup" aria-label="Payment method">
-        <label class="pay-tab is-on" id="tab-card" for="pm-card">
-          <input type="radio" name="paymethod" id="pm-card" value="card" checked>
-          <span class="pt-icon"><svg width="20" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
-          <span class="pt-name">Card</span>
-        </label>
-        <label class="pay-tab" id="tab-transfer" for="pm-transfer">
-          <input type="radio" name="paymethod" id="pm-transfer" value="transfer">
-          <span class="pt-icon"><svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M3 10l9-6 9 6"/><path d="M5 10v8M12 10v8M19 10v8"/><path d="M3 20h18"/></svg></span>
-          <span class="pt-name">Bank Transfer</span>
-        </label>
-      </div>
-
-      <!-- =========================================================
-           !!! BANK DETAILS — ACTION REQUIRED BEFORE GOING LIVE !!!
-           Replace the three placeholder values below with the real
-           Etin Media account. Nothing else needs to change — the
-           amount updates itself from the order bump.
-           ========================================================= -->
-      <div class="bank-panel" id="bank-panel" hidden>
-        <p class="bank-intro">Send exactly <strong id="bank-amount">₦14,800</strong> to the account below.</p>
-        <div class="bank-rows">
-          <div class="bank-row">
-            <span class="bk">Bank</span>
-            <span class="bv" id="bank-name">[BANK NAME — REPLACE ME]</span>
-          </div>
-          <div class="bank-row">
-            <span class="bk">Account Number</span>
-            <span class="bv acct" id="bank-account">[0000000000 — REPLACE ME]</span>
-            <button class="copy-btn" type="button" id="copy-acct">Copy</button>
-          </div>
-          <div class="bank-row">
-            <span class="bk">Account Name</span>
-            <span class="bv" id="bank-holder">[ACCOUNT NAME — REPLACE ME]</span>
-          </div>
-          <div class="bank-row">
-            <span class="bk">Amount To Send</span>
-            <span class="bv amt" id="bank-amount-row">₦14,800</span>
-          </div>
-        </div>
-        <p class="bank-note">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2" stroke-linecap="square"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-          <span>Once you have sent it, your payment is confirmed within 10 minutes and the email with your access is sent to the email address you entered above.</span>
-        </p>
-      </div>
-
-      <!-- ORDER BUMP -->
-      <div class="bump-box">
-        <label class="bump-label" for="bump">
-          <input type="checkbox" id="bump" checked>
-          <span><span class="bump-lead">YES, protect my ad account. Add the Banned Ad Account Recovery Protocol for just ₦4,900.</span> Meta bans Nigerian ad accounts every day, usually without telling you why. This is the exact appeal process and prevention checklist we use to recover and protect our clients' accounts. If your account ever goes down, this pays for itself 100 times over. One-time offer, only on this page.</span>
-        </label>
-      </div>
-
-      <!-- SUMMARY -->
-      <div class="summary">
-        <p class="summary-title">Summary</p>
-        <div class="summary-row"><span>The Complete AI Ads System</span><span class="amt">₦9,900</span></div>
-        <div class="summary-row" id="bump-row"><span>Banned Ad Account Recovery Protocol</span><span class="amt">₦4,900</span></div>
-        <div class="summary-total"><span>Total</span><span class="amt" id="total-amt">₦14,800</span></div>
-      </div>
-
-      <button class="pay-btn" type="submit" id="pay-btn">Get Instant Access — Pay ₦14,800</button>
-      <p class="form-error" id="form-error" role="alert">Please fill in your name, a valid email, and phone number to continue.</p>
-
-      <div class="below-btn">
-        <p class="secure-line" id="secure-line">Secured by Paystack · Your login details enter your email immediately after payment.</p>
-        <p class="trust-line">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4B5563" stroke-width="2" stroke-linecap="square"><rect x="4" y="10" width="16" height="11" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-          100% Secure 256-Bit Encrypted Checkout
-        </p>
-        <p class="reassure-line">If you don't make at least ₦150,000 in sales in that period, we will refund every single naira.</p>
-      </div>
-    </form>
-
-    <!-- SUCCESS STATE (card payment — shown after Paystack callback) -->
-    <div class="success-card" id="success-card">
-      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2" stroke-linecap="square"><circle cx="12" cy="12" r="10" fill="#DCFCE7"/><path d="M8 12.5l2.7 2.7L16.5 9"/></svg>
-      <h2>Payment received — check your email</h2>
-      <p>Your login details enter your email immediately after payment.</p>
+        <svg class="gtee-laurel right" viewBox="0 0 52 78" aria-hidden="true"><path d="M34 71 L27 60 L23.5 47 L23.5 31 L27 18 L34 7" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round"/><g transform="translate(32 72) rotate(112)"><ellipse rx="9.5" ry="3.6" fill="currentColor"/></g><g transform="translate(26 61) rotate(126)"><ellipse rx="9.5" ry="3.6" fill="currentColor"/></g><g transform="translate(22 48) rotate(142)"><ellipse rx="9.5" ry="3.6" fill="currentColor"/></g><g transform="translate(21 33) rotate(160)"><ellipse rx="9.5" ry="3.6" fill="currentColor"/></g><g transform="translate(25 19) rotate(178)"><ellipse rx="9.5" ry="3.6" fill="currentColor"/></g><g transform="translate(32 7) rotate(196)"><ellipse rx="9.5" ry="3.6" fill="currentColor"/></g></svg>
+      </span>
+      <p class="guarantee-box">Apply everything inside this system within 7 days. Complete the course, build your ads with the machine, and launch them. If you don't make at least ₦150,000 in sales in that period, we will refund every single naira. No questions. No delay. Just email support@etinmedia.com and get sorted out.</p>
     </div>
 
-    <!-- PENDING STATE (bank transfer) -->
-    <div class="success-card" id="transfer-card">
-      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2" stroke-linecap="square"><circle cx="12" cy="12" r="10" fill="#DCFCE7"/><path d="M12 7v5l3 2"/></svg>
-      <h2>Thank you — we're confirming your transfer</h2>
-      <p class="amt-line" id="transfer-amt-line">You sent ₦14,800.</p>
-      <p>Your payment is confirmed within 10 minutes and the email with your access is sent to <strong id="transfer-email">your email</strong>. If you don't see it, check your spam folder or email support@etinmedia.com.</p>
-    </div>
+    <p class="rating-line">
+      <span class="rating-stars">
+        <svg viewBox="0 0 24 24" fill="#F5B83D"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg><svg viewBox="0 0 24 24" fill="#F5B83D"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg><svg viewBox="0 0 24 24" fill="#F5B83D"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg><svg viewBox="0 0 24 24" fill="#F5B83D"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg><svg viewBox="0 0 24 24" fill="#F5B83D"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg>
+      </span>
+      Trusted by 4,000+ Nigerian Businesses
+    </p>
   </div>
 
-  <!-- ===== RIGHT: WHAT YOU'RE GETTING ===== -->
-  <div class="right-col">
+  <!-- ===== RIGHT COLUMN ===== -->
+  <div class="right-col" id="right-col">
     <h2>Here's What You're Getting...</h2>
     <div class="ph mockup">Product Bundle Mockup</div>
 
     <h3>Everything Included:</h3>
     <ul class="check-list">
-      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" stroke-width="3" stroke-linecap="square"><path d="M4 12.5l5 5L20 6.5"/></svg><span><strong>The AI Ad Machine,</strong> up to 50 ads in 90 seconds (₦250K value)</span></li>
-      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" stroke-width="3" stroke-linecap="square"><path d="M4 12.5l5 5L20 6.5"/></svg><span><strong>The Daily Bank Alert Traffic System course</strong> (₦225K value)</span></li>
-      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" stroke-width="3" stroke-linecap="square"><path d="M4 12.5l5 5L20 6.5"/></svg><span><strong>The 100 Winning Ads Vault</strong> behind ₦233M+ (₦150K value)</span></li>
+      <li><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span><span><strong>The AI Ad Machine,</strong> up to 50 ads in 90 seconds (₦250K value)</span></li>
+      <li><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span><span><strong>The Daily Bank Alert Traffic System course</strong> (₦225K value)</span></li>
+      <li><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span><span><strong>The 100 Winning Ads Vault</strong> behind ₦233M+ (₦150K value)</span></li>
     </ul>
 
     <h3>Instant Bonuses, Pay Now and Get Free:</h3>
     <ul class="check-list">
-      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="square"><path d="M4 12.5l5 5L20 6.5"/></svg><span><strong>The DM-to-Alert WhatsApp Closing Scripts</strong> (₦50K value)</span></li>
-      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="square"><path d="M4 12.5l5 5L20 6.5"/></svg><span><strong>The ₦10K to ₦2.3M Case Study</strong> (₦135K value)</span></li>
-      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="square"><path d="M4 12.5l5 5L20 6.5"/></svg><span><strong>iPhone Challenge eligibility:</strong> 10 iPhone 15 Pro Maxs for the first 10 students to 100 verified sales</span></li>
+      <li><span class="tick green"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span><span><strong>The DM-to-Alert WhatsApp Closing Scripts</strong> (₦50K value)</span></li>
+      <li><span class="tick green"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span><span><strong>The ₦10K to ₦2.3M Case Study</strong> (₦135K value)</span></li>
+      <li><span class="tick green"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span><span><strong>iPhone Challenge eligibility:</strong> 10 iPhone 15 Pro Maxs for the first 10 students to 100 verified sales</span></li>
     </ul>
 
-    <div class="mini-guarantee">
-      <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="1.6" stroke-linecap="square"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z" fill="#DCFCE7"/><path d="M8.5 12l2.5 2.5 4.5-4.5"/></svg>
-      <h3>The "No-Mugu" Guarantee</h3>
-      <p>Apply everything inside this system within 7 days. Complete the course, build your ads with the machine, and launch them. If you don't make at least ₦150,000 in sales in that period, we will refund every single naira. No questions. No delay. Just email support@etinmedia.com and get sorted out.</p>
+    <!-- MOST POPULAR OPTION — order bump -->
+    <div class="popular-wrap">
+      <div class="popular-ribbon">
+        <span class="pr-fire" aria-hidden="true">🔥</span>
+        <span class="pr-tag">Most Popular Option</span>
+        <span class="pr-fire" aria-hidden="true">🔥</span>
+      </div>
+      <div class="bump-card">
+        <label class="bump-label" for="bump">
+          <input type="checkbox" id="bump" checked>
+          <span class="bump-lead">YES, protect my ad account. Add the Banned Ad Account Recovery Protocol for just ₦4,900.</span>
+        </label>
+        <p class="bump-body">Meta bans Nigerian ad accounts every day, usually without telling you why. This is the exact appeal process and prevention checklist we use to recover and protect our clients' accounts. If your account ever goes down, this pays for itself 100 times over. One-time offer, only on this page.</p>
+        <button class="bump-yes is-added" type="button" id="bump-yes">Yes, Add To My Order</button>
+      </div>
+    </div>
+
+    <!-- ORDER SUMMARY -->
+    <div class="sum">
+      <div class="sum-row normal"><span class="sl">Normal Price:</span><span class="sv">₦810,000</span></div>
+      <div class="sum-row"><span class="sl">The Complete AI Ads System</span><span class="sv" id="sv-base">₦9,900</span></div>
+      <div class="sum-row" id="bump-row"><span class="sl">Banned Ad Account Recovery Protocol</span><span class="sv">₦4,900</span></div>
+      <div class="sum-row total"><span class="sl">Total</span><span class="sv" id="total-amt">₦14,800</span></div>
+    </div>
+
+    <button class="pay-btn" type="submit" id="pay-btn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+      <span id="pay-btn-text">Click To Continue</span>
+    </button>
+    <p class="form-error" id="form-error" role="alert">Please fill in your first name, a valid email, and phone number to continue.</p>
+
+    <div class="below-btn">
+      <p class="secure-line" id="secure-line">Secured by Paystack · Your login details enter your email immediately after payment.</p>
+      <p class="trust-line">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4B5563" stroke-width="2" stroke-linecap="square"><rect x="4" y="10" width="16" height="11" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        100% Secure 256-Bit Encrypted Checkout
+      </p>
+    </div>
+
+    <!-- scarcity bar -->
+    <div class="stock">
+      <p class="stock-cap">Hurry — 7 of 10 still unclaimed</p>
+      <div class="stock-bar" role="img" aria-label="7 of 10 iPhone prizes still unclaimed">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i class="live"></i><i class="gone"></i><i class="gone"></i><i class="gone"></i>
+      </div>
     </div>
   </div>
 </main>
+</form>
+
+<!-- STATE: card payment complete -->
+<div class="checkout-grid" style="margin-top:0">
+  <div class="state-card" id="success-card">
+    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2" stroke-linecap="square"><circle cx="12" cy="12" r="10" fill="#DCFCE7"/><path d="M8 12.5l2.7 2.7L16.5 9"/></svg>
+    <h2>Payment received — check your email</h2>
+    <p>Your login details enter your email immediately after payment.</p>
+  </div>
+  <div class="state-card" id="transfer-card">
+    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2" stroke-linecap="square"><circle cx="12" cy="12" r="10" fill="#DCFCE7"/><path d="M12 7v5l3 2"/></svg>
+    <h2>Thank you — we're confirming your transfer</h2>
+    <p class="amt-line" id="transfer-amt-line">You sent ₦14,800.</p>
+    <p>Your payment is confirmed within 10 minutes and the email with your access is sent to <strong id="transfer-email">your email</strong>. If you don't see it, check your spam folder or email support@etinmedia.com.</p>
+  </div>
+</div>
 
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
@@ -422,44 +499,45 @@ var PAYSTACK_PUBLIC_KEY = "pk_live_REPLACE_ME";
 var BASE_AMOUNT_KOBO = 990000;   /* ₦9,900  */
 var BUMP_AMOUNT_KOBO = 490000;   /* ₦4,900  */
 
-/* Prefill from the landing-page lead modal (?fn=&em=&ph=) so the buyer never types twice */
+var $ = function(id){ return document.getElementById(id); };
+
+/* Prefill from the landing-page lead modal (?fn=&em=&ph=) so the buyer never types twice.
+   The modal only collects first name, email and phone — last name is therefore optional
+   here, otherwise a prefilled buyer would still be forced to type. */
 (function(){
   try{
     var q = new URLSearchParams(window.location.search);
-    if(q.get('fn')) document.getElementById('first-name').value = q.get('fn');
-    if(q.get('em')) document.getElementById('email').value = q.get('em');
-    if(q.get('ph')) document.getElementById('phone').value = q.get('ph');
+    if(q.get('fn')) $('first-name').value = q.get('fn');
+    if(q.get('em')) $('email').value = q.get('em');
+    if(q.get('ph')) $('phone').value = q.get('ph');
   }catch(e){}
 })();
 
-var bump = document.getElementById('bump');
-var bumpRow = document.getElementById('bump-row');
-var totalAmt = document.getElementById('total-amt');
-var payBtn = document.getElementById('pay-btn');
-var form = document.getElementById('checkout-form');
-var formError = document.getElementById('form-error');
-var secureLine = document.getElementById('secure-line');
-var bankPanel = document.getElementById('bank-panel');
-var bankAmount = document.getElementById('bank-amount');
-var bankAmountRow = document.getElementById('bank-amount-row');
-var tabCard = document.getElementById('tab-card');
-var tabTransfer = document.getElementById('tab-transfer');
-var radioCard = document.getElementById('pm-card');
-var radioTransfer = document.getElementById('pm-transfer');
+var bump = $('bump');
+var bumpRow = $('bump-row');
+var totalAmt = $('total-amt');
+var payBtn = $('pay-btn');
+var payBtnText = $('pay-btn-text');
+var form = $('checkout-form');
+var formError = $('form-error');
+var secureLine = $('secure-line');
+var payConsent = $('pay-consent');
+var bankPanel = $('bank-panel');
+var bankAmount = $('bank-amount');
+var bankAmountRow = $('bank-amount-row');
+var bumpYes = $('bump-yes');
+var phoneWrap = $('phone-wrap');
 
-function payMethod(){ return radioTransfer.checked ? 'transfer' : 'card'; }
-
-function currentAmountKobo(){
-  return bump.checked ? BASE_AMOUNT_KOBO + BUMP_AMOUNT_KOBO : BASE_AMOUNT_KOBO;
-}
-function formatNaira(kobo){
-  return '₦' + (kobo/100).toLocaleString('en-NG');
-}
+function payMethod(){ return $('pm-transfer').checked ? 'transfer' : 'card'; }
+function currentAmountKobo(){ return bump.checked ? BASE_AMOUNT_KOBO + BUMP_AMOUNT_KOBO : BASE_AMOUNT_KOBO; }
+function formatNaira(kobo){ return '₦' + (kobo/100).toLocaleString('en-NG'); }
 
 var MSG_SECURE_CARD = "Secured by Paystack · Your login details enter your email immediately after payment.";
 var MSG_SECURE_TRANSFER = "Send the transfer from any bank app · Your login details enter your email once it is confirmed.";
+var MSG_CONSENT_CARD = "By continuing, you allow Etin Media to charge your card for this payment. You're one step away. Card or bank transfer, both give instant access.";
+var MSG_CONSENT_TRANSFER = "Send the transfer from any bank app using the details below. You're one step away. Card or bank transfer, both give instant access.";
 
-/* One place that keeps every amount + label in sync: summary, button,
+/* One place that keeps every amount + label in sync: summary, buttons,
    bank panel and the transfer receipt line. */
 function refreshTotals(){
   bumpRow.style.display = bump.checked ? 'flex' : 'none';
@@ -467,34 +545,35 @@ function refreshTotals(){
   totalAmt.textContent = label;
   bankAmount.textContent = label;
   bankAmountRow.textContent = label;
-  if(payMethod() === 'transfer'){
-    payBtn.textContent = "I Have Sent The " + label + " Transfer";
-    secureLine.textContent = MSG_SECURE_TRANSFER;
-  }else{
-    payBtn.textContent = 'Get Instant Access — Pay ' + label;
-    secureLine.textContent = MSG_SECURE_CARD;
-  }
+  bumpYes.textContent = bump.checked ? 'Added To My Order ✓' : 'Yes, Add To My Order';
+  bumpYes.classList.toggle('is-added', bump.checked);
+  payBtnText.textContent = payMethod() === 'transfer'
+    ? 'I Have Sent The ' + label
+    : 'Click To Continue';
+  secureLine.textContent = payMethod() === 'transfer' ? MSG_SECURE_TRANSFER : MSG_SECURE_CARD;
+  payConsent.textContent = payMethod() === 'transfer' ? MSG_CONSENT_TRANSFER : MSG_CONSENT_CARD;
 }
 
 function refreshMethod(){
-  var transfer = payMethod();
-  tabCard.classList.toggle('is-on', transfer === 'card');
-  tabTransfer.classList.toggle('is-on', transfer === 'transfer');
-  bankPanel.hidden = (transfer !== 'transfer');
+  var m = payMethod();
+  $('tab-card').classList.toggle('is-on', m === 'card');
+  $('tab-transfer').classList.toggle('is-on', m === 'transfer');
+  bankPanel.hidden = (m !== 'transfer');
   hideError();
   refreshTotals();
 }
 
 bump.addEventListener('change', refreshTotals);
-radioCard.addEventListener('change', refreshMethod);
-radioTransfer.addEventListener('change', refreshMethod);
+bumpYes.addEventListener('click', function(){ bump.checked = !bump.checked; refreshTotals(); });
+$('pm-card').addEventListener('change', refreshMethod);
+$('pm-transfer').addEventListener('change', refreshMethod);
 refreshMethod();
 
 /* Copy the account number — falls back to a manual select when the
    clipboard API is blocked (it needs https or localhost). */
-document.getElementById('copy-acct').addEventListener('click', function(){
+$('copy-acct').addEventListener('click', function(){
   var btn = this;
-  var text = document.getElementById('bank-account').textContent.trim();
+  var text = $('bank-account').textContent.trim();
   function done(){
     btn.textContent = 'Copied';
     btn.classList.add('done');
@@ -512,7 +591,7 @@ document.getElementById('copy-acct').addEventListener('click', function(){
   }
 });
 
-var MSG_VALIDATION = 'Please fill in your name, a valid email, and phone number to continue.';
+var MSG_VALIDATION = 'Please fill in your first name, a valid email, and phone number to continue.';
 var MSG_PAYSTACK_LOADING = 'Secure checkout is still loading. Check your connection and tap the button again — or email support@etinmedia.com.';
 
 function showError(msg){ formError.textContent = msg; formError.classList.add('show'); }
@@ -525,32 +604,39 @@ function setInvalid(el, invalid){
 
 /* Nigerian numbers arrive as 0803..., +234803..., or 803... — normalize to one +234 form */
 function normalizedPhone(){
-  var digits = document.getElementById('phone').value.replace(/\D/g, '');
+  var digits = $('phone').value.replace(/\D/g, '');
   if(digits.indexOf('234') === 0) digits = digits.slice(3);
   if(digits.indexOf('0') === 0) digits = digits.slice(1);
   return { digits: digits, display: '+234 ' + digits };
 }
+function phoneValid(){
+  var d = normalizedPhone().digits;
+  return d.length >= 7 && d.length <= 15;
+}
+function markPhone(){ phoneWrap.classList.toggle('ok', phoneValid()); }
+$('phone').addEventListener('input', markPhone);
+markPhone();
 
 function validate(){
   var firstInvalid = null;
-  ['first-name','last-name'].forEach(function(id){
-    var el = document.getElementById(id);
-    var valid = el.value.trim().length > 0;
-    setInvalid(el, !valid);
-    if(!valid && !firstInvalid) firstInvalid = el;
-  });
-  var email = document.getElementById('email');
+  var fn = $('first-name');
+  var fnValid = fn.value.trim().length > 0;
+  setInvalid(fn, !fnValid);
+  if(!fnValid) firstInvalid = fn;
+
+  var email = $('email');
   var emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
   setInvalid(email, !emailValid);
   if(!emailValid && !firstInvalid) firstInvalid = email;
-  var phoneEl = document.getElementById('phone');
-  var phoneDigits = normalizedPhone().digits;
-  var phoneValid = phoneDigits.length >= 7 && phoneDigits.length <= 15;
-  setInvalid(phoneEl, !phoneValid);
-  if(!phoneValid && !firstInvalid) firstInvalid = phoneEl;
+
+  var phoneEl = $('phone');
+  setInvalid(phoneEl, !phoneValid());
+  if(!phoneValid() && !firstInvalid) firstInvalid = phoneEl;
+
   if(firstInvalid){
     showError(MSG_VALIDATION);
     firstInvalid.focus();
+    firstInvalid.scrollIntoView({behavior:'smooth', block:'center'});
     return false;
   }
   hideError();
@@ -564,7 +650,7 @@ function paystackAvailable(){
 
 function showPanel(id){
   form.style.display = 'none';
-  var el = document.getElementById(id);
+  var el = $(id);
   el.classList.add('show');
   el.scrollIntoView({behavior:'smooth', block:'center'});
 }
@@ -576,8 +662,8 @@ form.addEventListener('submit', function(e){
 
   /* ---- bank transfer: no gateway, just acknowledge and tell them what happens next ---- */
   if(payMethod() === 'transfer'){
-    document.getElementById('transfer-amt-line').textContent = 'You sent ' + formatNaira(currentAmountKobo()) + '.';
-    document.getElementById('transfer-email').textContent = document.getElementById('email').value.trim();
+    $('transfer-amt-line').textContent = 'You sent ' + formatNaira(currentAmountKobo()) + '.';
+    $('transfer-email').textContent = $('email').value.trim();
     showPanel('transfer-card');
     return;
   }
@@ -600,21 +686,18 @@ form.addEventListener('submit', function(e){
   payBtn.disabled = true;
   var handler = PaystackPop.setup({
     key: PAYSTACK_PUBLIC_KEY,
-    email: document.getElementById('email').value.trim(),
+    email: $('email').value.trim(),
     amount: currentAmountKobo(),
     currency: 'NGN',
     ref: 'ETIN-AIADS-' + Date.now() + '-' + Math.floor(Math.random()*1000000),
     metadata: {
       custom_fields: [
-        { display_name: 'First Name', variable_name: 'first_name', value: document.getElementById('first-name').value.trim() },
-        { display_name: 'Last Name', variable_name: 'last_name', value: document.getElementById('last-name').value.trim() },
+        { display_name: 'First Name', variable_name: 'first_name', value: $('first-name').value.trim() },
         { display_name: 'Phone', variable_name: 'phone', value: normalizedPhone().display },
         { display_name: 'Order Bump: Banned Ad Account Recovery Protocol', variable_name: 'order_bump', value: bump.checked ? 'Yes (₦4,900)' : 'No' }
       ]
     },
-    callback: function(response){
-      showPanel('success-card');
-    },
+    callback: function(response){ showPanel('success-card'); },
     onClose: function(){ payBtn.disabled = false; /* visitor closed the popup — let them retry */ }
   });
   handler.openIframe();
