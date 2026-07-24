@@ -16,11 +16,13 @@
   --green:#22C55E;
   --green-dark:#15803D;
   --green-bg:#DCFCE7;
-  --page-bg:#F6F4F4;
+  --page-bg:#F6F7FB;
   --ph-bg:#E5E7EB;
   --ph-border:#9CA3AF;
   --ph-text:#6B7280;
   --input-border:#E5E7EB;
+  --line:#E3E6EC;
+  --muted:#6B7280;
   --font-sys:-apple-system,"system-ui","Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
   --font-body:var(--font-sys);
 }
@@ -41,26 +43,48 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 .topbar-phone{display:flex;align-items:center;gap:7px;font-family:var(--font-sys);font-size:13px;white-space:nowrap;justify-self:start;color:#fff;text-decoration:none}
 .topbar-logo{font-family:var(--font-sys);font-weight:900;font-size:20px;letter-spacing:4px;text-transform:uppercase;text-align:center;grid-column:2}
 .topbar-logo span{color:var(--red)}
-@media(max-width:767px){
+.topbar-help{justify-self:end;font-family:var(--font-sys);font-size:13px;white-space:nowrap;color:#fff;text-decoration:none;display:flex;align-items:center;gap:7px}
+.topbar-help u{text-underline-offset:3px}
+@media(max-width:900px){
   .topbar-inner{display:flex;flex-wrap:wrap;justify-content:center;row-gap:2px;padding:7px 12px}
   .topbar-logo{order:-1;width:100%;font-size:16px;letter-spacing:3px}
   .topbar-phone{font-size:11.5px}
+  .topbar-help{display:none}
+}
+
+/* ---------- progress steps ---------- */
+.steps{max-width:1180px;margin:0 auto;padding:30px 15px 4px;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:start}
+.step{position:relative;text-align:center}
+.step-dot{width:34px;height:34px;border-radius:50%;background:#C9CED8;color:#fff;font-family:var(--font-sys);font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;position:relative;z-index:1}
+.step.is-on .step-dot{background:var(--red)}
+.step-label{font-family:var(--font-sys);font-size:15px;color:var(--muted)}
+.step.is-on .step-label{color:var(--navy);font-weight:600}
+/* connector sits behind the dots, from this dot's centre to the next */
+.step:not(:last-child)::after{content:"";position:absolute;top:17px;left:calc(50% + 26px);right:calc(-50% + 26px);height:2px;background:#D8DDE5}
+@media(max-width:560px){
+  .steps{padding-top:20px}
+  .step-dot{width:28px;height:28px;font-size:14px}
+  .step-label{font-size:12.5px}
+  .step:not(:last-child)::after{top:14px;left:calc(50% + 22px);right:calc(-50% + 22px)}
 }
 
 /* ---------- banner ---------- */
-.banner{max-width:1100px;margin:24px auto 0;padding:0 15px}
-.banner-inner{background:#EAF9EF;border:2px dashed #16A34A;padding:24px 20px;text-align:center}
+.banner{max-width:1180px;margin:22px auto 0;padding:0 15px}
+.banner-inner{background:#EAF9EF;border:2px dashed #16A34A;padding:22px 20px;text-align:center;border-radius:4px}
 .banner-inner h1{font-family:var(--font-sys);font-weight:800;font-size:clamp(21px,4vw,27px);line-height:1.3;letter-spacing:-0.01em;color:var(--navy)}
 
 /* ---------- layout ---------- */
-.checkout-grid{max-width:1100px;margin:26px auto 60px;padding:0 15px;display:grid;grid-template-columns:440px 1fr;gap:30px;align-items:start}
-@media(max-width:900px){.checkout-grid{grid-template-columns:1fr}}
+.checkout-grid{max-width:1180px;margin:26px auto 60px;padding:0 15px;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:34px;align-items:start}
+@media(max-width:900px){.checkout-grid{grid-template-columns:1fr;gap:28px}}
 
 /* ---------- left form card ---------- */
-.form-card{background:#fff;border:1px solid var(--input-border);border-radius:4px;padding:26px 22px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
-.form-label{display:flex;align-items:center;gap:14px;font-family:var(--font-sys);font-weight:700;font-size:14px;letter-spacing:1px;color:var(--navy);text-transform:uppercase;margin:26px 0 14px}
+.form-card{background:#fff;border:1px solid var(--input-border);border-radius:6px;padding:26px 22px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+.form-label{display:flex;align-items:center;gap:12px;font-family:var(--font-sys);font-weight:700;font-size:19px;letter-spacing:0;color:var(--navy);margin:30px 0 16px}
 .form-label:first-child{margin-top:0}
-.form-label::after{content:"";flex:1;height:1px;background:var(--input-border)}
+.form-label>svg{flex:0 0 auto}
+.form-label::after{content:"";flex:1;height:1px;background:var(--line)}
+.field-lab{display:block;font-family:var(--font-sys);font-weight:700;font-size:15px;margin-bottom:7px}
+.field-lab .req{color:var(--red)}
 
 .product-box{border:2px solid var(--yellow-border);background:#F0FDF4;border-radius:4px;padding:14px 16px;display:flex;gap:14px;align-items:flex-start;justify-content:space-between}
 .product-box .pb-title{font-weight:700;font-size:17px;margin-bottom:6px}
@@ -69,15 +93,52 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:420px){.field-row{grid-template-columns:1fr}}
-.input{width:100%;height:55px;border:1px solid var(--input-border);border-radius:4px;padding:0 16px;font-family:var(--font-body);font-size:18px;color:var(--navy);background:#fff;margin-bottom:12px;transition:border-color .15s ease}
+.input{width:100%;height:55px;border:1px solid var(--input-border);border-radius:4px;padding:0 16px;font-family:var(--font-body);font-size:18px;color:var(--navy);background:#fff;margin-bottom:14px;transition:border-color .15s ease}
 .input:focus{outline:2px solid var(--yellow-border);outline-offset:-1px;border-color:var(--yellow-border)}
-.input::placeholder{color:#6B7280}
+.input::placeholder{color:#9AA1AC}
 .input.invalid{border-color:var(--red-soft);outline:1px solid var(--red-soft);outline-offset:-1px}
-.phone-wrap{display:flex;margin-bottom:12px}
-.phone-prefix{flex:0 0 auto;display:flex;align-items:center;padding:0 14px;background:#F3F4F6;border:1px solid var(--input-border);border-right:0;border-radius:4px 0 0 4px;font-size:15px;font-weight:700;white-space:nowrap}
+.phone-wrap{display:flex;margin-bottom:14px}
+.phone-prefix{flex:0 0 auto;display:flex;align-items:center;gap:7px;padding:0 14px;background:#F3F4F6;border:1px solid var(--input-border);border-right:0;border-radius:4px 0 0 4px;font-size:15px;font-weight:700;white-space:nowrap}
 .phone-wrap .input{border-radius:0 4px 4px 0;margin-bottom:0}
 
 .payment-note{font-size:16px;font-weight:700;line-height:1.5;margin-bottom:16px}
+
+/* ---------- payment method tabs ---------- */
+.pay-methods{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+@media(max-width:420px){.pay-methods{grid-template-columns:1fr}}
+.pay-tab{position:relative;display:flex;flex-direction:column;gap:8px;border:1px solid var(--line);border-radius:6px;padding:14px 15px;cursor:pointer;background:#fff;transition:border-color .15s ease,box-shadow .15s ease}
+.pay-tab:hover{border-color:#B9C0CC}
+.pay-tab input{position:absolute;opacity:0;width:0;height:0}
+.pay-tab .pt-name{font-family:var(--font-sys);font-weight:700;font-size:16px;color:#3B4250}
+.pay-tab.is-on{border-color:#2563EB;box-shadow:0 0 0 1px #2563EB inset}
+.pay-tab.is-on .pt-name{color:#2563EB}
+.pay-tab .pt-icon{width:34px;height:23px;border:1px solid #CBD2DC;border-radius:3px;display:flex;align-items:center;justify-content:center;background:#fff}
+.pay-tab.is-on .pt-icon{border-color:#2563EB}
+
+/* ---------- bank transfer panel ---------- */
+.bank-panel{border:1px solid #BBD3F6;background:#F4F8FF;border-radius:6px;padding:18px 16px;margin-bottom:18px}
+.bank-panel[hidden]{display:none}
+.bank-intro{font-size:15.5px;line-height:1.55;margin-bottom:14px}
+.bank-intro strong{font-variant-numeric:tabular-nums}
+.bank-rows{background:#fff;border:1px solid #DCE6F5;border-radius:4px;padding:4px 14px;margin-bottom:14px}
+.bank-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EEF2F8}
+.bank-row:last-child{border-bottom:0}
+.bank-row .bk{font-size:14px;color:var(--muted);font-family:var(--font-sys)}
+.bank-row .bv{font-family:var(--font-sys);font-weight:800;font-size:17px;text-align:right;word-break:break-word}
+/* an account number must never split across lines — a misread digit sends money to the wrong place */
+.bank-row .bv.acct{letter-spacing:1.2px;font-variant-numeric:tabular-nums;white-space:nowrap;word-break:normal}
+.bank-row .bv.amt{color:var(--green-dark)}
+.copy-btn{flex:0 0 auto;border:1px solid #C9D6EA;background:#fff;border-radius:4px;padding:7px 11px;font-family:var(--font-sys);font-weight:700;font-size:13px;cursor:pointer;color:#2563EB;transition:background .15s ease}
+.copy-btn:hover{background:#EFF5FF}
+.copy-btn.done{color:var(--green-dark);border-color:var(--green)}
+.bank-note{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;line-height:1.55;color:#1F2937}
+.bank-note svg{flex:0 0 auto;margin-top:2px}
+/* narrow screens: stack label over value so the number gets the full width */
+@media(max-width:560px){
+  .bank-row{flex-wrap:wrap;gap:4px 10px;padding:12px 0}
+  .bank-row .bk{width:100%}
+  .bank-row .bv{text-align:left;flex:1 1 auto;min-width:0}
+}
 
 .bump-box{border:2px dashed var(--red);background:#FFF7F7;border-radius:4px;padding:16px;margin-bottom:22px}
 .bump-label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;font-size:15px;line-height:1.55}
@@ -103,16 +164,18 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 .trust-line svg{vertical-align:-2px;margin-right:5px}
 .reassure-line{font-size:13.5px;font-style:italic;color:var(--navy);line-height:1.5}
 
-/* ---------- success state ---------- */
-.success-card{display:none;background:#fff;border:3px solid var(--green);border-radius:4px;padding:50px 26px;text-align:center}
+/* ---------- success / pending states ---------- */
+.success-card{display:none;background:#fff;border:3px solid var(--green);border-radius:6px;padding:50px 26px;text-align:center}
 .success-card.show{display:block}
 .success-card h2{font-family:var(--font-sys);font-weight:700;font-size:clamp(24px,4vw,32px);margin:16px 0 6px}
 .success-card p{font-size:18px}
+.success-card p+p{margin-top:10px;font-size:16px;color:#374151}
+.success-card .amt-line{font-weight:700;font-variant-numeric:tabular-nums}
 
 /* ---------- right column ---------- */
 .right-col h2{font-family:var(--font-sys);font-weight:800;font-size:clamp(28px,4.5vw,40px);line-height:1.12;letter-spacing:-0.01em;color:#5c0a0a;margin-bottom:24px}
 .ph{background:var(--ph-bg);border:1px dashed var(--ph-border);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--ph-text);font-family:var(--font-sys);font-size:15px;font-weight:600;padding:12px}
-.mockup{aspect-ratio:4/3;margin-bottom:28px}
+.mockup{aspect-ratio:4/3;margin-bottom:28px;border-radius:6px}
 .right-col h3{font-family:var(--font-sys);font-weight:700;font-size:clamp(19px,3vw,24px);margin:26px 0 14px}
 .check-list{list-style:none}
 .check-list li{display:flex;align-items:flex-start;gap:12px;font-size:17.5px;line-height:1.5;margin-bottom:12px}
@@ -144,8 +207,19 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
       +234 916 763 7825
     </a>
     <span class="topbar-logo">ETIN<span>&nbsp;MEDIA</span></span>
+    <a class="topbar-help" href="mailto:support@etinmedia.com">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
+      Need help? <u>support@etinmedia.com</u>
+    </a>
   </div>
 </header>
+
+<!-- ============ PROGRESS STEPS ============ -->
+<nav class="steps" aria-label="Checkout progress">
+  <div class="step is-on"><span class="step-dot">1</span><span class="step-label">Checkout</span></div>
+  <div class="step"><span class="step-dot">2</span><span class="step-label">Order Confirmation</span></div>
+  <div class="step"><span class="step-dot">3</span><span class="step-label">Instant Access</span></div>
+</nav>
 
 <!-- ============ TOP BANNER ============ -->
 <div class="banner">
@@ -161,7 +235,10 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
   <div>
     <form class="form-card" id="checkout-form" novalidate>
       <!-- SELECT PRODUCT -->
-      <p class="form-label">Select Product</p>
+      <p class="form-label">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="square"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/></svg>
+        Select Product
+      </p>
       <div class="product-box">
         <div>
           <p class="pb-title">The Complete AI Ads System</p>
@@ -170,21 +247,84 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
         <span class="pb-price">₦9,900</span>
       </div>
 
-      <!-- CONTACT INFORMATION -->
-      <p class="form-label">Contact Information</p>
+      <!-- CONTACT DETAILS -->
+      <p class="form-label">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="square"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+        Contact Details
+      </p>
       <div class="field-row">
-        <input class="input" type="text" id="first-name" name="first-name" placeholder="First Name" aria-label="First Name" autocomplete="given-name" required>
-        <input class="input" type="text" id="last-name" name="last-name" placeholder="Last Name" aria-label="Last Name" autocomplete="family-name" required>
+        <div>
+          <label class="field-lab" for="first-name">First Name <span class="req">*</span></label>
+          <input class="input" type="text" id="first-name" name="first-name" placeholder="First Name" autocomplete="given-name" required>
+        </div>
+        <div>
+          <label class="field-lab" for="last-name">Last Name <span class="req">*</span></label>
+          <input class="input" type="text" id="last-name" name="last-name" placeholder="Last Name" autocomplete="family-name" required>
+        </div>
       </div>
-      <input class="input" type="email" id="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" required>
+      <label class="field-lab" for="email">Email Address <span class="req">*</span></label>
+      <input class="input" type="email" id="email" name="email" placeholder="Email" autocomplete="email" required>
+      <label class="field-lab" for="phone">Phone Number <span class="req">*</span></label>
       <div class="phone-wrap">
-        <span class="phone-prefix">Nigeria +234</span>
-        <input class="input" type="tel" id="phone" name="phone" placeholder="Phone" aria-label="Phone" autocomplete="tel-national" required>
+        <span class="phone-prefix">
+          <svg width="20" height="14" viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#fff"/><rect width="10" height="21" fill="#008751"/><rect x="20" width="10" height="21" fill="#008751"/></svg>
+          +234
+        </span>
+        <input class="input" type="tel" id="phone" name="phone" placeholder="Phone" autocomplete="tel-national" required>
       </div>
 
-      <!-- PAYMENT INFORMATION -->
-      <p class="form-label">Payment Information</p>
+      <!-- BILLING INFORMATION -->
+      <p class="form-label">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="square"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        Billing Information
+      </p>
       <p class="payment-note">You're one step away. Card or bank transfer, both give instant access.</p>
+
+      <div class="pay-methods" role="radiogroup" aria-label="Payment method">
+        <label class="pay-tab is-on" id="tab-card" for="pm-card">
+          <input type="radio" name="paymethod" id="pm-card" value="card" checked>
+          <span class="pt-icon"><svg width="20" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
+          <span class="pt-name">Card</span>
+        </label>
+        <label class="pay-tab" id="tab-transfer" for="pm-transfer">
+          <input type="radio" name="paymethod" id="pm-transfer" value="transfer">
+          <span class="pt-icon"><svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M3 10l9-6 9 6"/><path d="M5 10v8M12 10v8M19 10v8"/><path d="M3 20h18"/></svg></span>
+          <span class="pt-name">Bank Transfer</span>
+        </label>
+      </div>
+
+      <!-- =========================================================
+           !!! BANK DETAILS — ACTION REQUIRED BEFORE GOING LIVE !!!
+           Replace the three placeholder values below with the real
+           Etin Media account. Nothing else needs to change — the
+           amount updates itself from the order bump.
+           ========================================================= -->
+      <div class="bank-panel" id="bank-panel" hidden>
+        <p class="bank-intro">Send exactly <strong id="bank-amount">₦14,800</strong> to the account below.</p>
+        <div class="bank-rows">
+          <div class="bank-row">
+            <span class="bk">Bank</span>
+            <span class="bv" id="bank-name">[BANK NAME — REPLACE ME]</span>
+          </div>
+          <div class="bank-row">
+            <span class="bk">Account Number</span>
+            <span class="bv acct" id="bank-account">[0000000000 — REPLACE ME]</span>
+            <button class="copy-btn" type="button" id="copy-acct">Copy</button>
+          </div>
+          <div class="bank-row">
+            <span class="bk">Account Name</span>
+            <span class="bv" id="bank-holder">[ACCOUNT NAME — REPLACE ME]</span>
+          </div>
+          <div class="bank-row">
+            <span class="bk">Amount To Send</span>
+            <span class="bv amt" id="bank-amount-row">₦14,800</span>
+          </div>
+        </div>
+        <p class="bank-note">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2" stroke-linecap="square"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span>Once you have sent it, your payment is confirmed within 10 minutes and the email with your access is sent to the email address you entered above.</span>
+        </p>
+      </div>
 
       <!-- ORDER BUMP -->
       <div class="bump-box">
@@ -206,7 +346,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
       <p class="form-error" id="form-error" role="alert">Please fill in your name, a valid email, and phone number to continue.</p>
 
       <div class="below-btn">
-        <p class="secure-line">Secured by Paystack · Your login details enter your email immediately after payment.</p>
+        <p class="secure-line" id="secure-line">Secured by Paystack · Your login details enter your email immediately after payment.</p>
         <p class="trust-line">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4B5563" stroke-width="2" stroke-linecap="square"><rect x="4" y="10" width="16" height="11" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
           100% Secure 256-Bit Encrypted Checkout
@@ -215,11 +355,19 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
       </div>
     </form>
 
-    <!-- SUCCESS STATE (shown after Paystack callback) -->
+    <!-- SUCCESS STATE (card payment — shown after Paystack callback) -->
     <div class="success-card" id="success-card">
       <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2" stroke-linecap="square"><circle cx="12" cy="12" r="10" fill="#DCFCE7"/><path d="M8 12.5l2.7 2.7L16.5 9"/></svg>
       <h2>Payment received — check your email</h2>
       <p>Your login details enter your email immediately after payment.</p>
+    </div>
+
+    <!-- PENDING STATE (bank transfer) -->
+    <div class="success-card" id="transfer-card">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2" stroke-linecap="square"><circle cx="12" cy="12" r="10" fill="#DCFCE7"/><path d="M12 7v5l3 2"/></svg>
+      <h2>Thank you — we're confirming your transfer</h2>
+      <p class="amt-line" id="transfer-amt-line">You sent ₦14,800.</p>
+      <p>Your payment is confirmed within 10 minutes and the email with your access is sent to <strong id="transfer-email">your email</strong>. If you don't see it, check your spam folder or email support@etinmedia.com.</p>
     </div>
   </div>
 
@@ -265,6 +413,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
    Replace "pk_live_REPLACE_ME" below with your REAL Paystack
    PUBLIC key (Paystack Dashboard → Settings → API Keys & Webhooks).
    It starts with "pk_live_". Nothing else needs to change.
+
+   Bank transfer account details are in the HTML above, in the
+   block marked "BANK DETAILS — ACTION REQUIRED".
    ============================================================ */
 var PAYSTACK_PUBLIC_KEY = "pk_live_REPLACE_ME";
 
@@ -287,6 +438,16 @@ var totalAmt = document.getElementById('total-amt');
 var payBtn = document.getElementById('pay-btn');
 var form = document.getElementById('checkout-form');
 var formError = document.getElementById('form-error');
+var secureLine = document.getElementById('secure-line');
+var bankPanel = document.getElementById('bank-panel');
+var bankAmount = document.getElementById('bank-amount');
+var bankAmountRow = document.getElementById('bank-amount-row');
+var tabCard = document.getElementById('tab-card');
+var tabTransfer = document.getElementById('tab-transfer');
+var radioCard = document.getElementById('pm-card');
+var radioTransfer = document.getElementById('pm-transfer');
+
+function payMethod(){ return radioTransfer.checked ? 'transfer' : 'card'; }
 
 function currentAmountKobo(){
   return bump.checked ? BASE_AMOUNT_KOBO + BUMP_AMOUNT_KOBO : BASE_AMOUNT_KOBO;
@@ -294,14 +455,62 @@ function currentAmountKobo(){
 function formatNaira(kobo){
   return '₦' + (kobo/100).toLocaleString('en-NG');
 }
+
+var MSG_SECURE_CARD = "Secured by Paystack · Your login details enter your email immediately after payment.";
+var MSG_SECURE_TRANSFER = "Send the transfer from any bank app · Your login details enter your email once it is confirmed.";
+
+/* One place that keeps every amount + label in sync: summary, button,
+   bank panel and the transfer receipt line. */
 function refreshTotals(){
   bumpRow.style.display = bump.checked ? 'flex' : 'none';
   var label = formatNaira(currentAmountKobo());
   totalAmt.textContent = label;
-  payBtn.textContent = 'Get Instant Access — Pay ' + label;
+  bankAmount.textContent = label;
+  bankAmountRow.textContent = label;
+  if(payMethod() === 'transfer'){
+    payBtn.textContent = "I Have Sent The " + label + " Transfer";
+    secureLine.textContent = MSG_SECURE_TRANSFER;
+  }else{
+    payBtn.textContent = 'Get Instant Access — Pay ' + label;
+    secureLine.textContent = MSG_SECURE_CARD;
+  }
 }
+
+function refreshMethod(){
+  var transfer = payMethod();
+  tabCard.classList.toggle('is-on', transfer === 'card');
+  tabTransfer.classList.toggle('is-on', transfer === 'transfer');
+  bankPanel.hidden = (transfer !== 'transfer');
+  hideError();
+  refreshTotals();
+}
+
 bump.addEventListener('change', refreshTotals);
-refreshTotals();
+radioCard.addEventListener('change', refreshMethod);
+radioTransfer.addEventListener('change', refreshMethod);
+refreshMethod();
+
+/* Copy the account number — falls back to a manual select when the
+   clipboard API is blocked (it needs https or localhost). */
+document.getElementById('copy-acct').addEventListener('click', function(){
+  var btn = this;
+  var text = document.getElementById('bank-account').textContent.trim();
+  function done(){
+    btn.textContent = 'Copied';
+    btn.classList.add('done');
+    setTimeout(function(){ btn.textContent = 'Copy'; btn.classList.remove('done'); }, 2000);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done, function(){ btn.textContent = 'Copy failed'; });
+  }else{
+    try{
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta); done();
+    }catch(e){ btn.textContent = 'Copy failed'; }
+  }
+});
 
 var MSG_VALIDATION = 'Please fill in your name, a valid email, and phone number to continue.';
 var MSG_PAYSTACK_LOADING = 'Secure checkout is still loading. Check your connection and tap the button again — or email support@etinmedia.com.';
@@ -353,10 +562,25 @@ function paystackAvailable(){
   return typeof window.PaystackPop !== 'undefined' && window.PaystackPop && typeof window.PaystackPop.setup === 'function';
 }
 
+function showPanel(id){
+  form.style.display = 'none';
+  var el = document.getElementById(id);
+  el.classList.add('show');
+  el.scrollIntoView({behavior:'smooth', block:'center'});
+}
+
 form.addEventListener('submit', function(e){
   e.preventDefault();
   if(payBtn.disabled) return;                     /* in-flight guard: no double-open */
   if(!validate()) return;
+
+  /* ---- bank transfer: no gateway, just acknowledge and tell them what happens next ---- */
+  if(payMethod() === 'transfer'){
+    document.getElementById('transfer-amt-line').textContent = 'You sent ' + formatNaira(currentAmountKobo()) + '.';
+    document.getElementById('transfer-email').textContent = document.getElementById('email').value.trim();
+    showPanel('transfer-card');
+    return;
+  }
 
   if(!paystackAvailable()){
     /* Paystack JS blocked/timed out (flaky network) — tell the visitor and retry the script */
@@ -389,9 +613,7 @@ form.addEventListener('submit', function(e){
       ]
     },
     callback: function(response){
-      form.style.display = 'none';
-      document.getElementById('success-card').classList.add('show');
-      document.getElementById('success-card').scrollIntoView({behavior:'smooth', block:'center'});
+      showPanel('success-card');
     },
     onClose: function(){ payBtn.disabled = false; /* visitor closed the popup — let them retry */ }
   });
