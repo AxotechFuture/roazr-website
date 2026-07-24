@@ -81,12 +81,15 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 .hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(90% 70% at 50% 30%,transparent 55%,rgba(0,0,0,.5) 100%)}
 .hero>*{position:relative;z-index:1}
 .trust-strip{display:flex;justify-content:center;padding:4px 12px 28px}
-.trust-pill{display:inline-flex;align-items:center;gap:11px;background:#fff;border-radius:999px;padding:9px 22px;box-shadow:0 8px 24px rgba(0,0,0,.3);flex-wrap:wrap;justify-content:center;max-width:100%}
-.trust-laurel{flex:0 0 auto;width:23px;height:31px;color:#B08D2E}
+.trust-pill{display:inline-flex;align-items:center;gap:13px;background:#fff;border-radius:999px;padding:9px 16px 9px 9px;box-shadow:0 8px 24px rgba(0,0,0,.3);flex-wrap:wrap;justify-content:center;max-width:100%;row-gap:7px}
+.trust-badge{flex:0 0 auto;background:#F2A93B;color:#141414;border-radius:999px;padding:8px 15px;font-family:var(--font-sys);font-weight:800;font-size:clamp(11.5px,2.4vw,14px);letter-spacing:.3px;text-transform:uppercase;white-space:nowrap}
+.trust-cluster{display:inline-flex;align-items:center;gap:5px}
+.trust-laurel{flex:0 0 auto;width:20px;height:27px;color:#A6ADB5}
 .trust-laurel.right{transform:scaleX(-1)}
-.trust-stars{display:inline-flex;gap:2px}
-.trust-stars svg{width:19px;height:19px}
-.trust-rating{font-family:var(--font-sys);font-weight:800;font-size:clamp(12px,2.6vw,13.5px);letter-spacing:.4px;text-transform:uppercase;color:var(--navy)}
+.trust-stars{display:inline-flex;gap:1px}
+.trust-stars svg{width:21px;height:21px}
+.trust-mid,.trust-rating{font-family:var(--font-sys);font-weight:700;font-size:clamp(11.5px,2.4vw,15px);letter-spacing:.3px;text-transform:uppercase;color:#141414}
+@media(max-width:560px){.trust-pill{padding:12px 16px}}
 .hero-eyebrow-wrap{text-align:center;margin-bottom:22px}
 .hero-eyebrow{display:inline-block;background:var(--yellow);color:#000;font-family:var(--font-sys);font-size:12.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:8px 18px}
 .hero h1{font-family:var(--font-head);font-weight:900;font-size:clamp(33px,5.6vw,60px);line-height:1.1;letter-spacing:-0.015em;text-transform:uppercase;text-align:center;max-width:1100px;margin:0 auto 24px}
@@ -295,7 +298,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 .option-1{background:rgba(239,68,68,0.06);border:2px solid var(--red-soft)}
 .option-2{background:#F0FDF4;border:2px solid var(--green);box-shadow:0 16px 36px rgba(21,128,61,.16)}
 .option-3{text-align:center;font-weight:700;margin:44px 0 56px}
-.ps-block{max-width:800px;margin:76px auto 0;font-style:italic;font-size:17px;line-height:1.7;background:#fff;border:1px solid #E5E7EB;border-left:4px solid var(--yellow);border-radius:4px;padding:30px}
+.ps-block{max-width:760px;margin:84px auto 0}
+.ps-head{font-family:var(--font-sys);font-weight:900;font-size:clamp(56px,10vw,84px);line-height:.95;letter-spacing:-0.02em;text-align:center;color:#000;margin-bottom:34px}
+.ps-block p:not(.ps-head){font-size:clamp(17.5px,2.6vw,20px);line-height:1.6;color:#000;margin-bottom:22px;text-align:left}
 
 /* ---------- CTA lead-capture modal ---------- */
 .cta-modal-overlay{position:fixed;inset:0;z-index:10000;background:rgba(7,31,47,.78);display:none;align-items:center;justify-content:center;padding:20px}
@@ -359,11 +364,16 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 <section class="hero">
   <div class="trust-strip">
     <div class="trust-pill">
-      <svg class="trust-laurel" viewBox="0 0 52 34" aria-hidden="true"><path d="M 16.1 26.9 L 13.5 23.4 L 12.2 19.2 L 12.2 14.8 L 13.5 10.6 L 16.1 7.1" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><g transform="translate(15.4 27.6) rotate(110.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(12.6 23.8) rotate(128.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(11.2 19.3) rotate(146.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(11.2 14.7) rotate(164.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(12.6 10.2) rotate(182.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(15.4 6.4) rotate(200.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g></svg>
-      <span class="trust-stars" aria-label="5 star rating"><svg viewBox="0 0 24 24" fill="#F5A623"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg><svg viewBox="0 0 24 24" fill="#F5A623"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg><svg viewBox="0 0 24 24" fill="#F5A623"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg><svg viewBox="0 0 24 24" fill="#F5A623"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg><svg viewBox="0 0 24 24" fill="#F5A623"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg></span>
-      <svg class="trust-laurel right" viewBox="0 0 52 34" aria-hidden="true"><path d="M 16.1 26.9 L 13.5 23.4 L 12.2 19.2 L 12.2 14.8 L 13.5 10.6 L 16.1 7.1" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><g transform="translate(15.4 27.6) rotate(110.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(12.6 23.8) rotate(128.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(11.2 19.3) rotate(146.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(11.2 14.7) rotate(164.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(12.6 10.2) rotate(182.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(15.4 6.4) rotate(200.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g></svg>
+      <span class="trust-badge">₦233M+ Generated</span>
+      <span class="trust-mid">1,000+ Campaigns for African Businesses</span>
+      <span class="trust-cluster">
+        <svg class="trust-laurel" viewBox="0 0 52 34" aria-hidden="true"><path d="M 16.1 26.9 L 13.5 23.4 L 12.2 19.2 L 12.2 14.8 L 13.5 10.6 L 16.1 7.1" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><g transform="translate(15.4 27.6) rotate(110.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(12.6 23.8) rotate(128.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(11.2 19.3) rotate(146.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(11.2 14.7) rotate(164.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(12.6 10.2) rotate(182.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(15.4 6.4) rotate(200.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g></svg>
+        <span class="trust-stars" aria-label="5 star rating"><svg viewBox="0 0 24 24" fill="#F5B83D"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg><svg viewBox="0 0 24 24" fill="#F5B83D"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg><svg viewBox="0 0 24 24" fill="#F5B83D"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg><svg viewBox="0 0 24 24" fill="#F5B83D"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg><svg viewBox="0 0 24 24" fill="#F5B83D"><path d="M12 1.5l3.1 6.3 6.9.9-5 4.9 1.2 6.9L12 17.2l-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z"/></svg></span>
+        <svg class="trust-laurel right" viewBox="0 0 52 34" aria-hidden="true"><path d="M 16.1 26.9 L 13.5 23.4 L 12.2 19.2 L 12.2 14.8 L 13.5 10.6 L 16.1 7.1" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><g transform="translate(15.4 27.6) rotate(110.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(12.6 23.8) rotate(128.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(11.2 19.3) rotate(146.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(11.2 14.7) rotate(164.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(12.6 10.2) rotate(182.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g><g transform="translate(15.4 6.4) rotate(200.0)"><ellipse rx="5.2" ry="2.1" fill="currentColor"/></g></svg>
+      </span>
       <span class="trust-rating">Trusted by 4,000+ Nigerian Businesses</span>
     </div>
+  </div>
   </div>
 
   <h1>Steal Our ₦233M AI Ads System to Generate Ads That Convert Every Single Time</h1>
@@ -815,7 +825,11 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
   </a>
 
   <div class="ps-block">
-    <p>P.S. Quick recap. You get the AI Ad Machine that builds winning ads for your business in 90 seconds, the complete Daily Bank Alert Traffic System course, the 100 Winning Ads Vault behind ₦233M+ in client sales, the WhatsApp Closing Scripts, and the ₦10K to ₦2.3M Case Study. All for ₦9,900, backed by the No-Mugu Guarantee: make at least ₦150,000 in 7 days or you get your ₦9,900 back.. And if you're one of the first 10 students to hit 100 verified sales, an iPhone 15 Pro Max is yours. The longer you wait, the more weeks your business spends behaving like NEPA light.</p>
+    <p class="ps-head">P.S.</p>
+    <p>Quick recap. You get the AI Ad Machine that builds winning ads for your business in 90 seconds, the complete Daily Bank Alert Traffic System course, the 100 Winning Ads Vault behind ₦233M+ in client sales, the WhatsApp Closing Scripts, and the ₦10K to ₦2.3M Case Study.</p>
+    <p>All for ₦9,900, backed by the No-Mugu Guarantee: make at least ₦150,000 in 7 days or you get your ₦9,900 back..</p>
+    <p>And if you're one of the first 10 students to hit 100 verified sales, an iPhone 15 Pro Max is yours.</p>
+    <p>The longer you wait, the more weeks your business spends behaving like NEPA light.</p>
   </div>
 </section>
 </main>
