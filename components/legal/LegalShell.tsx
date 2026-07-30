@@ -19,7 +19,7 @@ export function LegalShell({
       <Nav />
       <main className="relative flex-1 overflow-hidden">
         <div
-          className="aurora pointer-events-none absolute -top-[260px] left-1/2 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-accent/[0.07] blur-[140px]"
+          className="orb orb-soft aurora pointer-events-none absolute -top-[400px] left-1/2 h-[700px] w-[1000px] -translate-x-1/2"
           aria-hidden="true"
         />
         <div className="container-x relative pb-24 pt-32 sm:pt-36">

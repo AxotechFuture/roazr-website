@@ -7,7 +7,7 @@ export function FinalCta() {
   return (
     <section className="relative overflow-hidden py-28 sm:py-36">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="aurora absolute left-1/2 top-1/2 h-[420px] w-[760px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/[0.12] blur-[130px]" />
+        <div className="orb orb-strong aurora absolute left-1/2 top-1/2 h-[680px] w-[1020px] -translate-x-1/2 -translate-y-1/2" />
         <div
           className="grid-bg absolute inset-0"
           style={{

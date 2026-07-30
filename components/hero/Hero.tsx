@@ -44,9 +44,9 @@ export function Hero() {
               "radial-gradient(ellipse 90% 60% at 50% 0%, black 20%, transparent 70%)",
           }}
         />
-        <div className="aurora absolute -top-[280px] left-1/2 h-[560px] w-[900px] -translate-x-1/2 rounded-full bg-accent/[0.13] blur-[140px]" />
-        <div className="aurora absolute -left-[200px] top-[180px] h-[420px] w-[560px] rounded-full bg-[var(--aurora-2)] blur-[140px]" style={{ animationDelay: "-8s" }} />
-        <div className="aurora absolute -right-[180px] top-[60px] h-[380px] w-[520px] rounded-full bg-accent/[0.07] blur-[120px]" style={{ animationDelay: "-16s" }} />
+        <div className="orb orb-strong aurora absolute -top-[420px] left-1/2 h-[840px] w-[1180px] -translate-x-1/2" />
+        <div className="orb orb-cool aurora absolute -left-[340px] top-[40px] h-[700px] w-[840px]" style={{ animationDelay: "-8s" }} />
+        <div className="orb orb-soft aurora absolute -right-[300px] -top-[60px] h-[620px] w-[760px]" style={{ animationDelay: "-16s" }} />
         <Particles className="absolute inset-x-0 top-0 h-[85%] w-full" />
       </div>
 

@@ -283,7 +283,7 @@ export default function FormModePage() {
       <Nav />
       <main className="relative flex-1 overflow-hidden">
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-          <div className="aurora absolute -top-[260px] left-1/2 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-accent/[0.07] blur-[140px]" />
+          <div className="orb orb-soft aurora absolute -top-[400px] left-1/2 h-[700px] w-[1000px] -translate-x-1/2" />
           <div
             className="grid-bg absolute inset-x-0 top-0 h-[520px]"
             style={{

@@ -125,7 +125,7 @@ export function Problem() {
           <Reveal delay={0.12}>
             <div className="panel relative overflow-hidden border-accent/20 p-6 sm:p-8">
               <div
-                className="pointer-events-none absolute -right-20 -top-24 h-56 w-56 rounded-full bg-accent/10 blur-[80px]"
+                className="orb orb-strong pointer-events-none absolute -right-[160px] -top-[176px] h-96 w-96"
                 aria-hidden="true"
               />
               <div className="mb-5 flex items-center justify-between">

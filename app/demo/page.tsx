@@ -30,7 +30,7 @@ export default function DemoPage() {
       <Nav />
       <main className="relative flex-1 overflow-hidden">
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-          <div className="aurora absolute -top-[240px] left-1/3 h-[480px] w-[760px] -translate-x-1/2 rounded-full bg-accent/[0.1] blur-[140px]" />
+          <div className="orb orb-strong aurora absolute -top-[380px] left-1/3 h-[760px] w-[1040px] -translate-x-1/2" />
           <div
             className="grid-bg absolute inset-x-0 top-0 h-[560px]"
             style={{

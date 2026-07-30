@@ -615,7 +615,7 @@ export function HeroVisual() {
 
           {/* glow under dashboard */}
           <div
-            className="absolute left-[10%] right-[20%] top-[30%] -z-10 h-[50%] rounded-full bg-accent/20 blur-[120px]"
+            className="orb orb-strong absolute left-[-2%] right-[-2%] top-[10%] -z-10 h-[88%]"
             aria-hidden="true"
           />
         </div>
