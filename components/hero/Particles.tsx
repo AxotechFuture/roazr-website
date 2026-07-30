@@ -27,6 +27,7 @@ export function Particles({ className }: { className?: string }) {
     if (!ctx) return;
 
     let raf = 0;
+    let running = false;
     let dots: Dot[] = [];
     let width = 0;
     let height = 0;
@@ -81,17 +82,43 @@ export function Particles({ className }: { className?: string }) {
         ctx.fillStyle = `rgba(${rgb}, ${d.a})`;
         ctx.fill();
       }
-      raf = requestAnimationFrame(draw);
+      if (running) raf = requestAnimationFrame(draw);
     };
 
     seed();
-    draw();
+
+    // Only animate while the canvas is actually on screen and the tab is
+    // visible. Left unchecked this rAF loop runs for the life of the page —
+    // invisible work that keeps a phone's CPU awake and drains battery.
+    const start = () => {
+      if (running) return;
+      running = true;
+      raf = requestAnimationFrame(draw);
+    };
+    const stop = () => {
+      running = false;
+      cancelAnimationFrame(raf);
+    };
+
+    const io = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !document.hidden) start();
+      else stop();
+    });
+    io.observe(canvas);
+
+    const onVisibility = () => {
+      if (document.hidden) stop();
+      else if (canvas.getBoundingClientRect().bottom > 0) start();
+    };
+    document.addEventListener("visibilitychange", onVisibility);
 
     const onResize = () => seed();
     window.addEventListener("resize", onResize);
 
     return () => {
-      cancelAnimationFrame(raf);
+      stop();
+      io.disconnect();
+      document.removeEventListener("visibilitychange", onVisibility);
       window.removeEventListener("resize", onResize);
       themeObserver.disconnect();
     };
