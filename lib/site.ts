@@ -22,10 +22,16 @@ export const site = {
     privacy: "privacy@roazr.com",
   },
   appUrl: "https://app.roazr.com",
-  /** Self-serve signup entry (create an account in the product). */
-  signupUrl: "https://app.roazr.com/signup",
+  /**
+   * Self-serve signup entry (create an account in the product).
+   *
+   * The app is a hash-router SPA (see src/router.jsx in etin-media-reporting),
+   * so routes live behind `#/`. The path form `/signup` 404s — verified live.
+   * Keep the `#/` in these URLs unless the app gains real server-side routes.
+   */
+  signupUrl: "https://app.roazr.com/#/signup",
   /** Returning-user sign in. */
-  signinUrl: "https://app.roazr.com",
+  signinUrl: "https://app.roazr.com/#/login",
   /** PLACEHOLDER — booking link for qualified demo leads. */
   schedulerUrl: "",
   /** PLACEHOLDER — WhatsApp business number, digits only. */
