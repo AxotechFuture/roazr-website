@@ -16,20 +16,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.tagline}`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} · ${site.tagline}`,
+    template: `%s · ${site.name}`,
   },
   description: site.description,
   keywords: [
-    "WhatsApp ad tracking",
-    "ad attribution",
-    "ROAS",
+    "revenue attribution",
+    "ad attribution platform",
+    "ROAS tracking",
     "Meta Conversions API",
-    "WhatsApp commerce",
+    "WhatsApp sales tracking",
     "African businesses",
   ],
   openGraph: {
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name} · ${site.tagline}`,
     description: site.description,
     url: site.url,
     siteName: site.name,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name} · ${site.tagline}`,
     description: site.description,
   },
   robots: {

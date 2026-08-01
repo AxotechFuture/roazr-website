@@ -6,13 +6,13 @@ import { DemoForm } from "@/components/demo/DemoForm";
 export const metadata: Metadata = {
   title: "Book a demo",
   description:
-    "A 20-minute walkthrough of your real ROAS — including every WhatsApp sale your pixel can't see.",
+    "A 20-minute walkthrough of your real ROAS, including every sale your pixel can't see.",
 };
 
 const agenda = [
   {
     title: "Your numbers, live",
-    body: "We walk through the dashboard with campaigns like yours — real spend, real WhatsApp revenue.",
+    body: "We walk through the dashboard with campaigns like yours: real spend, real revenue, the sales a pixel misses.",
   },
   {
     title: "Integration walkthrough",
@@ -55,7 +55,7 @@ export default function DemoPage() {
               </h1>
               <p className="mt-5 text-pretty text-base leading-relaxed text-muted">
                 A few quick questions so we can tailor the walkthrough to your
-                business — then you pick a time.
+                business, then you pick a time.
               </p>
 
               <ul className="mt-10 flex flex-col gap-6">

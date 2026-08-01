@@ -14,9 +14,9 @@ export const site = {
   name: "Roazr",
   url: "https://roazr.com",
   company: "Etin Media, Inc.",
-  tagline: "Every WhatsApp sale, fed back to your ads.",
+  tagline: "Every sale, fed back to your ads.",
   description:
-    "Roazr connects WhatsApp, website, and payment data to Meta and Snapchat — so ad algorithms optimize for real buyers, not clicks.",
+    "Roazr is a full revenue attribution platform. It matches website, payment, call, and WhatsApp sales to the exact ad that caused them, so Meta and Snapchat optimize for real buyers, not clicks.",
   emails: {
     hello: "hello@roazr.com",
     privacy: "privacy@roazr.com",

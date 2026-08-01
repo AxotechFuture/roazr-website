@@ -84,11 +84,11 @@ export function Problem() {
             <>
               Your ads optimize for clicks.
               <br />
-              Your sales happen in{" "}
-              <span className="text-[var(--whatsapp)]">WhatsApp</span>.
+              Your sales close{" "}
+              <span className="text-accent">off the page</span>.
             </>
           }
-          sub="A pixel only sees the browser. The moment your buyer moves to chat — or pays by transfer — the ad platform goes blind. So the algorithm keeps hunting for people who click and ghost, while your real customers stay invisible."
+          sub="A pixel only sees the browser. The moment your buyer moves to a chat, a bank app, or a phone call, the ad platform goes blind. So the algorithm keeps hunting for people who click and ghost, while your real customers stay invisible."
         />
 
         <div className="mx-auto mt-14 grid max-w-4xl gap-5 lg:grid-cols-1">
@@ -116,8 +116,8 @@ export function Problem() {
               <p className="mt-5 text-sm leading-relaxed text-muted">
                 The customer clicked, chatted, negotiated, and paid ₦68,500 by
                 bank transfer. Meta recorded a click that &ldquo;never
-                converted&rdquo; — and will now go find more people just like
-                the ones who don&rsquo;t buy.
+                converted&rdquo;, and it will now go find more people just
+                like the ones who don&rsquo;t buy.
               </p>
             </div>
           </Reveal>
@@ -130,7 +130,7 @@ export function Problem() {
               />
               <div className="mb-5 flex items-center justify-between">
                 <p className="font-mono text-[11px] uppercase tracking-widest text-accent">
-                  What actually happened — reported by Roazr
+                  What actually happened · reported by Roazr
                 </p>
                 <span className="rounded-md border border-accent/25 bg-accent/[0.08] px-2 py-1 font-mono text-[10px] text-accent">
                   Purchase · ₦68,500 ✓
@@ -156,7 +156,7 @@ export function Problem() {
                 </FlowStep>
               </div>
               <p className="mt-5 text-sm leading-relaxed text-muted">
-                Roazr connects the click to the conversation to the payment —
+                Roazr connects the click to the conversation to the payment,
                 then hands the complete picture back to the algorithm. Now it
                 optimizes for buyers, and every naira of ad spend gets smarter.
               </p>

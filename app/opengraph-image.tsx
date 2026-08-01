@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { site } from "@/lib/site";
 
-export const alt = `${site.name} — ${site.tagline}`;
+export const alt = `${site.name} · ${site.tagline}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -47,7 +47,7 @@ export default async function OgImage() {
               flexDirection: "column",
             }}
           >
-            <span>Every WhatsApp sale,</span>
+            <span>Every sale,</span>
             <span style={{ color: "#17E88F" }}>fed back to your ads.</span>
           </div>
           <div
@@ -57,8 +57,8 @@ export default async function OgImage() {
               letterSpacing: -0.5,
             }}
           >
-            Revenue attribution for Meta &amp; Snapchat — built for WhatsApp
-            commerce.
+            Full revenue attribution for Meta and Snapchat. Every channel,
+            every sale.
           </div>
         </div>
 

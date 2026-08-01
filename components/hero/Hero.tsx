@@ -54,13 +54,13 @@ export function Hero() {
         <div className="mx-auto max-w-3xl text-center">
           <Enter delay={0}>
             <p className="kicker justify-center">
-              Revenue attribution for WhatsApp commerce
+              Revenue attribution, end to end
             </p>
           </Enter>
 
           <Enter delay={0.08}>
             <h1 className="mt-5 text-balance text-[2.6rem] font-semibold leading-[1.04] tracking-[-0.035em] sm:text-6xl lg:text-[4.4rem]">
-              Every WhatsApp sale,
+              Every sale,
               <br />
               <span className="glow-text bg-gradient-to-r from-accent-strong via-accent to-[var(--grad-tail)] bg-clip-text text-transparent">
                 fed back to your ads.
@@ -70,10 +70,10 @@ export function Hero() {
 
           <Enter delay={0.16}>
             <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted sm:text-lg">
-              Roazr connects WhatsApp, website, and payment data to Meta and
-              Snapchat — so their algorithms optimize for real buyers, not
-              clicks. Built for businesses that close where their customers
-              actually are.
+              Roazr matches every sale (website checkout, card, bank transfer,
+              booked call, or WhatsApp chat) to the exact ad that caused it,
+              then feeds Meta and Snapchat real buyers, not clicks. Full
+              attribution, built for how you actually sell.
             </p>
           </Enter>
 
