@@ -2,13 +2,12 @@
  * Integration catalogue for /integrations.
  *
  * STATUS TRUTH — verified against the app repo (etin-media-reporting),
- * 2026-08-01. Do not promote a card to "live" without re-verifying:
- *   LIVE:        Meta CAPI, Snapchat, Paystack, Flutterwave, Stripe,
- *                Manual sale logging, WhatsApp Business Cloud API, Calendly
- *   COMING SOON: Google Ads, TikTok, Pinterest, Selar, Shopify
- *
- * Coming-soon copy must stay future-tense — a dimmed card must never
- * read as shipped. Monogram letter tiles only; no third-party logos.
+ * 2026-08-01. Only shipped integrations appear here at all: the founder
+ * removed the coming-soon cards (Aug 2026), so Google Ads, TikTok,
+ * Pinterest, Selar and Shopify must NOT be added back until the app
+ * actually ships them. Re-verify before adding any card:
+ *   LIVE: Meta CAPI, Snapchat, Paystack, Flutterwave, Stripe,
+ *         Manual sale logging, WhatsApp Business Cloud API, Calendly
  */
 
 export type IntegrationStatus = "live" | "soon";
@@ -25,7 +24,7 @@ export type Integration = {
   color: string;
   status: IntegrationStatus;
   blurb: string;
-  /** Mono micro-line describing the data path (or roadmap state). */
+  /** Mono micro-line describing the data path. */
   path: string;
 };
 
@@ -59,33 +58,6 @@ export const categories: IntegrationCategory[] = [
         blurb:
           "Snap Conversions API, same server-side delivery. Snap's algorithm learns from paid sales, not clicks.",
         path: "sale + click ID → Snap CAPI",
-      },
-      {
-        name: "Google Ads",
-        icon: "googleads",
-        color: "var(--googleads)",
-        status: "soon",
-        blurb:
-          "On the roadmap: nothing syncs today. When it ships, offline conversions will follow the same server-side path.",
-        path: "on the roadmap",
-      },
-      {
-        name: "TikTok",
-        icon: "tiktok",
-        color: "var(--tiktok)",
-        status: "soon",
-        blurb:
-          "Planned. TikTok's Events API will get the same server-side treatment once this ships.",
-        path: "on the roadmap",
-      },
-      {
-        name: "Pinterest",
-        icon: "pinterest",
-        color: "var(--pinterest)",
-        status: "soon",
-        blurb:
-          "Planned. Pinterest conversions will ride the same server-side rail when this lands.",
-        path: "on the roadmap",
       },
     ],
   },
@@ -130,32 +102,14 @@ export const categories: IntegrationCategory[] = [
           "No webhook? Log the sale in one tap. Conversions backdate up to 7 days on Meta's CAPI, so cash and COD still count.",
         path: "one tap → sale logged → CAPI",
       },
-      {
-        name: "Selar",
-        icon: "selar",
-        color: "var(--selar)",
-        status: "soon",
-        blurb:
-          "Planned. Selar orders will log as sales automatically once this integration ships.",
-        path: "on the roadmap",
-      },
-      {
-        name: "Shopify",
-        icon: "shopify",
-        color: "var(--shopify)",
-        status: "soon",
-        blurb:
-          "Planned. Shopify orders will arrive through the same webhook path as Paystack.",
-        path: "on the roadmap",
-      },
     ],
   },
   {
-    /* Chat and bookings share a section: as one-card categories they
+    /* WhatsApp and bookings share a section: as one-card categories they
        each left two thirds of a three-column row empty. */
     id: "conversations",
-    title: "Conversations & bookings",
-    sub: "Sales that close in a chat, and calls booked off an ad, still credit what started them.",
+    title: "WhatsApp & bookings",
+    sub: "Sales that close on WhatsApp, and calls booked off an ad, still credit what started them.",
     items: [
       {
         name: "WhatsApp Business Cloud API",
@@ -163,8 +117,8 @@ export const categories: IntegrationCategory[] = [
         color: "var(--whatsapp)",
         status: "live",
         blurb:
-          "Conversations become attributable leads: a sale closed in chat still credits the ad that opened it.",
-        path: "chat → lead → journey",
+          "Conversations become attributable leads: a sale closed on WhatsApp still credits the ad that opened it.",
+        path: "whatsapp → lead → journey",
       },
       {
         name: "Calendly",

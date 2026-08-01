@@ -110,7 +110,7 @@ export default function IntegrationsPage() {
             </h1>
             <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted sm:text-lg">
               Connect the stack once. Every sale (card, bank transfer, or
-              WhatsApp chat) reports back to the ad that caused it.
+              WhatsApp) reports back to the ad that caused it.
             </p>
 
             {/* jump links: the reference's category sidebar, folded into
