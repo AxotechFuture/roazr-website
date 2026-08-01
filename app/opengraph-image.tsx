@@ -30,7 +30,6 @@ export default async function OgImage() {
       >
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
           {/* Real brand mark — rounded corners are baked into the PNG. */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={markSrc} width={56} height={56} alt="" />
           <div style={{ fontSize: 40, fontWeight: 700, letterSpacing: -1 }}>
             roazr
