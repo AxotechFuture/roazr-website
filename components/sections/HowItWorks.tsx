@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { steps } from "@/lib/content";
-import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
+import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import { SectionHead } from "@/components/ui/SectionHead";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
 
@@ -140,6 +141,25 @@ export function HowItWorks() {
             );
           })}
         </RevealGroup>
+
+        <Reveal delay={0.15} className="mt-10 text-center">
+          <Link
+            href="/how-it-works"
+            className="group inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-foreground"
+          >
+            See the full walkthrough — every step, from funnel to fed algorithm
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 16 16"
+              fill="none"
+              aria-hidden="true"
+              className="transition-transform group-hover:translate-x-0.5"
+            >
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Link>
+        </Reveal>
       </div>
     </section>
   );

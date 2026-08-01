@@ -82,13 +82,13 @@ const FEED = [
   { amount: "GH₵2,400", label: "WhatsApp sale matched", target: "Snapchat", dot: "#25d366" },
   { amount: "₦86,000", label: "Bank transfer matched", target: "Meta CAPI", dot: "#17e88f" },
   { amount: "₦230,500", label: "WhatsApp sale matched", target: "Meta CAPI", dot: "#25d366" },
-  { amount: "KSh 18,400", label: "Shopify order", target: "Meta CAPI", dot: "#17e88f" },
+  { amount: "KSh 18,400", label: "Flutterwave payment", target: "Meta CAPI", dot: "#17e88f" },
   { amount: "₦57,900", label: "WhatsApp sale matched", target: "Meta CAPI", dot: "#25d366" },
 ] as const;
 
 const AGE_LABELS = ["now", "4s", "11s", "19s", "26s"];
 
-function LiveFeed({ rows = 5 }: { rows?: number }) {
+export function LiveFeed({ rows = 5 }: { rows?: number }) {
   const reduced = useReducedMotion();
   // Deterministic first render (SSR-safe), rotates client-side after mount.
   const [head, setHead] = useState(0);
@@ -295,7 +295,7 @@ function SidebarIcon({ active = false }: { active?: boolean }) {
   );
 }
 
-function Dashboard({ compact = false }: { compact?: boolean }) {
+export function Dashboard({ compact = false }: { compact?: boolean }) {
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-line-strong bg-[#081014]/90 shadow-[0_40px_120px_-32px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.02)] backdrop-blur-xl">
       {/* window chrome */}
@@ -401,7 +401,7 @@ function Dashboard({ compact = false }: { compact?: boolean }) {
 const chatDelay = (delay: number) =>
   ({ "--chat-delay": `${delay}s` }) as React.CSSProperties;
 
-function WhatsAppCard() {
+export function WhatsAppCard() {
   return (
     <div className="overflow-hidden rounded-2xl border border-line-strong bg-raised/95 shadow-[0_32px_80px_-24px_rgba(0,0,0,0.9)] backdrop-blur-xl">
       <div className="flex items-center gap-2.5 border-b border-line px-3.5 py-2.5">
@@ -474,7 +474,14 @@ const PLATFORMS = [
   { key: "paystack", monogram: "P", color: "var(--paystack)", name: "Paystack", status: "Payment matched" },
 ] as const;
 
-function PlatformChip({ p }: { p: (typeof PLATFORMS)[number] }) {
+export type PlatformChipData = {
+  monogram: string;
+  color: string;
+  name: string;
+  status: string;
+};
+
+export function PlatformChip({ p }: { p: PlatformChipData }) {
   return (
     <div className="flex items-center gap-2.5 rounded-xl border border-line-strong bg-raised/95 px-3 py-2.5 shadow-[0_24px_64px_-24px_rgba(0,0,0,0.9)] backdrop-blur-xl">
       <span

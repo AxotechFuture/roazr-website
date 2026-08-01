@@ -91,7 +91,7 @@ export function Hero() {
 
           <Enter delay={0.3} className="mt-6">
             <Link
-              href="/#how-it-works"
+              href="/how-it-works"
               className="group inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-foreground"
             >
               See how it works
@@ -101,9 +101,9 @@ export function Hero() {
                 viewBox="0 0 16 16"
                 fill="none"
                 aria-hidden="true"
-                className="transition-transform group-hover:translate-y-0.5"
+                className="transition-transform group-hover:translate-x-0.5"
               >
-                <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
           </Enter>
