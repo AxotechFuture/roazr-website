@@ -40,7 +40,7 @@ export const testimonials = [
 export const faqs = [
   {
     q: "What exactly does Roazr do?",
-    a: "Roazr is a revenue attribution platform. It matches the sales you close — on WhatsApp, your website, or by bank transfer and Paystack — back to the exact ad that brought each customer in, then sends those real purchase events to Meta and Snapchat server-side. Their algorithms learn who actually buys from you and optimize toward more of them. Google Ads and TikTok sync are on the roadmap.",
+    a: "Roazr is a revenue attribution platform. It matches the sales you close — on WhatsApp, your website, or by bank transfer and Paystack — back to the exact ad that brought each customer in, then sends those real purchase events to Meta and Snapchat server-side. Their algorithms learn who actually buys from you and optimize toward more of them. Google Ads, TikTok, and Pinterest sync are on the roadmap.",
   },
   {
     q: "Do I need a developer to set it up?",
@@ -48,7 +48,7 @@ export const faqs = [
   },
   {
     q: "Which platforms does Roazr integrate with?",
-    a: "Conversions sync to Meta — Facebook and Instagram, through the Conversions API — and to Snapchat. On the way in, Roazr connects the WhatsApp Business API, your website and funnels, and payments through Paystack, Flutterwave, Stripe, Selar, and Shopify. Google Ads and TikTok sync are on the roadmap and will be included at no extra cost when they land.",
+    a: "Conversions sync to Meta — Facebook and Instagram, through the Conversions API — and to Snapchat. On the way in, Roazr connects the WhatsApp Business API, your website and funnels, Calendly booking pages, and payments through Paystack, Flutterwave, and Stripe — plus one-tap manual logging for transfers and cash. Google Ads, TikTok, and Pinterest sync are on the roadmap, with Selar and Shopify next on the payments side — all included at no extra cost when they land.",
   },
   {
     q: "How does WhatsApp attribution actually work?",
@@ -70,32 +70,32 @@ export const faqs = [
 
 export const features = [
   {
-    title: "Live ROAS, per campaign",
-    body: "One dashboard that shows true return on ad spend — including the sales your pixel never saw.",
+    title: "Know which ads actually make money",
+    body: "True ROAS per campaign — including the WhatsApp and transfer sales your pixel never saw. Cut dead campaigns with certainty, scale the winners.",
     key: "roas",
   },
   {
-    title: "Server-side event streaming",
-    body: "Purchase events delivered straight to Meta and Snapchat, server-side — no browser, no ad blockers, no signal loss.",
+    title: "No more signal loss",
+    body: "Purchases reach Meta and Snapchat server-side, with the original click ID attached. No browser pixel in the path — nothing for ad blockers to eat.",
     key: "capi",
   },
   {
-    title: "WhatsApp conversation attribution",
-    body: "Every chat traced to the ad that started it. Every closed sale credited to the right campaign.",
+    title: "Sales that close in chat still count",
+    body: "Each conversation is traced to the ad that started it, and the payment that ends it is credited to that exact campaign.",
     key: "whatsapp",
   },
   {
-    title: "Payment matching",
-    body: "Paystack, bank transfer, cash on delivery — revenue reconciled to campaigns automatically.",
+    title: "Every payment finds its ad",
+    body: "Paystack, Flutterwave, and Stripe webhooks log sales the second they're paid. Transfers and cash on delivery take one tap — backdated up to 7 days.",
     key: "payments",
   },
   {
-    title: "Multi-currency reporting",
-    body: "₦, GH₵, KSh, R, $ — spend and revenue in the currencies your business actually runs on.",
+    title: "Sell in any currency, report in one",
+    body: "₦, GH₵, KSh, R, $ — revenue converts automatically, so ROAS reads clean in the one currency you actually run the business in.",
     key: "currency",
   },
   {
-    title: "Human onboarding",
+    title: "A human sets it up with you",
     body: "A real person connects your accounts with you and stays on WhatsApp. No tickets, no bots.",
     key: "human",
   },

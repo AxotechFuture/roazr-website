@@ -85,7 +85,7 @@ function WhatsappVisual() {
 }
 
 function PaymentsVisual() {
-  const rows = ["Paystack", "Bank transfer", "Cash on delivery"];
+  const rows = ["Paystack", "Flutterwave", "Stripe", "Bank transfer"];
   return (
     <div className="flex flex-wrap gap-1.5">
       {rows.map((r) => (
@@ -176,7 +176,7 @@ export function Features() {
       <div className="container-x">
         <SectionHead
           kicker="Product"
-          title="Attribution infrastructure, not another dashboard"
+          title="Every sale counted. Every ad accountable."
           sub="Everything Roazr does exists to answer one question precisely: which ad made you money — and to make sure the algorithm knows it too."
         />
 

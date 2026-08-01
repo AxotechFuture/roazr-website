@@ -1,5 +1,6 @@
-/* Shipped integrations only. Google Ads and TikTok sync are roadmap, and are
-   named as roadmap on the pricing page rather than implied as live here. */
+/* Shipped integrations only — verified against the app repo. Google Ads,
+   TikTok, Pinterest, Selar, and Shopify are roadmap: they appear as
+   "coming soon" on /integrations, never implied live here. */
 const integrations = [
   { name: "Meta", detail: "Conversions API" },
   { name: "Snapchat", detail: "Conversions API" },
@@ -7,8 +8,6 @@ const integrations = [
   { name: "Paystack", detail: "Payments" },
   { name: "Flutterwave", detail: "Payments" },
   { name: "Stripe", detail: "Payments" },
-  { name: "Shopify", detail: "Orders" },
-  { name: "Selar", detail: "Checkout" },
   { name: "Calendly", detail: "Bookings" },
 ] as const;
 

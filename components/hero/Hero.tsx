@@ -110,7 +110,7 @@ export function Hero() {
 
           <Enter delay={0.36}>
             <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-2 font-mono text-[11px] uppercase tracking-widest text-muted">
-              {["10-minute setup", "No developer required", "Human onboarding"].map((t) => (
+              {["10-minute setup", "No card required", "No developer needed"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <span className="h-1 w-1 rounded-full bg-accent" />
                   {t}

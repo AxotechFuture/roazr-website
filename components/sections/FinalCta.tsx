@@ -46,7 +46,7 @@ export function FinalCta() {
             </Link>
           </div>
           <p className="mt-6 font-mono text-[11px] uppercase tracking-widest text-muted">
-            10-minute setup · no developer required · a human whenever you want one
+            10-minute setup · no card required · founding price locked for life
           </p>
         </Reveal>
       </div>

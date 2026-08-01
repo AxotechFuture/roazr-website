@@ -5,6 +5,7 @@ import { LogoStrip } from "@/components/sections/LogoStrip";
 import { Problem } from "@/components/sections/Problem";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Features } from "@/components/sections/Features";
+import { CtaBand } from "@/components/sections/CtaBand";
 import { Metrics } from "@/components/sections/Metrics";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Faq } from "@/components/sections/Faq";
@@ -20,6 +21,7 @@ export default function Home() {
         <Problem />
         <HowItWorks />
         <Features />
+        <CtaBand />
         <Metrics />
         <Testimonials />
         <Faq />
