@@ -38,12 +38,11 @@ export const site = {
   whatsappNumber: "",
   /**
    * Canonical CTA labels. Signup is the primary path, demo the secondary.
-   * NOTE: label is "Get started", NOT "Start free" — free/no-card signup is
-   * not yet confirmed, and an unverified free claim on paid traffic is a
-   * trust liability. Upgrade to a "free" label only once verified end to end.
+   * The trial claim is verified against the app repo (lib/plans.mjs:
+   * TRIAL_DAYS = 14, full-app access, no card required) — safe to state.
    */
   cta: {
-    signup: "Get started",
+    signup: "Start 14-day free trial",
     demo: "Book a demo",
     signin: "Sign in",
   },

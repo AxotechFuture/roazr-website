@@ -40,7 +40,7 @@ export function Nav() {
           creates a containing block that would trap fixed positioning */}
       {open && (
         <div
-          className="fixed inset-0 z-40 bg-black/45 md:hidden"
+          className="fixed inset-0 z-40 bg-black/45 lg:hidden"
           aria-hidden="true"
           onClick={() => setOpen(false)}
         />
@@ -57,7 +57,9 @@ export function Nav() {
           <Wordmark />
         </Link>
 
-        <div className="hidden items-center gap-8 md:flex">
+        {/* desktop nav switches on at lg: five links + the full trial CTA
+            genuinely don't fit at 768–1023px — tablets get the hamburger */}
+        <div className="hidden items-center gap-8 lg:flex">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -69,7 +71,7 @@ export function Nav() {
           ))}
         </div>
 
-        <div className="hidden items-center gap-4 md:flex">
+        <div className="hidden items-center gap-4 lg:flex">
           <ThemeToggle />
           <a
             href={site.signinUrl}
@@ -84,7 +86,7 @@ export function Nav() {
         </div>
 
         {/* mobile toggle */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
         <ThemeToggle />
         <button
           type="button"
@@ -106,7 +108,7 @@ export function Nav() {
 
       {/* mobile menu */}
       {open && (
-        <div className="border-b border-line bg-background/95 backdrop-blur-xl md:hidden">
+        <div className="border-b border-line bg-background/95 backdrop-blur-xl lg:hidden">
           <div className="container-x flex flex-col gap-1 py-4">
             {links.map((l) => (
               <Link

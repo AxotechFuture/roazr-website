@@ -114,7 +114,10 @@ export function HowItWorks() {
           sub="No pixels to debug, no spreadsheets to reconcile, no developer on payroll."
         />
 
-        <RevealGroup className="mt-14 grid gap-5 md:grid-cols-3" stagger={0.12}>
+        {/* grid-cols-1 is load-bearing: with no explicit template the implicit
+            auto track sizes to the widest card's max-content and overflows
+            narrow viewports (345px card in a 312px rail at 360px). */}
+        <RevealGroup className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-3" stagger={0.12}>
           {steps.map((s, i) => {
             const Visual = visuals[i];
             return (
