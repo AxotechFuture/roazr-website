@@ -3,7 +3,6 @@
  * components.
  *
  * ── PLACEHOLDER CONTENT (replace before launch) ────────────────────
- *  - `metrics`: swap for real aggregate numbers you can honestly claim.
  *  - `testimonials`: ILLUSTRATIVE — the quotes are representative
  *    samples and the names are invented (founder's display decision,
  *    Aug 2026). They are not real customers. Swap in real, permissioned
@@ -11,13 +10,6 @@
  *    account and ARCON/FTC liability if challenged.
  * ───────────────────────────────────────────────────────────────────
  */
-
-export const metrics = [
-  { value: 2.1, suffix: "B+", prefix: "₦", label: "Revenue attributed", decimals: 1 },
-  { value: 4.3, suffix: "x", prefix: "", label: "Average ROAS after 60 days", decimals: 1 },
-  { value: 12, suffix: "M+", prefix: "", label: "Conversion events delivered", decimals: 0 },
-  { value: 10, suffix: " min", prefix: "", label: "Average setup time", decimals: 0 },
-] as const;
 
 export const testimonials = [
   {
@@ -34,7 +26,7 @@ export const testimonials = [
   },
   {
     quote:
-      "Setup took one call. Now every bank transfer and Paystack payment shows up against the exact ad that brought the customer in.",
+      "Setup took about ten minutes. Now every bank transfer and Paystack payment shows up against the exact ad that brought the customer in.",
     name: "Aisha Bello",
     role: "Managing director, beauty & wellness brand · Abuja",
   },
@@ -87,7 +79,7 @@ export const features = [
     key: "capi",
   },
   {
-    title: "Sales that close in chat still count",
+    title: "Sales that close on WhatsApp still count",
     body: "Each conversation is traced to the ad that started it, and the payment that ends it is credited to that exact campaign.",
     key: "whatsapp",
   },

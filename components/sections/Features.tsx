@@ -125,16 +125,24 @@ function CurrencyVisual() {
 function AgentVisual() {
   return (
     <div className="flex flex-col gap-1.5 text-[12px] leading-snug">
-      <div className="max-w-[92%] self-end rounded-xl rounded-br-sm bg-wash-strong px-3 py-2 text-muted-strong">
+      <div className="max-w-[70%] self-end rounded-xl rounded-br-sm bg-wash-strong px-3 py-2 text-muted-strong sm:max-w-[52%]">
         How did my ads do this week?
       </div>
-      <div className="max-w-[92%] self-start rounded-xl rounded-bl-sm border border-line bg-wash px-3 py-2">
+      <div className="max-w-[70%] self-start rounded-xl rounded-bl-sm border border-line bg-wash px-3 py-2 sm:max-w-[52%]">
         <p className="font-mono text-[11px] text-foreground">
           ROAS 4.8x · ₦2.4M attributed
         </p>
         <p className="mt-0.5 font-mono text-[10px] text-muted">
           Top ad: UGC Video · Lagos broad
         </p>
+      </div>
+      <div className="max-w-[70%] self-end rounded-xl rounded-br-sm bg-wash-strong px-3 py-2 text-muted-strong sm:max-w-[52%]">
+        Log a sale, 450k, Chidi
+      </div>
+      <div className="mt-0.5 flex max-w-[70%] items-center gap-2 self-start rounded-lg border border-accent/25 bg-accent/[0.08] px-2.5 py-1.5 sm:max-w-[52%]">
+        <span className="font-mono text-[10.5px] text-accent">
+          ₦450,000 logged · confirm to send
+        </span>
       </div>
     </div>
   );
@@ -182,8 +190,8 @@ const spanByKey: Record<string, string> = {
   whatsapp: "",
   payments: "",
   currency: "",
-  agent: "",
-  human: "md:col-span-2",
+  agent: "md:col-span-2",
+  human: "",
 };
 
 export function Features() {
