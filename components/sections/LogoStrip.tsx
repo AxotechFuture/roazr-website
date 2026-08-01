@@ -2,6 +2,7 @@
    named as roadmap on the pricing page rather than implied as live here. */
 const integrations = [
   { name: "Meta", detail: "Conversions API" },
+  { name: "Snapchat", detail: "Conversions API" },
   { name: "WhatsApp Business", detail: "Cloud API" },
   { name: "Paystack", detail: "Payments" },
   { name: "Flutterwave", detail: "Payments" },

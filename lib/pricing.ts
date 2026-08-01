@@ -62,7 +62,7 @@ export function annualSaving(currency: Currency): string {
  */
 export const included = [
   {
-    title: "Meta Conversions API",
+    title: "Meta & Snapchat ad sync",
     body: "Real purchase events sent server-side the moment a sale lands — no browser, no ad blockers, no signal loss.",
   },
   {
