@@ -164,16 +164,21 @@ export function PaymentsVisual() {
 /* Only the two destinations that ship today. Google Ads and TikTok
    are roadmap and deliberately absent — this mock must not imply a
    sync that does not exist yet. */
+/* These chips sit on a themed page rather than inside a dark-pinned
+   mock, so they pass the `ink` token — Snapchat's yellow is unreadable
+   on the light theme's white panels. */
 const DESTINATIONS: PlatformChipData[] = [
   {
     monogram: "M",
     color: "var(--meta)",
+    ink: "var(--meta-ink)",
     name: "Meta CAPI",
     status: "Purchase · ₦68,500",
   },
   {
     monogram: "S",
     color: "var(--snapchat)",
+    ink: "var(--snapchat-ink)",
     name: "Snapchat",
     status: "Conversion sent",
   },

@@ -243,10 +243,13 @@ function RevenueChart() {
 
 /* ------------------------------------------------------------------ */
 
+/* Campaign names stay on platforms that actually sync — Meta and
+   Snapchat. A Google or TikTok campaign in the mock would imply a sync
+   that is still roadmap. */
 const CAMPAIGNS = [
   { name: "UGC Video — Lagos broad", spend: "₦1.24M", roas: "5.1x", pct: 86 },
-  { name: "Search — buy iphone 14", spend: "₦680K", roas: "3.8x", pct: 62 },
-  { name: "Spark Ads — Creator mix", spend: "₦410K", roas: "2.9x", pct: 44 },
+  { name: "Advantage+ — Retargeting", spend: "₦680K", roas: "3.8x", pct: 62 },
+  { name: "Snap — Creator mix", spend: "₦410K", roas: "2.9x", pct: 44 },
 ] as const;
 
 function CampaignRows() {
@@ -381,14 +384,18 @@ export function Dashboard({ compact = false }: { compact?: boolean }) {
           )}
         </div>
 
-        {/* live feed column */}
-        <div className="hidden w-[218px] flex-col gap-2 border-l border-line p-3 lg:flex">
-          <p className="flex items-center justify-between font-mono text-[9.5px] uppercase tracking-widest text-muted">
-            Live events
-            <span className="text-accent">●</span>
-          </p>
-          <LiveFeed />
-        </div>
+        {/* Live feed column — desktop hero only. In compact mode the
+            window is embedded at roughly half the width, and the feed
+            squeezes the stat row until labels wrap. */}
+        {!compact && (
+          <div className="hidden w-[218px] flex-col gap-2 border-l border-line p-3 lg:flex">
+            <p className="flex items-center justify-between font-mono text-[9.5px] uppercase tracking-widest text-muted">
+              Live events
+              <span className="text-accent">●</span>
+            </p>
+            <LiveFeed />
+          </div>
+        )}
       </div>
     </div>
   );
@@ -469,14 +476,21 @@ export function WhatsAppCard() {
    sync are roadmap and deliberately absent — the mock must not imply a sync
    that does not exist yet. */
 const PLATFORMS = [
-  { key: "meta", monogram: "M", color: "var(--meta)", name: "Meta CAPI", status: "Purchase · ₦68,500" },
-  { key: "snapchat", monogram: "S", color: "var(--snapchat)", name: "Snapchat", status: "Conversion sent" },
-  { key: "paystack", monogram: "P", color: "var(--paystack)", name: "Paystack", status: "Payment matched" },
+  { key: "meta", monogram: "M", color: "var(--meta)", ink: "var(--meta-ink)", name: "Meta CAPI", status: "Purchase · ₦68,500" },
+  { key: "snapchat", monogram: "S", color: "var(--snapchat)", ink: "var(--snapchat-ink)", name: "Snapchat", status: "Conversion sent" },
+  { key: "paystack", monogram: "P", color: "var(--paystack)", ink: "var(--paystack-ink)", name: "Paystack", status: "Payment matched" },
 ] as const;
 
 export type PlatformChipData = {
   monogram: string;
+  /** Brand hex (or token) used for the tile tint and border. */
   color: string;
+  /**
+   * Letter color. Defaults to `color`, which is right inside a
+   * dark-pinned mock; pass the matching `--*-ink` token when the chip
+   * sits on a themed page, so bright hexes stay legible in light mode.
+   */
+  ink?: string;
   name: string;
   status: string;
 };
@@ -487,7 +501,7 @@ export function PlatformChip({ p }: { p: PlatformChipData }) {
       <span
         className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-[13px] font-bold"
         style={{
-          color: p.color,
+          color: p.ink ?? p.color,
           backgroundColor: `color-mix(in srgb, ${p.color} 12%, transparent)`,
           border: `1px solid color-mix(in srgb, ${p.color} 20%, transparent)`,
         }}

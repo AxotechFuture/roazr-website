@@ -72,7 +72,7 @@ export default async function OgImage() {
           }}
         >
           <span>roazr.com</span>
-          <span style={{ color: "#17E88F" }}>Get started →</span>
+          <span style={{ color: "#17E88F" }}>{site.cta.signup} →</span>
         </div>
       </div>
     ),

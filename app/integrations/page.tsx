@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { CtaBand } from "@/components/sections/CtaBand";
+import { FactStrip } from "@/components/sections/FactStrip";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import { IntegrationCard } from "@/components/integrations/IntegrationCard";
@@ -43,7 +43,7 @@ function CategorySection({ cat }: { cat: IntegrationCategory }) {
       </Reveal>
 
       <RevealGroup
-        className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+        className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
         stagger={0.06}
       >
         {cat.items.map((item) => (
@@ -99,19 +99,36 @@ export default function IntegrationsPage() {
         </div>
 
         {/* ---------- hero ---------- */}
-        <div className="container-x relative pt-32 sm:pt-36">
-          <Reveal className="mx-auto flex max-w-2xl flex-col items-center text-center">
+        <div className="container-x relative pt-32 sm:pt-40">
+          <Reveal className="mx-auto flex max-w-3xl flex-col items-center text-center">
             <p className="kicker justify-center">Integrations</p>
-            <h1 className="mt-4 text-balance text-4xl font-semibold leading-[1.08] tracking-[-0.03em] sm:text-5xl">
+            <h1 className="mt-5 text-balance text-4xl font-semibold leading-[1.06] tracking-[-0.035em] sm:text-6xl">
               Plugged into{" "}
               <span className="glow-text bg-gradient-to-r from-accent-strong via-accent to-[var(--grad-tail)] bg-clip-text text-transparent">
                 how you actually sell.
               </span>
             </h1>
-            <p className="mt-5 max-w-xl text-pretty text-base leading-relaxed text-muted sm:text-lg">
+            <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted sm:text-lg">
               Connect the stack once. Every sale — card, bank transfer, or
               WhatsApp chat — reports back to the ad that caused it.
             </p>
+
+            {/* jump links: the reference's category sidebar, folded into
+                the hero because our sections are grouped, not filtered */}
+            <nav
+              aria-label="Integration categories"
+              className="mt-8 flex flex-wrap items-center justify-center gap-2"
+            >
+              {categories.map((cat) => (
+                <a
+                  key={cat.id}
+                  href={`#${cat.id}`}
+                  className="inline-flex min-h-11 items-center rounded-full border border-line bg-wash px-4 text-sm text-muted-strong transition-colors hover:border-line-strong hover:text-foreground"
+                >
+                  {cat.title}
+                </a>
+              ))}
+            </nav>
           </Reveal>
         </div>
 
@@ -123,8 +140,8 @@ export default function IntegrationsPage() {
           <MissingStackBand />
         </div>
 
-        <CtaBand />
         <FinalCta />
+        <FactStrip />
       </main>
       <Footer />
     </>

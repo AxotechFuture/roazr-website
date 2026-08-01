@@ -40,6 +40,13 @@
   --tiktok: #fe2c55;
   --pinterest: #e60023;
   --calendly: #006bff;
+  /* Ink used for a brand letter on a tinted tile. Equal to the brand hex
+     on dark; darkened in light mode, where hexes like Snapchat yellow
+     disappear against white. Re-declared in .theme-dark-pin so mock UI
+     keeps the raw brand color even while the page is light. */
+  --meta-ink: var(--meta);
+  --snapchat-ink: var(--snapchat);
+  --paystack-ink: var(--paystack);
 }
 
 html[data-theme="light"] {
@@ -63,6 +70,9 @@ html[data-theme="light"] {
   --whatsapp: #1aa14f;
   --aurora-2: rgba(125, 211, 192, 0.35);
   --grad-tail: #0a9b8f;
+  --meta-ink: #0b4fc4;
+  --snapchat-ink: #7a7500;
+  --paystack-ink: #027fa3;
 }
 
 @theme inline {
@@ -132,6 +142,9 @@ body {
   --whatsapp: #25d366;
   --aurora-2: rgba(11, 106, 143, 0.2);
   --grad-tail: #0fd4c4;
+  --meta-ink: var(--meta);
+  --snapchat-ink: var(--snapchat);
+  --paystack-ink: var(--paystack);
   color-scheme: dark;
 }
 
@@ -160,6 +173,13 @@ body {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
+}
+
+/* 12px uppercase accent text on a near-white page sits just under AA at
+   the standard accent; the dim variant clears 4.5:1. Buttons and large
+   accent type keep the brighter token. */
+html[data-theme="light"] .kicker {
+  color: var(--accent-dim);
 }
 
 .kicker::before {

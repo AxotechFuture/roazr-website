@@ -146,9 +146,11 @@ export const categories: IntegrationCategory[] = [
     ],
   },
   {
-    id: "messaging",
-    title: "Messaging",
-    sub: "Sales that close in a chat still credit the ad that started the conversation.",
+    /* Chat and bookings share a section: as one-card categories they
+       each left two thirds of a three-column row empty. */
+    id: "conversations",
+    title: "Conversations & bookings",
+    sub: "Sales that close in a chat — and calls booked off an ad — still credit what started them.",
     items: [
       {
         name: "WhatsApp Business Cloud API",
@@ -159,13 +161,6 @@ export const categories: IntegrationCategory[] = [
           "Conversations become attributable leads — a sale closed in chat still credits the ad that opened it.",
         path: "chat → lead → journey",
       },
-    ],
-  },
-  {
-    id: "scheduling",
-    title: "Scheduling",
-    sub: "Booked calls land on the lead's timeline, tied to the ad that got them there.",
-    items: [
       {
         name: "Calendly",
         monogram: "C",

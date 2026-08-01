@@ -11,7 +11,7 @@ import { site } from "@/lib/site";
  */
 export function CtaBand({
   title = "Live in about 10 minutes.",
-  sub = "Create an account, paste two scripts, and watch the first events arrive before your tea cools.",
+  sub = "Create an account, paste your page scripts, and watch the first events arrive before your tea cools.",
 }: {
   title?: string;
   sub?: string;

@@ -40,7 +40,16 @@ export function StepSection({
             </p>
           )}
         </div>
-        <div className={flip ? "min-w-0 lg:order-1" : "min-w-0"}>{children}</div>
+        {/* The visuals are illustrations of the copy beside them — mock
+            numbers, some of them self-updating. Nothing inside is
+            focusable, so hiding them keeps a screen reader on the prose
+            instead of reading out a ticking fake stat. */}
+        <div
+          className={flip ? "min-w-0 lg:order-1" : "min-w-0"}
+          aria-hidden="true"
+        >
+          {children}
+        </div>
       </div>
     </Reveal>
   );

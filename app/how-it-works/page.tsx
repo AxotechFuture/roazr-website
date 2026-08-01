@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { FactStrip } from "@/components/sections/FactStrip";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { Reveal } from "@/components/ui/Reveal";
 import { JourneyStrip } from "@/components/how-it-works/JourneyStrip";
@@ -140,6 +141,7 @@ export default function HowItWorksPage() {
           <StepSection
             n="05"
             title="Read the results in one place"
+            proof="Full journey timeline · any currency in, one out"
             body={
               <>
                 True ROAS per campaign sits next to what you spent — including
@@ -153,14 +155,15 @@ export default function HowItWorksPage() {
           </StepSection>
         </section>
 
-        <WhyServerSide />
-
         <CtaBand
           title="Five steps. About ten minutes."
           sub="Create an account, build your first funnel, and paste the scripts — the first events arrive while you’re still on the page."
         />
 
+        <WhyServerSide />
+
         <FinalCta />
+        <FactStrip />
       </main>
       <Footer />
     </>

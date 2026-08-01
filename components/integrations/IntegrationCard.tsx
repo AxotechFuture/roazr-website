@@ -54,10 +54,19 @@ export function IntegrationCard({ item }: { item: Integration }) {
   const body = (
     <>
       <div className="flex items-start justify-between gap-3">
-        <MonogramTile monogram={item.monogram} color={item.color} />
+        {/* Only the tile dims on a planned card. Dimming the whole card
+            drags the body copy under 4.5:1 — the badge plus the inert,
+            hover-free card already carry the "not yet" signal. */}
+        <span className={live ? undefined : "opacity-50 saturate-50"}>
+          <MonogramTile monogram={item.monogram} color={item.color} />
+        </span>
         <StatusBadge live={live} />
       </div>
-      <h3 className="mt-4 text-[15px] font-medium text-foreground">
+      <h3
+        className={`mt-4 text-[15px] font-medium ${
+          live ? "text-foreground" : "text-muted-strong"
+        }`}
+      >
         {item.name}
       </h3>
       <p className="mt-1.5 flex-1 text-sm leading-relaxed text-muted">
@@ -72,10 +81,10 @@ export function IntegrationCard({ item }: { item: Integration }) {
   /* Live cards get the hover lift + cursor spotlight; coming-soon cards
      sit dimmed and inert so they can never be mistaken for shipped. */
   return live ? (
-    <SpotlightCard className="panel-hover flex h-full flex-col p-5">
+    <SpotlightCard className="panel-hover flex h-full flex-col p-6">
       {body}
     </SpotlightCard>
   ) : (
-    <div className="panel flex h-full flex-col p-5 opacity-60">{body}</div>
+    <div className="panel flex h-full flex-col p-6">{body}</div>
   );
 }
