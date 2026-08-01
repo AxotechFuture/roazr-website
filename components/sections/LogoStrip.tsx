@@ -1,10 +1,14 @@
+/* Shipped integrations only. Google Ads and TikTok sync are roadmap, and are
+   named as roadmap on the pricing page rather than implied as live here. */
 const integrations = [
   { name: "Meta", detail: "Conversions API" },
-  { name: "Google Ads", detail: "Offline conversions" },
-  { name: "TikTok", detail: "Events API" },
   { name: "WhatsApp Business", detail: "Cloud API" },
   { name: "Paystack", detail: "Payments" },
-  { name: "Instagram", detail: "Lead ads" },
+  { name: "Flutterwave", detail: "Payments" },
+  { name: "Stripe", detail: "Payments" },
+  { name: "Shopify", detail: "Orders" },
+  { name: "Selar", detail: "Checkout" },
+  { name: "Calendly", detail: "Bookings" },
 ] as const;
 
 function Row() {
@@ -32,7 +36,7 @@ export function LogoStrip() {
     <section className="border-y border-line py-10">
       <div className="container-x">
         <p className="mb-7 text-center font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-          Native integrations with the platforms that run your growth
+          Native integrations with the tools that run your growth
         </p>
       </div>
       <div

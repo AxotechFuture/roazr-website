@@ -16,7 +16,7 @@ const agenda = [
   },
   {
     title: "Integration walkthrough",
-    body: "Exactly how Meta, Google, TikTok, and your payment stack connect. Spoiler: about ten minutes.",
+    body: "Exactly how Meta, WhatsApp Business, and your payment stack connect. Spoiler: about ten minutes.",
   },
   {
     title: "Exact pricing",

@@ -16,7 +16,7 @@ export const site = {
   company: "Etin Media, Inc.",
   tagline: "Every WhatsApp sale, fed back to your ads.",
   description:
-    "Roazr connects WhatsApp, website, and payment data to Meta, Google, and TikTok — so ad algorithms optimize for real buyers, not clicks.",
+    "Roazr connects WhatsApp, website, and payment data to Meta's Conversions API — so ad algorithms optimize for real buyers, not clicks.",
   emails: {
     hello: "hello@roazr.com",
     privacy: "privacy@roazr.com",

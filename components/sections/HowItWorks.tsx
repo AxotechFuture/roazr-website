@@ -8,8 +8,8 @@ import { SpotlightCard } from "@/components/ui/SpotlightCard";
 function ConnectVisual() {
   const items = [
     { name: "Meta Ads", on: true },
-    { name: "Google Ads", on: true },
     { name: "WhatsApp Business", on: true },
+    { name: "Shopify", on: true },
     { name: "Paystack", on: false },
   ];
   return (
@@ -72,9 +72,9 @@ function TrackVisual() {
 
 function FeedVisual() {
   const rows = [
-    { p: "Meta CAPI", e: "Purchase · ₦68,500" },
-    { p: "Google Ads", e: "Offline conversion" },
-    { p: "TikTok Events", e: "CompletePayment" },
+    { p: "Purchase", e: "→ Meta CAPI · ₦68,500" },
+    { p: "Purchase", e: "→ Meta CAPI · ₦124,000" },
+    { p: "InitiateCheckout", e: "→ Meta CAPI" },
   ];
   return (
     <div className="flex flex-col gap-2">

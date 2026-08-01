@@ -77,13 +77,13 @@ function EventsStat() {
 
 const FEED = [
   { amount: "₦68,500", label: "WhatsApp sale matched", target: "Meta CAPI", dot: "#25d366" },
-  { amount: "₦124,000", label: "Paystack payment", target: "Google Ads", dot: "#17e88f" },
+  { amount: "₦124,000", label: "Paystack payment", target: "Meta CAPI", dot: "#17e88f" },
   { amount: "₦41,200", label: "Website checkout", target: "Meta CAPI", dot: "#17e88f" },
-  { amount: "GH₵2,400", label: "WhatsApp sale matched", target: "TikTok Events", dot: "#25d366" },
+  { amount: "GH₵2,400", label: "WhatsApp sale matched", target: "Meta CAPI", dot: "#25d366" },
   { amount: "₦86,000", label: "Bank transfer matched", target: "Meta CAPI", dot: "#17e88f" },
   { amount: "₦230,500", label: "WhatsApp sale matched", target: "Meta CAPI", dot: "#25d366" },
-  { amount: "KSh 18,400", label: "Paystack payment", target: "Google Ads", dot: "#17e88f" },
-  { amount: "₦57,900", label: "WhatsApp sale matched", target: "TikTok Events", dot: "#25d366" },
+  { amount: "KSh 18,400", label: "Shopify order", target: "Meta CAPI", dot: "#17e88f" },
+  { amount: "₦57,900", label: "WhatsApp sale matched", target: "Meta CAPI", dot: "#25d366" },
 ] as const;
 
 const AGE_LABELS = ["now", "4s", "11s", "19s", "26s"];
@@ -464,15 +464,22 @@ function WhatsAppCard() {
   );
 }
 
+/* Only Meta receives conversions today. Google and TikTok stay in the frame
+   because they are the roadmap, but they render dimmed and labelled "soon" —
+   the mock must not imply a sync that does not exist yet. */
 const PLATFORMS = [
-  { key: "meta", monogram: "M", color: "var(--meta)", name: "Meta CAPI", status: "Purchase · ₦68,500" },
-  { key: "google", monogram: "G", color: "var(--google)", name: "Google Ads", status: "Conversion imported" },
-  { key: "tiktok", monogram: "T", color: "var(--tiktok)", name: "TikTok Events", status: "Event received" },
+  { key: "meta", monogram: "M", color: "var(--meta)", name: "Meta CAPI", status: "Purchase · ₦68,500", live: true },
+  { key: "google", monogram: "G", color: "var(--google)", name: "Google Ads", status: "On the roadmap", live: false },
+  { key: "tiktok", monogram: "T", color: "var(--tiktok)", name: "TikTok Events", status: "On the roadmap", live: false },
 ] as const;
 
 function PlatformChip({ p }: { p: (typeof PLATFORMS)[number] }) {
   return (
-    <div className="flex items-center gap-2.5 rounded-xl border border-line-strong bg-raised/95 px-3 py-2.5 shadow-[0_24px_64px_-24px_rgba(0,0,0,0.9)] backdrop-blur-xl">
+    <div
+      className={`flex items-center gap-2.5 rounded-xl border border-line-strong bg-raised/95 px-3 py-2.5 shadow-[0_24px_64px_-24px_rgba(0,0,0,0.9)] backdrop-blur-xl ${
+        p.live ? "" : "opacity-55"
+      }`}
+    >
       <span
         className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-[13px] font-bold"
         style={{
@@ -487,7 +494,9 @@ function PlatformChip({ p }: { p: (typeof PLATFORMS)[number] }) {
         <p className="truncate text-[12px] font-medium text-foreground">{p.name}</p>
         <p className="truncate font-mono text-[10px] text-muted">{p.status}</p>
       </div>
-      <span className="ml-auto font-mono text-[10px] text-accent">✓</span>
+      <span className="ml-auto shrink-0 font-mono text-[10px] text-accent">
+        {p.live ? "✓" : <span className="text-muted">soon</span>}
+      </span>
     </div>
   );
 }

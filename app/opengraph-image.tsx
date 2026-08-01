@@ -76,8 +76,7 @@ export default function OgImage() {
               letterSpacing: -0.5,
             }}
           >
-            Revenue attribution for Meta, Google &amp; TikTok — built for
-            WhatsApp commerce.
+            Revenue attribution for Meta — built for WhatsApp commerce.
           </div>
         </div>
 

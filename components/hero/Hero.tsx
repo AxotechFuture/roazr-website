@@ -70,10 +70,10 @@ export function Hero() {
 
           <Enter delay={0.16}>
             <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted sm:text-lg">
-              Roazr connects WhatsApp, website, and payment data to Meta,
-              Google, and TikTok — so their algorithms optimize for real
-              buyers, not clicks. Built for businesses that close where their
-              customers actually are.
+              Roazr connects WhatsApp, website, and payment data to Meta&rsquo;s
+              Conversions API — so the algorithm optimizes for real buyers, not
+              clicks. Built for businesses that close where their customers
+              actually are.
             </p>
           </Enter>
 
