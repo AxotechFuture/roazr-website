@@ -78,7 +78,7 @@ function WhatsappVisual() {
           />
         </svg>
         <span className="font-mono text-[10px] text-accent">
-          linked → UGC Video — Lagos broad
+          linked → UGC Video · Lagos broad
         </span>
       </div>
     </div>
@@ -122,6 +122,24 @@ function CurrencyVisual() {
   );
 }
 
+function AgentVisual() {
+  return (
+    <div className="flex flex-col gap-1.5 text-[12px] leading-snug">
+      <div className="max-w-[92%] self-end rounded-xl rounded-br-sm bg-wash-strong px-3 py-2 text-muted-strong">
+        How did my ads do this week?
+      </div>
+      <div className="max-w-[92%] self-start rounded-xl rounded-bl-sm border border-line bg-wash px-3 py-2">
+        <p className="font-mono text-[11px] text-foreground">
+          ROAS 4.8x · ₦2.4M attributed
+        </p>
+        <p className="mt-0.5 font-mono text-[10px] text-muted">
+          Top ad: UGC Video · Lagos broad
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function HumanVisual() {
   return (
     <div className="flex flex-wrap items-center gap-4">
@@ -154,6 +172,7 @@ const visualByKey: Record<string, () => React.ReactNode> = {
   whatsapp: WhatsappVisual,
   payments: PaymentsVisual,
   currency: CurrencyVisual,
+  agent: AgentVisual,
   human: HumanVisual,
 };
 
@@ -163,7 +182,8 @@ const spanByKey: Record<string, string> = {
   whatsapp: "",
   payments: "",
   currency: "",
-  human: "md:col-span-3",
+  agent: "",
+  human: "md:col-span-2",
 };
 
 export function Features() {
@@ -173,7 +193,7 @@ export function Features() {
         <SectionHead
           kicker="Product"
           title="Every sale counted. Every ad accountable."
-          sub="Everything Roazr does exists to answer one question precisely: which ad made you money — and to make sure the algorithm knows it too."
+          sub="Everything Roazr does exists to answer one question precisely: which ad made you money, and to make sure the algorithm knows it too."
         />
 
         <RevealGroup className="mt-14 grid gap-5 md:grid-cols-3" stagger={0.08}>

@@ -63,19 +63,19 @@ export function annualSaving(currency: Currency): string {
 export const included = [
   {
     title: "Meta & Snapchat ad sync",
-    body: "Real purchase events sent server-side the moment a sale lands — no browser, no ad blockers, no signal loss.",
+    body: "Real purchase events sent server-side the moment a sale lands: no browser, no ad blockers, no signal loss.",
   },
   {
     title: "WhatsApp sales attribution",
     body: "Every chat traced to the ad that started it, and every closed sale credited to the right campaign.",
   },
   {
-    title: "Multi-touch attribution",
-    body: "First click, last click, and the full page journey for every lead — across a 730-day window fixed from the click.",
+    title: "Full-journey attribution",
+    body: "Every touchpoint recorded for every lead, from first click to payment, across a 730-day window fixed from the click.",
   },
   {
     title: "ROAS down to the ad",
-    body: "True return by source, campaign, ad set, and individual ad — including the revenue your pixel never saw.",
+    body: "True return by source, campaign, ad set, and individual ad, including the revenue your pixel never saw.",
   },
   {
     title: "Lead CRM & journey timeline",
@@ -83,7 +83,7 @@ export const included = [
   },
   {
     title: "Payments reconciled automatically",
-    body: "Paystack, Flutterwave, Stripe, Selar, and Shopify webhooks log the sale and fire the conversion instantly.",
+    body: "Paystack, Flutterwave, and Stripe webhooks log the sale and fire the conversion instantly. Selar and Shopify are next.",
   },
   {
     title: "Manual sale logging",
@@ -91,11 +91,15 @@ export const included = [
   },
   {
     title: "Unlimited funnels",
-    body: "Five premade funnel templates with auto-generated tracking scripts, and no cap on how many you run.",
+    body: "Build any funnel from step blocks (landing, WhatsApp, checkout, call booking) with auto-generated tracking scripts, and no cap on how many you run.",
+  },
+  {
+    title: "AI agent on WhatsApp",
+    body: "Ask your numbers in chat, log a sale by text, and work your pipeline. Every change waits for your one-tap confirm.",
   },
   {
     title: "Multi-currency reporting",
-    body: "₦, GH₵, KSh, R, $ — spend and revenue in the currencies your business actually runs on.",
+    body: "₦, GH₵, KSh, R, $: spend and revenue in the currencies your business actually runs on.",
   },
   {
     title: "Priority WhatsApp support",
@@ -104,4 +108,4 @@ export const included = [
 ] as const;
 
 /** Named honestly as roadmap, never mixed into the shipped list above. */
-export const roadmap = ["Google Ads sync", "TikTok Events sync"] as const;
+export const roadmap = ["Google Ads sync", "TikTok Events sync", "Pinterest sync"] as const;
