@@ -29,12 +29,13 @@
   --paystack: #00c3f7;
   /* Integration monogram-tile colors (used on /integrations and in mock
      UI). Stripe/Shopify/Google/TikTok/Pinterest/Calendly are published
-     brand hexes; Flutterwave is its logo amber; Selar is a lightened take
-     on the deep plum sampled from selar.com's buttons (#5a0b4d raw is
-     illegible on the dark theme). */
+     brand hexes; Flutterwave is its logo amber; Selar's true brand plum is
+     #5a0b4d (their app config) — illegible on the dark theme, so the
+     token is a lightened plum and the light theme's --tile-ink mix
+     lands back near the real hex. */
   --flutterwave: #f5a623;
   --stripe: #635bff;
-  --selar: #a8348f;
+  --selar: #b44a9e;
   --shopify: #95bf47;
   --googleads: #4285f4;
   --tiktok: #fe2c55;

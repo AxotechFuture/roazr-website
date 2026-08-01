@@ -17,8 +17,8 @@ import type { BrandKey } from "@/components/brand/BrandIcon";
 
 export type Integration = {
   name: string;
-  /** Real brand glyph; "selar" renders from public/brand/selar.png. */
-  icon?: BrandKey | "selar";
+  /** Real brand glyph from components/brand/BrandIcon. */
+  icon?: BrandKey;
   /** Fallback tile character for non-brand entries (manual logging). */
   monogram?: string;
   /** CSS custom property from globals.css, e.g. "var(--meta)". */

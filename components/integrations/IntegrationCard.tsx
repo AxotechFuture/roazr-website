@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { BrandIcon } from "@/components/brand/BrandIcon";
 import type { Integration } from "@/components/integrations/data";
@@ -9,17 +8,11 @@ import type { Integration } from "@/components/integrations/data";
  * inherits --tile-ink, so the light theme can darken bright brand
  * hexes (Snapchat yellow, Shopify green…) that vanish on white; the
  * raw hex is used as-is on the dark theme, matching the hero chips.
- * Flutterwave's butterfly keeps its own multicolor fills, and Selar —
- * which has no vector mark — renders its real PNG tile full-bleed.
+ * Flutterwave's butterfly keeps its own multicolor fills. Selar's
+ * glyph is its official script wordmark (wide viewBox) — it
+ * letterboxes inside the square tile, so it gets a touch more width.
  */
 function BrandTile({ item }: { item: Integration }) {
-  if (item.icon === "selar") {
-    return (
-      <span aria-hidden="true" className="h-10 w-10 shrink-0 overflow-hidden rounded-lg">
-        <Image src="/brand/selar.png" alt="" width={40} height={40} />
-      </span>
-    );
-  }
   return (
     <span
       aria-hidden="true"
@@ -32,7 +25,11 @@ function BrandTile({ item }: { item: Integration }) {
         } as React.CSSProperties
       }
     >
-      {item.icon ? <BrandIcon name={item.icon} size={20} /> : item.monogram}
+      {item.icon ? (
+        <BrandIcon name={item.icon} size={item.icon === "selar" ? 27 : 20} />
+      ) : (
+        item.monogram
+      )}
     </span>
   );
 }
