@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { steps } from "@/lib/content";
+import { BrandIcon, type BrandKey } from "@/components/brand/BrandIcon";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import { SectionHead } from "@/components/ui/SectionHead";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
@@ -7,11 +8,11 @@ import { SpotlightCard } from "@/components/ui/SpotlightCard";
 /* mini-visuals for each step */
 
 function ConnectVisual() {
-  const items = [
-    { name: "Meta Ads", on: true },
-    { name: "Snapchat", on: true },
-    { name: "WhatsApp Business", on: true },
-    { name: "Paystack", on: false },
+  const items: { name: string; icon: BrandKey; ink: string; on: boolean }[] = [
+    { name: "Meta Ads", icon: "meta", ink: "var(--meta-ink)", on: true },
+    { name: "Snapchat", icon: "snapchat", ink: "var(--snapchat-ink)", on: true },
+    { name: "WhatsApp Business", icon: "whatsapp", ink: "var(--whatsapp)", on: true },
+    { name: "Paystack", icon: "paystack", ink: "var(--paystack-ink)", on: false },
   ];
   return (
     <div className="flex flex-col gap-2">
@@ -20,7 +21,12 @@ function ConnectVisual() {
           key={i.name}
           className="flex items-center justify-between rounded-lg border border-line bg-wash px-3 py-2"
         >
-          <span className="text-[12px] text-muted-strong">{i.name}</span>
+          <span className="flex items-center gap-2 text-[12px] text-muted-strong">
+            <span style={{ color: i.ink }}>
+              <BrandIcon name={i.icon} size={13} />
+            </span>
+            {i.name}
+          </span>
           {i.on ? (
             <span className="flex items-center gap-1.5 font-mono text-[10px] text-accent">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />

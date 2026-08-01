@@ -13,9 +13,14 @@
 
 export type IntegrationStatus = "live" | "soon";
 
+import type { BrandKey } from "@/components/brand/BrandIcon";
+
 export type Integration = {
   name: string;
-  monogram: string;
+  /** Real brand glyph; "selar" renders from public/brand/selar.png. */
+  icon?: BrandKey | "selar";
+  /** Fallback tile character for non-brand entries (manual logging). */
+  monogram?: string;
   /** CSS custom property from globals.css, e.g. "var(--meta)". */
   color: string;
   status: IntegrationStatus;
@@ -39,7 +44,7 @@ export const categories: IntegrationCategory[] = [
     items: [
       {
         name: "Meta Conversions API",
-        monogram: "M",
+        icon: "meta",
         color: "var(--meta)",
         status: "live",
         blurb:
@@ -48,7 +53,7 @@ export const categories: IntegrationCategory[] = [
       },
       {
         name: "Snapchat",
-        monogram: "S",
+        icon: "snapchat",
         color: "var(--snapchat)",
         status: "live",
         blurb:
@@ -57,7 +62,7 @@ export const categories: IntegrationCategory[] = [
       },
       {
         name: "Google Ads",
-        monogram: "G",
+        icon: "googleads",
         color: "var(--googleads)",
         status: "soon",
         blurb:
@@ -66,7 +71,7 @@ export const categories: IntegrationCategory[] = [
       },
       {
         name: "TikTok",
-        monogram: "T",
+        icon: "tiktok",
         color: "var(--tiktok)",
         status: "soon",
         blurb:
@@ -75,7 +80,7 @@ export const categories: IntegrationCategory[] = [
       },
       {
         name: "Pinterest",
-        monogram: "P",
+        icon: "pinterest",
         color: "var(--pinterest)",
         status: "soon",
         blurb:
@@ -91,7 +96,7 @@ export const categories: IntegrationCategory[] = [
     items: [
       {
         name: "Paystack",
-        monogram: "P",
+        icon: "paystack",
         color: "var(--paystack)",
         status: "live",
         blurb:
@@ -100,7 +105,7 @@ export const categories: IntegrationCategory[] = [
       },
       {
         name: "Flutterwave",
-        monogram: "F",
+        icon: "flutterwave",
         color: "var(--flutterwave)",
         status: "live",
         blurb:
@@ -109,7 +114,7 @@ export const categories: IntegrationCategory[] = [
       },
       {
         name: "Stripe",
-        monogram: "S",
+        icon: "stripe",
         color: "var(--stripe)",
         status: "live",
         blurb:
@@ -127,7 +132,7 @@ export const categories: IntegrationCategory[] = [
       },
       {
         name: "Selar",
-        monogram: "S",
+        icon: "selar",
         color: "var(--selar)",
         status: "soon",
         blurb:
@@ -136,7 +141,7 @@ export const categories: IntegrationCategory[] = [
       },
       {
         name: "Shopify",
-        monogram: "S",
+        icon: "shopify",
         color: "var(--shopify)",
         status: "soon",
         blurb:
@@ -154,7 +159,7 @@ export const categories: IntegrationCategory[] = [
     items: [
       {
         name: "WhatsApp Business Cloud API",
-        monogram: "W",
+        icon: "whatsapp",
         color: "var(--whatsapp)",
         status: "live",
         blurb:
@@ -163,7 +168,7 @@ export const categories: IntegrationCategory[] = [
       },
       {
         name: "Calendly",
-        monogram: "C",
+        icon: "calendly",
         color: "var(--calendly)",
         status: "live",
         blurb:

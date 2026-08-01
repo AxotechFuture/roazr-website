@@ -1,15 +1,24 @@
+import { BrandIcon, type BrandKey } from "@/components/brand/BrandIcon";
+
 /* Shipped integrations only — verified against the app repo. Google Ads,
    TikTok, Pinterest, Selar, and Shopify are roadmap: they appear as
-   "coming soon" on /integrations, never implied live here. */
-const integrations = [
-  { name: "Meta", detail: "Conversions API" },
-  { name: "Snapchat", detail: "Conversions API" },
-  { name: "WhatsApp Business", detail: "Cloud API" },
-  { name: "Paystack", detail: "Payments" },
-  { name: "Flutterwave", detail: "Payments" },
-  { name: "Stripe", detail: "Payments" },
-  { name: "Calendly", detail: "Bookings" },
-] as const;
+   "coming soon" on /integrations, never implied live here. Ink tokens
+   keep bright marks (Snapchat) legible in light mode; Flutterwave's
+   glyph carries its own colors. */
+const integrations: {
+  name: string;
+  detail: string;
+  icon: BrandKey;
+  ink: string;
+}[] = [
+  { name: "Meta", detail: "Conversions API", icon: "meta", ink: "var(--meta-ink)" },
+  { name: "Snapchat", detail: "Conversions API", icon: "snapchat", ink: "var(--snapchat-ink)" },
+  { name: "WhatsApp Business", detail: "Cloud API", icon: "whatsapp", ink: "var(--whatsapp)" },
+  { name: "Paystack", detail: "Payments", icon: "paystack", ink: "var(--paystack-ink)" },
+  { name: "Flutterwave", detail: "Payments", icon: "flutterwave", ink: "var(--flutterwave)" },
+  { name: "Stripe", detail: "Payments", icon: "stripe", ink: "var(--stripe)" },
+  { name: "Calendly", detail: "Bookings", icon: "calendly", ink: "var(--calendly)" },
+];
 
 function Row() {
   return (
@@ -17,8 +26,11 @@ function Row() {
       {integrations.map((i) => (
         <span
           key={i.name}
-          className="mx-8 inline-flex items-baseline gap-2.5 whitespace-nowrap"
+          className="mx-8 inline-flex items-center gap-2.5 whitespace-nowrap"
         >
+          <span style={{ color: i.ink }}>
+            <BrandIcon name={i.icon} size={17} />
+          </span>
           <span className="text-lg font-semibold tracking-tight text-muted-strong/85">
             {i.name}
           </span>

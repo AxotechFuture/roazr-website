@@ -1,4 +1,5 @@
 import { features } from "@/lib/content";
+import { BrandIcon } from "@/components/brand/BrandIcon";
 import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import { SectionHead } from "@/components/ui/SectionHead";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
@@ -138,14 +139,9 @@ function HumanVisual() {
         ))}
       </div>
       <span className="inline-flex items-center gap-2 rounded-lg border border-whatsapp/25 bg-whatsapp/[0.07] px-3 py-1.5 font-mono text-[11px] text-accent">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path
-            d="M12 3a9 9 0 00-7.8 13.5L3 21l4.7-1.2A9 9 0 1012 3z"
-            stroke="var(--whatsapp)"
-            strokeWidth="1.8"
-            strokeLinejoin="round"
-          />
-        </svg>
+        <span className="text-[var(--whatsapp)]">
+          <BrandIcon name="whatsapp" size={12} />
+        </span>
         Your onboarding team, on WhatsApp · replies in minutes
       </span>
     </div>

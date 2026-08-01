@@ -169,14 +169,14 @@ export function PaymentsVisual() {
    on the light theme's white panels. */
 const DESTINATIONS: PlatformChipData[] = [
   {
-    monogram: "M",
+    icon: "meta",
     color: "var(--meta)",
     ink: "var(--meta-ink)",
     name: "Meta CAPI",
     status: "Purchase · ₦68,500",
   },
   {
-    monogram: "S",
+    icon: "snapchat",
     color: "var(--snapchat)",
     ink: "var(--snapchat-ink)",
     name: "Snapchat",

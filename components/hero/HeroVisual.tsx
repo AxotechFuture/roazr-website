@@ -9,6 +9,7 @@ import {
   useTransform,
 } from "motion/react";
 import { Mark } from "@/components/Wordmark";
+import { BrandIcon, type BrandKey } from "@/components/brand/BrandIcon";
 
 /* ================================================================== */
 /* Live data pieces                                                    */
@@ -412,15 +413,8 @@ export function WhatsAppCard() {
   return (
     <div className="overflow-hidden rounded-2xl border border-line-strong bg-raised/95 shadow-[0_32px_80px_-24px_rgba(0,0,0,0.9)] backdrop-blur-xl">
       <div className="flex items-center gap-2.5 border-b border-line px-3.5 py-2.5">
-        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#25d366]/15">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path
-              d="M12 3a9 9 0 00-7.8 13.5L3 21l4.7-1.2A9 9 0 1012 3z"
-              stroke="#25d366"
-              strokeWidth="1.8"
-              strokeLinejoin="round"
-            />
-          </svg>
+        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#25d366]/15 text-[#25d366]">
+          <BrandIcon name="whatsapp" size={14} />
         </span>
         <div className="min-w-0">
           <p className="truncate text-[12.5px] font-medium text-foreground">Adaeze O.</p>
@@ -476,17 +470,18 @@ export function WhatsAppCard() {
    sync are roadmap and deliberately absent — the mock must not imply a sync
    that does not exist yet. */
 const PLATFORMS = [
-  { key: "meta", monogram: "M", color: "var(--meta)", ink: "var(--meta-ink)", name: "Meta CAPI", status: "Purchase · ₦68,500" },
-  { key: "snapchat", monogram: "S", color: "var(--snapchat)", ink: "var(--snapchat-ink)", name: "Snapchat", status: "Conversion sent" },
-  { key: "paystack", monogram: "P", color: "var(--paystack)", ink: "var(--paystack-ink)", name: "Paystack", status: "Payment matched" },
+  { key: "meta", icon: "meta", color: "var(--meta)", ink: "var(--meta-ink)", name: "Meta CAPI", status: "Purchase · ₦68,500" },
+  { key: "snapchat", icon: "snapchat", color: "var(--snapchat)", ink: "var(--snapchat-ink)", name: "Snapchat", status: "Conversion sent" },
+  { key: "paystack", icon: "paystack", color: "var(--paystack)", ink: "var(--paystack-ink)", name: "Paystack", status: "Payment matched" },
 ] as const;
 
 export type PlatformChipData = {
-  monogram: string;
+  /** Real brand glyph shown in the tile. */
+  icon: BrandKey;
   /** Brand hex (or token) used for the tile tint and border. */
   color: string;
   /**
-   * Letter color. Defaults to `color`, which is right inside a
+   * Glyph color. Defaults to `color`, which is right inside a
    * dark-pinned mock; pass the matching `--*-ink` token when the chip
    * sits on a themed page, so bright hexes stay legible in light mode.
    */
@@ -499,14 +494,14 @@ export function PlatformChip({ p }: { p: PlatformChipData }) {
   return (
     <div className="flex items-center gap-2.5 rounded-xl border border-line-strong bg-raised/95 px-3 py-2.5 shadow-[0_24px_64px_-24px_rgba(0,0,0,0.9)] backdrop-blur-xl">
       <span
-        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-[13px] font-bold"
+        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg"
         style={{
           color: p.ink ?? p.color,
           backgroundColor: `color-mix(in srgb, ${p.color} 12%, transparent)`,
           border: `1px solid color-mix(in srgb, ${p.color} 20%, transparent)`,
         }}
       >
-        {p.monogram}
+        <BrandIcon name={p.icon} size={16} />
       </span>
       <div className="min-w-0">
         <p className="truncate text-[12px] font-medium text-foreground">{p.name}</p>

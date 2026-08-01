@@ -1,33 +1,38 @@
+import Image from "next/image";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
+import { BrandIcon } from "@/components/brand/BrandIcon";
 import type { Integration } from "@/components/integrations/data";
 
 /**
- * Monogram tile — the PlatformChip tile recipe (color-mix 12% bg, 20%
- * border, brand-colored letter) at card scale. The letter color routes
- * through --tile-ink so the light theme can darken bright brand hexes
- * (Snapchat yellow, Shopify green…) that vanish on white; the raw hex
- * is used as-is on the dark theme, matching the hero chips.
+ * Brand tile — the PlatformChip tile recipe (color-mix 12% bg, 20%
+ * border) at card scale, holding the real brand glyph. The glyph
+ * inherits --tile-ink, so the light theme can darken bright brand
+ * hexes (Snapchat yellow, Shopify green…) that vanish on white; the
+ * raw hex is used as-is on the dark theme, matching the hero chips.
+ * Flutterwave's butterfly keeps its own multicolor fills, and Selar —
+ * which has no vector mark — renders its real PNG tile full-bleed.
  */
-function MonogramTile({
-  monogram,
-  color,
-}: {
-  monogram: string;
-  color: string;
-}) {
+function BrandTile({ item }: { item: Integration }) {
+  if (item.icon === "selar") {
+    return (
+      <span aria-hidden="true" className="h-10 w-10 shrink-0 overflow-hidden rounded-lg">
+        <Image src="/brand/selar.png" alt="" width={40} height={40} />
+      </span>
+    );
+  }
   return (
     <span
       aria-hidden="true"
       className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border text-[15px] font-bold text-(color:--tile-ink) [--tile-ink:var(--brand)] [html[data-theme=light]_&]:[--tile-ink:color-mix(in_srgb,var(--brand)_58%,#12211b)]"
       style={
         {
-          "--brand": color,
-          backgroundColor: `color-mix(in srgb, ${color} 12%, transparent)`,
-          borderColor: `color-mix(in srgb, ${color} 20%, transparent)`,
+          "--brand": item.color,
+          backgroundColor: `color-mix(in srgb, ${item.color} 12%, transparent)`,
+          borderColor: `color-mix(in srgb, ${item.color} 20%, transparent)`,
         } as React.CSSProperties
       }
     >
-      {monogram}
+      {item.icon ? <BrandIcon name={item.icon} size={20} /> : item.monogram}
     </span>
   );
 }
@@ -58,7 +63,7 @@ export function IntegrationCard({ item }: { item: Integration }) {
             drags the body copy under 4.5:1 — the badge plus the inert,
             hover-free card already carry the "not yet" signal. */}
         <span className={live ? undefined : "opacity-50 saturate-50"}>
-          <MonogramTile monogram={item.monogram} color={item.color} />
+          <BrandTile item={item} />
         </span>
         <StatusBadge live={live} />
       </div>
