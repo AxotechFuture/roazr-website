@@ -40,7 +40,7 @@ export const testimonials = [
 export const faqs = [
   {
     q: "What exactly does Roazr do?",
-    a: "Roazr is a revenue attribution platform. It matches the sales you close — on WhatsApp, your website, or by bank transfer and Paystack — back to the exact ad that brought each customer in, then sends those real purchase events to Meta, Google, and TikTok through their server-side APIs. The ad platforms' algorithms learn who actually buys from you and optimize toward more of them.",
+    a: "Roazr is a revenue attribution platform. It matches the sales you close — on WhatsApp, your website, or by bank transfer and Paystack — back to the exact ad that brought each customer in, then sends those real purchase events to Meta through the Conversions API. Meta's algorithm learns who actually buys from you and optimizes toward more of them. Google Ads and TikTok sync are on the roadmap.",
   },
   {
     q: "Do I need a developer to set it up?",
@@ -48,7 +48,7 @@ export const faqs = [
   },
   {
     q: "Which platforms does Roazr integrate with?",
-    a: "Meta (Facebook & Instagram), Google Ads, TikTok, the WhatsApp Business API, and payment processors such as Paystack. Website and funnel events can be routed in as well.",
+    a: "Conversions sync to Meta today — Facebook and Instagram, through the Conversions API. On the way in, Roazr connects the WhatsApp Business API, your website and funnels, and payments through Paystack, Flutterwave, Stripe, Selar, and Shopify. Google Ads and TikTok sync are on the roadmap and will be included at no extra cost when they land.",
   },
   {
     q: "How does WhatsApp attribution actually work?",
@@ -64,7 +64,7 @@ export const faqs = [
   },
   {
     q: "How much does it cost?",
-    a: "Pricing depends on your ad spend and volume. Book a demo and we'll give you an exact number on the call — no surprises.",
+    a: "One plan with every feature: ₦19,000 a month for Nigerian businesses, or $19 a month everywhere else — down from a $99 list price while the founding window is open, and locked for life if you subscribe before it closes. Annual is ₦200,000 / $200. Start with a 14-day free trial; we only ask for a card when you decide to stay. Full breakdown on the pricing page.",
   },
 ] as const;
 
@@ -76,7 +76,7 @@ export const features = [
   },
   {
     title: "Server-side event streaming",
-    body: "Purchase events delivered straight to Meta CAPI, Google, and TikTok — no browser, no ad blockers, no signal loss.",
+    body: "Purchase events delivered straight to Meta's Conversions API — no browser, no ad blockers, no signal loss.",
     key: "capi",
   },
   {
@@ -105,7 +105,7 @@ export const steps = [
   {
     n: "01",
     title: "Connect",
-    body: "Link Meta, Google, TikTok, WhatsApp Business, and your payment stack through official integrations. Under ten minutes, no developer.",
+    body: "Link Meta, WhatsApp Business, and your payment stack through official integrations. Under ten minutes, no developer.",
   },
   {
     n: "02",
@@ -115,6 +115,6 @@ export const steps = [
   {
     n: "03",
     title: "Feed the algorithm",
-    body: "Real purchase events flow back to each ad platform. The algorithm learns who actually buys — and goes to find you more of them.",
+    body: "Real purchase events flow back to Meta the moment they happen. The algorithm learns who actually buys — and goes to find you more of them.",
   },
 ] as const;
