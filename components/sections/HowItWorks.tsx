@@ -81,7 +81,7 @@ function FeedVisual() {
     <div className="flex flex-col gap-2">
       {rows.map((r) => (
         <div
-          key={r.p}
+          key={`${r.p}${r.e}`}
           className="flex items-center gap-2.5 rounded-lg border border-line bg-wash px-3 py-2"
         >
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
