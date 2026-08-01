@@ -9,10 +9,10 @@ import {
 /* ================================================================== */
 
 const FUNNEL_BLOCKS = [
-  { n: "01", name: "Landing — VSL page", tag: "page" },
+  { n: "01", name: "Landing · VSL page", tag: "page" },
   { n: "02", name: "WhatsApp conversation", tag: "chat" },
-  { n: "03", name: "Checkout — Paystack", tag: "payment" },
-  { n: "04", name: "Call booking — Calendly", tag: "booking" },
+  { n: "03", name: "Checkout · Paystack", tag: "payment" },
+  { n: "04", name: "Call booking · Calendly", tag: "booking" },
   { n: "05", name: "Thank you", tag: "page" },
 ] as const;
 
@@ -20,7 +20,7 @@ export function FunnelStackVisual() {
   return (
     <div className="panel p-5 sm:p-6">
       <div className="flex items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-widest text-muted">
-        <span className="truncate">Funnel — Coaching offer</span>
+        <span className="truncate">Funnel · Coaching offer</span>
         <span className="shrink-0 text-accent">5 steps</span>
       </div>
       <div className="relative mt-4 flex flex-col gap-2">

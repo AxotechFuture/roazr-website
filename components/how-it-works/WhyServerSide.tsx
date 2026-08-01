@@ -66,12 +66,12 @@ const CARDS = [
   },
   {
     title: "The exact ad gets the credit",
-    body: "Every event carries the original click ID, held for up to 730 days. Meta and Snapchat credit the precise ad that started the journey — even when the sale closes weeks later.",
+    body: "Every event carries the original click ID, held for up to 730 days. Meta and Snapchat credit the precise ad that started the journey, even when the sale closes weeks later.",
     Icon: TargetIcon,
   },
   {
     title: "Late entries still count",
-    body: "Some sales are logged after the fact — a transfer confirmed the next morning, a deal closed offline. Manual entries backdate up to 7 days on Meta’s Conversions API, so the algorithm still learns from them.",
+    body: "Some sales are logged after the fact: a transfer confirmed the next morning, a deal closed offline. Manual entries backdate up to 7 days on Meta’s Conversions API, so the algorithm still learns from them.",
     Icon: RewindClockIcon,
   },
 ] as const;

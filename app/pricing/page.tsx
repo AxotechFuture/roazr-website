@@ -18,7 +18,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "One plan, every feature. Founding rate locked for life — start with a 14-day free trial, no card required.",
+    "One plan, every feature. Founding rate locked for life. Start with a 14-day free trial, no card required.",
 };
 
 const promoEnds = new Intl.DateTimeFormat("en-US", {
@@ -38,11 +38,11 @@ const promoEndsShort = new Intl.DateTimeFormat("en-US", {
 const pricingFaqs = [
   {
     q: "What happens when the trial ends?",
-    a: `You get the full product for ${TRIAL_DAYS} days without entering a card. When the trial ends you pick a plan to keep going — nothing is charged automatically, and your data is still there when you subscribe.`,
+    a: `You get the full product for ${TRIAL_DAYS} days without entering a card. When the trial ends you pick a plan to keep going. Nothing is charged automatically, and your data is still there when you subscribe.`,
   },
   {
     q: "What does “locked for life” actually mean?",
-    a: `Subscribe before ${promoEnds} and you keep the founding rate for as long as your subscription stays continuous — even after the price goes back to list. Cancel and resubscribe later and you rejoin at whatever the price is then.`,
+    a: `Subscribe before ${promoEnds} and you keep the founding rate for as long as your subscription stays continuous, even after the price goes back to list. Cancel and resubscribe later and you rejoin at whatever the price is then.`,
   },
   {
     q: "Why is the naira price different from the dollar price?",
@@ -50,7 +50,7 @@ const pricingFaqs = [
   },
   {
     q: "Are there usage limits?",
-    a: "No. Unlimited funnels, unlimited tracked events, unlimited ad spend and revenue. The plan is the whole product — we do not meter the thing you are paying us to measure.",
+    a: "No. Unlimited funnels, unlimited tracked events, unlimited ad spend and revenue. The plan is the whole product: we do not meter the thing you are paying us to measure.",
   },
   {
     q: "Can I pay by bank transfer?",
@@ -96,7 +96,7 @@ export default async function PricingPage() {
             </h1>
             <p className="mx-auto mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted sm:text-lg">
               No tiers, no seat counts, no metering the revenue you asked us to
-              measure. Start free for {TRIAL_DAYS} days — we only ask for a card
+              measure. Start free for {TRIAL_DAYS} days. We only ask for a card
               when you decide to stay.
             </p>
           </div>
@@ -155,12 +155,12 @@ export default async function PricingPage() {
           {/* roadmap — named as roadmap, never mixed into the shipped list */}
           <div className="mx-auto mt-14 max-w-5xl rounded-2xl border border-line bg-wash px-6 py-5">
             <p className="font-mono text-[11px] uppercase tracking-widest text-muted">
-              On the roadmap — not available yet
+              On the roadmap, not available yet
             </p>
             <p className="mt-2 text-sm leading-relaxed text-muted">
               <span className="text-muted-strong">{roadmap.join(" · ")}</span>.
               Today Roazr syncs conversions to Meta. When these land, they are
-              included at no extra cost — that is what buying the whole product
+              included at no extra cost. That is what buying the whole product
               means.
             </p>
           </div>

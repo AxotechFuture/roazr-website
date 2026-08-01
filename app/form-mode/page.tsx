@@ -6,12 +6,12 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Form Mode: WhatsApp lead capture settings",
   description:
-    "Form Mode decides when Roazr asks a visitor for their details before sending them to WhatsApp. Compare Auto, Form always, and Skip always — and see which leads you keep.",
+    "Form Mode decides when Roazr asks a visitor for their details before sending them to WhatsApp. Compare Auto, Form always, and Skip always, and see which leads you keep.",
 };
 
 const toc = [
   { href: "#the-popup", label: "What the popup actually does" },
-  { href: "#auto", label: "Auto — the default" },
+  { href: "#auto", label: "Auto (the default)" },
   { href: "#form-always", label: "Form always" },
   { href: "#skip-always", label: "Skip always" },
   { href: "#compare", label: "The three modes, side by side" },
@@ -195,12 +195,12 @@ const summary = [
     mode: "Skip always",
     tone: "danger" as Tone,
     tag: "Risky",
-    line: "Never asks. Fastest for the visitor — and the only mode where a lead can vanish completely.",
+    line: "Never asks. Fastest for the visitor, and the only mode where a lead can vanish completely.",
   },
 ];
 
 const journey = [
-  { step: "Taps your ad", detail: "From Instagram, Facebook, TikTok — wherever you run it." },
+  { step: "Taps your ad", detail: "From Instagram, Facebook, TikTok, wherever you run it." },
   { step: "Lands on your page", detail: "Roazr's snippet is already watching that visit." },
   { step: "Taps WhatsApp", detail: "This is the moment Form Mode decides what happens." },
   { step: "Chat opens", detail: "Your message is prefilled, with a reference code inside." },
@@ -213,7 +213,7 @@ const table = [
     experience:
       "Straight through when Roazr already has what it needs. A short popup when it doesn't.",
     saved:
-      "Name — plus the number if your funnel asks for one — taken from your page, the popup, or both.",
+      "Name (plus the number if your funnel asks for one), taken from your page, the popup, or both.",
     risk: "Low. Nobody reaches WhatsApp without you knowing who they are.",
   },
   {
@@ -250,18 +250,18 @@ const picks = [
     who: "Your page already collects everything itself",
     mode: "Skip always",
     tone: "danger" as Tone,
-    why: "Only if your own form reliably captures a name and number before anyone reaches the WhatsApp button — or you have decided you can live with losing the people who tap and never message.",
+    why: "Only if your own form reliably captures a name and number before anyone reaches the WhatsApp button. Or you have decided you can live with losing the people who tap and never message.",
   },
 ];
 
 const faqs: { q: string; a: React.ReactNode }[] = [
   {
     q: "Will my visitors see the popup twice?",
-    a: "No. On Auto, if your page already collected a detail, Roazr will not ask for it again — and if only part is missing, the popup asks for that part only. On Form always the popup shows once per WhatsApp click, which is the whole point of that mode.",
+    a: "No. On Auto, if your page already collected a detail, Roazr will not ask for it again, and if only part is missing, the popup asks for that part only. On Form always the popup shows once per WhatsApp click, which is the whole point of that mode.",
   },
   {
     q: "What happens if someone taps WhatsApp but never sends the message?",
-    a: "On Auto and Form always, their details were already saved, so you can reach out yourself. On Skip always, if your page collected nothing, there is nothing to reach out with — that visitor is gone.",
+    a: "On Auto and Form always, their details were already saved, so you can reach out yourself. On Skip always, if your page collected nothing, there is nothing to reach out with. That visitor is gone.",
   },
   {
     q: "Does the reference code still work in every mode?",
@@ -269,7 +269,7 @@ const faqs: { q: string; a: React.ReactNode }[] = [
   },
   {
     q: "What if my page has no form at all?",
-    a: "Then Auto behaves like Form always — the full popup shows on every click, because there is nothing to carry through. You get the details either way, without having to think about it.",
+    a: "Then Auto behaves like Form always: the full popup shows on every click, because there is nothing to carry through. You get the details either way, without having to think about it.",
   },
   {
     q: "Can I change my mind later?",
@@ -309,8 +309,8 @@ export default function FormModePage() {
               <div className="article-body mt-7 border-b border-line pb-8">
                 <p>
                   When someone taps your WhatsApp button, Roazr can show a small
-                  popup that asks for their name — and their WhatsApp number, if
-                  you have turned that on. <strong>Form Mode</strong> is the
+                  popup that asks for their name (and their WhatsApp number, if
+                  you have turned that on). <strong>Form Mode</strong> is the
                   setting that decides when that popup shows up.
                 </p>
                 <p>
@@ -404,7 +404,7 @@ export default function FormModePage() {
               <div className="article-body mt-6">
                 <p>
                   That reference code is the important part. When Ada sends the
-                  message, the code tells Roazr that this chat belongs to her —
+                  message, the code tells Roazr that this chat belongs to her:
                   the visitor who came from that ad, in that campaign, on that
                   click. It is how a WhatsApp sale gets matched back to the ad
                   that paid for it.
@@ -434,7 +434,7 @@ export default function FormModePage() {
                   the details your page collected go with her.
                 </CaseRow>
                 <CaseRow label="Page got part of it">
-                  The popup appears and asks only for the missing piece — often
+                  The popup appears and asks only for the missing piece, often
                   just the number.
                 </CaseRow>
                 <CaseRow label="Page got nothing">
@@ -444,7 +444,7 @@ export default function FormModePage() {
 
               <Example>
                 Ada types her name into the order form on your page, then taps
-                your WhatsApp button. She sees no popup — Roazr already has
+                your WhatsApp button. She sees no popup: Roazr already has
                 &ldquo;Ada&rdquo; and carries it through. If your funnel also
                 asks for a number and your page never collected one, she sees a
                 popup with a single field: her number. Nothing she already gave
@@ -473,7 +473,7 @@ export default function FormModePage() {
                   do not ring.
                 </Point>
                 <Point title="You keep the number either way">
-                  Details are saved the moment she submits the popup — not when
+                  Details are saved the moment she submits the popup, not when
                   she sends the WhatsApp message. So even if she never messages,
                   you can still call her.
                 </Point>
@@ -487,7 +487,7 @@ export default function FormModePage() {
               <Example>
                 Chinedu runs ads for a ₦450,000 machine. Every chat he answers
                 costs him real time, so he wants a number he can call back and a
-                name he can trust. He turns on Form always — everyone who taps
+                name he can trust. He turns on Form always: everyone who taps
                 confirms their details first, and the tyre-kickers quietly drop
                 off.
               </Example>
@@ -505,7 +505,7 @@ export default function FormModePage() {
               name="Skip always"
               tag="Handle with care"
               tone="danger"
-              lede="No popup, ever. Every tap goes straight into WhatsApp — the fastest path there is."
+              lede="No popup, ever. Every tap goes straight into WhatsApp, the fastest path there is."
             >
               <div className="mt-6 rounded-xl border border-danger-dim/25 bg-danger-dim/[0.07] p-4 sm:p-5">
                 <p className="flex items-center gap-2 font-mono text-[10.5px] uppercase tracking-widest text-danger">
@@ -553,7 +553,7 @@ export default function FormModePage() {
               </Example>
 
               <Trade
-                choose="Your own page reliably collects a name — and a number, if your funnel asks for one — before anyone reaches the WhatsApp button. Or you have decided speed is worth the people you lose."
+                choose="Your own page reliably collects a name (and a number, if your funnel asks for one) before anyone reaches the WhatsApp button. Or you have decided speed is worth the people you lose."
                 cost="Every visitor your page did not identify. That is why the app warns you when you pick this one."
               />
 
@@ -615,7 +615,7 @@ export default function FormModePage() {
               </div>
               <p className="mt-4 text-[13px] leading-relaxed text-muted">
                 In every row, the reference code still goes into the prefilled
-                WhatsApp message — so a chat always matches back to the right
+                WhatsApp message, so a chat always matches back to the right
                 lead, ad and campaign. Form Mode only changes what you know about
                 the visitor before that chat starts.
               </p>
@@ -681,8 +681,8 @@ export default function FormModePage() {
                 </p>
                 <p>
                   If you are switching to Skip always, check one thing first:
-                  does your own page collect a name — and a number, if your
-                  funnel asks for one — before the visitor reaches your WhatsApp
+                  does your own page collect a name (and a number, if your
+                  funnel asks for one) before the visitor reaches your WhatsApp
                   button? If the answer is no, Auto will serve you better, and it
                   will not slow anybody down who has already filled in your form.
                 </p>

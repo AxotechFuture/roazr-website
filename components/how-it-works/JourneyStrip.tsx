@@ -9,7 +9,7 @@ import { Reveal } from "@/components/ui/Reveal";
 const NODES = [
   { n: "01", label: "Customer taps your ad" },
   { n: "02", label: "They chat on WhatsApp or land on your funnel" },
-  { n: "03", label: "They pay — card, transfer, or USSD" },
+  { n: "03", label: "They pay: card, transfer, or USSD" },
   { n: "04", label: "Roazr matches the payment to the click" },
   { n: "05", label: "The purchase appears in Ads Manager" },
 ] as const;

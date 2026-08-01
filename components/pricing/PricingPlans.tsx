@@ -149,7 +149,7 @@ export function PricingPlans({
           <p className="mt-3 text-[15px] leading-relaxed text-muted">
             {annual ? (
               <>
-                Twelve months for the price of about ten and a half — you keep{" "}
+                Twelve months for the price of about ten and a half: you keep{" "}
                 <span className="text-foreground">
                   {annualSaving(currency)}
                 </span>{" "}

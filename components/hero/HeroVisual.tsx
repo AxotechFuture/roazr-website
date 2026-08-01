@@ -248,9 +248,9 @@ function RevenueChart() {
    Snapchat. A Google or TikTok campaign in the mock would imply a sync
    that is still roadmap. */
 const CAMPAIGNS = [
-  { name: "UGC Video — Lagos broad", spend: "₦1.24M", roas: "5.1x", pct: 86 },
-  { name: "Advantage+ — Retargeting", spend: "₦680K", roas: "3.8x", pct: 62 },
-  { name: "Snap — Creator mix", spend: "₦410K", roas: "2.9x", pct: 44 },
+  { name: "UGC Video · Lagos broad", spend: "₦1.24M", roas: "5.1x", pct: 86 },
+  { name: "Advantage+ · Retargeting", spend: "₦680K", roas: "3.8x", pct: 62 },
+  { name: "Snap · Creator mix", spend: "₦410K", roas: "2.9x", pct: 44 },
 ] as const;
 
 function CampaignRows() {
@@ -434,7 +434,7 @@ export function WhatsAppCard() {
           style={chatDelay(1.8)}
           className="chat-msg max-w-[88%] self-end rounded-xl rounded-br-sm border border-[#25d366]/20 bg-[#25d366]/10 px-2.5 py-1.5 text-muted-strong"
         >
-          Yes! ₦68,500 — free delivery tomorrow.
+          Yes! ₦68,500, free delivery tomorrow.
         </p>
         <p
           style={chatDelay(3.4)}

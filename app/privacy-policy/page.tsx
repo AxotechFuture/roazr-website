@@ -5,7 +5,7 @@ import { LegalShell } from "@/components/legal/LegalShell";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Roazr Privacy Policy — how Etin Media, Inc. collects, uses, and protects your information when you use our website and attribution platform.",
+    "Roazr Privacy Policy: how Etin Media, Inc. collects, uses, and protects your information when you use our website and attribution platform.",
 };
 
 const toc = [
@@ -46,8 +46,8 @@ export default function PrivacyPolicyPage() {
           <p>
             <strong>Roazr</strong> is a software platform operated by Etin
             Media, Inc. It helps businesses connect advertising performance
-            with real sales outcomes — including conversions that occur on
-            WhatsApp, websites, and offline payment channels — and send
+            with real sales outcomes (including conversions that occur on
+            WhatsApp, websites, and offline payment channels) and send
             enriched conversion data to ad platforms such as Meta, Google, and
             TikTok.
           </p>
@@ -202,8 +202,8 @@ export default function PrivacyPolicyPage() {
           </li>
           <li>
             Create one custom conversion (&ldquo;Roazr WhatsApp DM&rdquo;) in
-            your Meta ad account to enable WhatsApp DM optimization — we do not
-            create, modify, or delete your ads, ad sets, campaigns, or budgets;
+            your Meta ad account to enable WhatsApp DM optimization (we do not
+            create, modify, or delete your ads, ad sets, campaigns, or budgets);
           </li>
           <li>Process waitlist sign-ups and respond to sales or support requests;</li>
           <li>
@@ -247,7 +247,7 @@ export default function PrivacyPolicyPage() {
           <li>
             <strong>Legitimate interests:</strong> to secure our platform,
             improve our products, communicate with prospects and customers, and
-            understand how the Services are used — balanced against your rights
+            understand how the Services are used, balanced against your rights
             and expectations.
           </li>
           <li>
@@ -278,7 +278,7 @@ export default function PrivacyPolicyPage() {
           <li>
             <strong>Service providers:</strong> with vendors who help us host
             infrastructure, send email, provide customer support, monitor
-            security, or process payments — under contracts that require
+            security, or process payments, under contracts that require
             appropriate safeguards.
           </li>
           <li>

@@ -19,7 +19,7 @@ import { WhyServerSide } from "@/components/how-it-works/WhyServerSide";
 export const metadata: Metadata = {
   title: "How it works",
   description:
-    "How Roazr tracks WhatsApp and bank-transfer sales back to the exact ad — server-side conversions to Meta and Snapchat, from first click to credited sale.",
+    "How Roazr tracks WhatsApp and bank-transfer sales back to the exact ad: server-side conversions to Meta and Snapchat, from first click to credited sale.",
 };
 
 export default function HowItWorksPage() {
@@ -52,7 +52,7 @@ export default function HowItWorksPage() {
               </span>
             </h1>
             <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted sm:text-lg">
-              This is the full path a sale takes through Roazr — the click, the
+              This is the full path a sale takes through Roazr: the click, the
               chat, the payment, and the conversion sent back to Meta and
               Snapchat. Five steps, about ten minutes of setup, no developer.
             </p>
@@ -71,10 +71,10 @@ export default function HowItWorksPage() {
             proof="Unlimited funnels · every founding plan"
             body={
               <>
-                Every funnel is assembled from step blocks: landing pages —
-                sales, VSL, opt-in, webinar, home — a WhatsApp conversation,
+                Every funnel is assembled from step blocks: landing pages
+                (sales, VSL, opt-in, webinar, home), a WhatsApp conversation,
                 checkout, call booking, qualification, thank-you. Stack them in
-                whatever order your sale actually follows — a VSL into a
+                whatever order your sale actually follows: a VSL into a
                 WhatsApp chat, an opt-in into a booked call, a sales page
                 straight into checkout.
               </>
@@ -92,8 +92,8 @@ export default function HowItWorksPage() {
               <>
                 Each page in your funnel gets an auto-generated script. Paste
                 it once, and it captures the ad&rsquo;s click ID the moment
-                someone lands — before they chat, pay, or book anything.
-                Calendly booking pages are tracked the same way — no developer
+                someone lands, before they chat, pay, or book anything.
+                Calendly booking pages are tracked the same way, no developer
                 needed.
               </>
             }
@@ -109,7 +109,7 @@ export default function HowItWorksPage() {
               <>
                 Paystack, Flutterwave and Stripe webhooks log every successful
                 payment as a sale the second it happens. Closed in chat or paid
-                by bank transfer? One tap logs it manually — and Meta&rsquo;s
+                by bank transfer? One tap logs it manually, and Meta&rsquo;s
                 Conversions API accepts conversions backdated up to 7 days, so
                 a sale you enter on Friday still counts against
                 Tuesday&rsquo;s ad.
@@ -144,7 +144,7 @@ export default function HowItWorksPage() {
             proof="Full journey timeline · any currency in, one out"
             body={
               <>
-                True ROAS per campaign sits next to what you spent — including
+                True ROAS per campaign sits next to what you spent, including
                 the sales a pixel never sees. Behind it, a lead CRM holds each
                 contact&rsquo;s full journey timeline, from first click to
                 payment. Sell in any currency, report in one.
@@ -157,7 +157,7 @@ export default function HowItWorksPage() {
 
         <CtaBand
           title="Five steps. About ten minutes."
-          sub="Create an account, build your first funnel, and paste the scripts — the first events arrive while you’re still on the page."
+          sub="Create an account, build your first funnel, and paste the scripts. The first events arrive while you’re still on the page."
         />
 
         <WhyServerSide />

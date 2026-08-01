@@ -96,7 +96,7 @@ function CheckMark() {
 
 function QualifiedScreen({ email }: { email: string }) {
   const wa = whatsappLink(
-    "Hi! I just booked a Roazr demo — looking forward to it.",
+    "Hi! I just booked a Roazr demo. Looking forward to it.",
   );
   return (
     <div className="text-center">
@@ -106,7 +106,7 @@ function QualifiedScreen({ email }: { email: string }) {
       </h2>
       <p className="mx-auto mt-3 max-w-md text-[15px] leading-relaxed text-muted">
         Based on your numbers, Roazr can move your ROAS meaningfully. Lock in
-        your walkthrough — it takes 20 minutes and we&rsquo;ll use your real
+        your walkthrough: it takes 20 minutes and we&rsquo;ll use your real
         campaigns.
       </p>
 
@@ -171,7 +171,7 @@ function UnqualifiedScreen() {
       <p className="mx-auto mt-3 max-w-md text-[15px] leading-relaxed text-muted">
         Honest answer: Roazr delivers the most value once ad spend passes a
         certain level, and we&rsquo;d rather tell you that now than waste your
-        time on a call. Your details are saved — as your ads scale, our team
+        time on a call. Your details are saved. As your ads scale, our team
         will be the first to reach out.
       </p>
       <div className="mt-8 flex flex-col items-center gap-3">
@@ -253,7 +253,7 @@ export function DemoForm() {
     }
     if (step === 2) {
       if (!data.notRunning && data.platforms.length === 0)
-        e.platforms = "Pick your platforms — or choose “Not running ads yet”.";
+        e.platforms = "Pick your platforms, or choose “Not running ads yet”.";
     }
     if (step === 3) {
       if (data.spendBand === null) e.spendBand = "Please pick a range.";
@@ -439,7 +439,7 @@ export function DemoForm() {
                 />
               </Field>
               <p className="text-[12.5px] leading-relaxed text-muted">
-                We&rsquo;ll only use this to coordinate your demo — never for
+                We&rsquo;ll only use this to coordinate your demo, never for
                 marketing blasts.
               </p>
             </div>

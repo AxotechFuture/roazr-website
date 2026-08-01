@@ -14,7 +14,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Integrations",
   description:
-    "Meta CAPI, Snapchat, Paystack, Flutterwave, Stripe, WhatsApp Business, and Calendly — connect once and every sale reports back to the ad that caused it.",
+    "Meta CAPI, Snapchat, Paystack, Flutterwave, Stripe, WhatsApp Business, and Calendly: connect once and every sale reports back to the ad that caused it.",
 };
 
 /** "2 live · 3 planned" — computed from the catalogue, never hand-typed. */
@@ -109,8 +109,8 @@ export default function IntegrationsPage() {
               </span>
             </h1>
             <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted sm:text-lg">
-              Connect the stack once. Every sale — card, bank transfer, or
-              WhatsApp chat — reports back to the ad that caused it.
+              Connect the stack once. Every sale (card, bank transfer, or
+              WhatsApp chat) reports back to the ad that caused it.
             </p>
 
             {/* jump links: the reference's category sidebar, folded into

@@ -153,7 +153,7 @@ export function HowItWorks() {
             href="/how-it-works"
             className="group inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-foreground"
           >
-            See the full walkthrough — every step, from funnel to fed algorithm
+            See the full walkthrough: every step, from funnel to fed algorithm
             <svg
               width="14"
               height="14"

@@ -4,12 +4,12 @@ import { LegalShell } from "@/components/legal/LegalShell";
 export const metadata: Metadata = {
   title: "Data Deletion Instructions",
   description:
-    "Roazr Data Deletion Instructions — how to disconnect your Meta account or request deletion of your Roazr data.",
+    "Roazr Data Deletion Instructions: how to disconnect your Meta account or request deletion of your Roazr data.",
 };
 
 const toc = [
-  { href: "#disconnect", label: "Option 1 — Disconnect yourself" },
-  { href: "#full-deletion", label: "Option 2 — Request full account deletion" },
+  { href: "#disconnect", label: "Option 1: Disconnect yourself" },
+  { href: "#full-deletion", label: "Option 2: Request full account deletion" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -31,7 +31,7 @@ export default function DataDeletionPage() {
       }
     >
       <section id="disconnect">
-        <h2>1. Option 1 — Disconnect yourself (immediate)</h2>
+        <h2>1. Option 1: Disconnect yourself (immediate)</h2>
         <p>
           If you only want to stop Roazr from accessing your Meta ad accounts,
           you can disconnect the integration directly from your Roazr
@@ -60,7 +60,7 @@ export default function DataDeletionPage() {
       </section>
 
       <section id="full-deletion">
-        <h2>2. Option 2 — Request full account deletion</h2>
+        <h2>2. Option 2: Request full account deletion</h2>
         <p>
           If you want Etin Media to delete your Roazr account and all
           associated data, email us from the address tied to your account:

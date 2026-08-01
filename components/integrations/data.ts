@@ -40,7 +40,7 @@ export const categories: IntegrationCategory[] = [
   {
     id: "ad-platforms",
     title: "Ad platforms",
-    sub: "Conversions delivered server-side, original click ID attached — not a pixel praying the browser cooperates.",
+    sub: "Conversions delivered server-side, original click ID attached. Not a pixel praying the browser cooperates.",
     items: [
       {
         name: "Meta Conversions API",
@@ -48,7 +48,7 @@ export const categories: IntegrationCategory[] = [
         color: "var(--meta)",
         status: "live",
         blurb:
-          "Purchases land server-side with the original click ID — WhatsApp and bank-transfer sales included.",
+          "Purchases land server-side with the original click ID, WhatsApp and bank-transfer sales included.",
         path: "sale + click ID → Meta CAPI",
       },
       {
@@ -57,7 +57,7 @@ export const categories: IntegrationCategory[] = [
         color: "var(--snapchat)",
         status: "live",
         blurb:
-          "Snap Conversions API, same server-side delivery — Snap's algorithm learns from paid sales, not clicks.",
+          "Snap Conversions API, same server-side delivery. Snap's algorithm learns from paid sales, not clicks.",
         path: "sale + click ID → Snap CAPI",
       },
       {
@@ -66,7 +66,7 @@ export const categories: IntegrationCategory[] = [
         color: "var(--googleads)",
         status: "soon",
         blurb:
-          "On the roadmap — nothing syncs today. When it ships, offline conversions will follow the same server-side path.",
+          "On the roadmap: nothing syncs today. When it ships, offline conversions will follow the same server-side path.",
         path: "on the roadmap",
       },
       {
@@ -92,7 +92,7 @@ export const categories: IntegrationCategory[] = [
   {
     id: "payments-stores",
     title: "Payments & stores",
-    sub: "Webhooks log the sale the moment it's paid — no thank-you page required.",
+    sub: "Webhooks log the sale the moment it's paid, no thank-you page required.",
     items: [
       {
         name: "Paystack",
@@ -100,7 +100,7 @@ export const categories: IntegrationCategory[] = [
         color: "var(--paystack)",
         status: "live",
         blurb:
-          "The webhook logs every successful charge as a sale and fires the conversion instantly — naira in, attribution out.",
+          "The webhook logs every successful charge as a sale and fires the conversion instantly: naira in, attribution out.",
         path: "payment → sale logged → CAPI",
       },
       {
@@ -118,7 +118,7 @@ export const categories: IntegrationCategory[] = [
         color: "var(--stripe)",
         status: "live",
         blurb:
-          "Same webhook flow for card payments — ready the day you start selling beyond the continent.",
+          "Same webhook flow for card payments, ready the day you start selling beyond the continent.",
         path: "payment → sale logged → CAPI",
       },
       {
@@ -127,7 +127,7 @@ export const categories: IntegrationCategory[] = [
         color: "var(--accent)",
         status: "live",
         blurb:
-          "No webhook? Log the sale in one tap — conversions backdate up to 7 days on Meta's CAPI, so cash and COD still count.",
+          "No webhook? Log the sale in one tap. Conversions backdate up to 7 days on Meta's CAPI, so cash and COD still count.",
         path: "one tap → sale logged → CAPI",
       },
       {
@@ -155,7 +155,7 @@ export const categories: IntegrationCategory[] = [
        each left two thirds of a three-column row empty. */
     id: "conversations",
     title: "Conversations & bookings",
-    sub: "Sales that close in a chat — and calls booked off an ad — still credit what started them.",
+    sub: "Sales that close in a chat, and calls booked off an ad, still credit what started them.",
     items: [
       {
         name: "WhatsApp Business Cloud API",
@@ -163,7 +163,7 @@ export const categories: IntegrationCategory[] = [
         color: "var(--whatsapp)",
         status: "live",
         blurb:
-          "Conversations become attributable leads — a sale closed in chat still credits the ad that opened it.",
+          "Conversations become attributable leads: a sale closed in chat still credits the ad that opened it.",
         path: "chat → lead → journey",
       },
       {
