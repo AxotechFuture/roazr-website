@@ -4,8 +4,11 @@
  *
  * ── PLACEHOLDER CONTENT (replace before launch) ────────────────────
  *  - `metrics`: swap for real aggregate numbers you can honestly claim.
- *  - `testimonials`: swap for real customers (with permission). The
- *    current entries are representative samples, not real people.
+ *  - `testimonials`: ILLUSTRATIVE — the quotes are representative
+ *    samples and the names are invented (founder's display decision,
+ *    Aug 2026). They are not real customers. Swap in real, permissioned
+ *    testimonials as soon as they exist — fake endorsements are an ad-
+ *    account and ARCON/FTC liability if challenged.
  * ───────────────────────────────────────────────────────────────────
  */
 
@@ -20,20 +23,20 @@ export const testimonials = [
   {
     quote:
       "We were flying blind on ₦4M a month in ad spend. Two weeks after connecting Roazr, we cut two dead campaigns and our cost per real customer dropped by a third.",
-    name: "Placeholder — Customer 1",
+    name: "Adaora Nwachukwu",
     role: "Founder, fashion e-commerce brand · Lagos",
   },
   {
     quote:
       "Meta finally optimizes for people who actually pay us on WhatsApp, not people who click and disappear. It's the difference between guessing and knowing.",
-    name: "Placeholder — Customer 2",
-    role: "Performance lead, electronics retailer · Accra",
+    name: "Ifeanyi Okeke",
+    role: "Performance lead, electronics retailer · Port Harcourt",
   },
   {
     quote:
       "Setup took one call. Now every bank transfer and Paystack payment shows up against the exact ad that brought the customer in.",
-    name: "Placeholder — Customer 3",
-    role: "Managing director, beauty & wellness brand · Nairobi",
+    name: "Aisha Bello",
+    role: "Managing director, beauty & wellness brand · Abuja",
   },
 ] as const;
 
