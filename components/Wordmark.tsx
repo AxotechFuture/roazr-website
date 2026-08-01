@@ -1,39 +1,21 @@
+import Image from "next/image";
+
+/**
+ * The real Roazr brand mark — a forest-green rounded tile with a mint
+ * wave. Canonical asset lives in the app repo (rendered on the app's
+ * sidebar and auth screen from ucarecdn); this is a local copy at
+ * public/brand/roazr-mark.png. The rounded corners and hairline keyline
+ * are baked into the PNG — no extra styling needed.
+ */
 export function Mark({ size = 26 }: { size?: number }) {
   return (
-    <svg
+    <Image
+      src="/brand/roazr-mark.png"
+      alt=""
+      aria-hidden="true"
       width={size}
       height={size}
-      viewBox="0 0 32 32"
-      fill="none"
-      aria-hidden="true"
-    >
-      <rect width="32" height="32" rx="9" fill="#0A1214" />
-      <rect
-        x="0.5"
-        y="0.5"
-        width="31"
-        height="31"
-        rx="8.5"
-        stroke="white"
-        strokeOpacity="0.12"
-      />
-      {/* signal arcs radiating from the dot — attribution "ping" */}
-      <path
-        d="M12 21.5c0-4.14 3.36-7.5 7.5-7.5"
-        stroke="#FFFFFF"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-        opacity="0.45"
-      />
-      <path
-        d="M12 16c0-2.9 2.35-5.25 5.25-5.25"
-        stroke="#FFFFFF"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-        opacity="0.75"
-      />
-      <circle cx="12" cy="21.5" r="3.1" fill="#FFFFFF" />
-    </svg>
+    />
   );
 }
 

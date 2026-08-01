@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { site } from "@/lib/site";
 
@@ -5,7 +7,11 @@ export const alt = `${site.name} — ${site.tagline}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OgImage() {
+export default async function OgImage() {
+  const mark = await readFile(
+    join(process.cwd(), "public/brand/roazr-mark.png"),
+  );
+  const markSrc = `data:image/png;base64,${mark.toString("base64")}`;
   return new ImageResponse(
     (
       <div
@@ -23,33 +29,9 @@ export default function OgImage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-          <svg width="52" height="52" viewBox="0 0 32 32" fill="none">
-            <rect width="32" height="32" rx="8" fill="#0A1214" />
-            <rect
-              x="0.5"
-              y="0.5"
-              width="31"
-              height="31"
-              rx="7.5"
-              stroke="white"
-              strokeOpacity="0.14"
-            />
-            <path
-              d="M12 21.5c0-4.14 3.36-7.5 7.5-7.5"
-              stroke="#17E88F"
-              strokeWidth="2.4"
-              strokeLinecap="round"
-              opacity="0.45"
-            />
-            <path
-              d="M12 16c0-2.9 2.35-5.25 5.25-5.25"
-              stroke="#17E88F"
-              strokeWidth="2.4"
-              strokeLinecap="round"
-              opacity="0.75"
-            />
-            <circle cx="12" cy="21.5" r="3.1" fill="#17E88F" />
-          </svg>
+          {/* Real brand mark — rounded corners are baked into the PNG. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={markSrc} width={56} height={56} alt="" />
           <div style={{ fontSize: 40, fontWeight: 700, letterSpacing: -1 }}>
             roazr
           </div>
