@@ -29,13 +29,18 @@ export function Footer() {
             </p>
             <ul className="flex flex-col gap-1 text-sm">
               <li>
-                <Link href="/#how-it-works" className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
+                <Link href="/how-it-works" className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
                   How it works
                 </Link>
               </li>
               <li>
                 <Link href="/#features" className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
                   Features
+                </Link>
+              </li>
+              <li>
+                <Link href="/integrations" className="inline-block py-1 text-muted-strong transition-colors hover:text-foreground">
+                  Integrations
                 </Link>
               </li>
               <li>

@@ -7,10 +7,10 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { site } from "@/lib/site";
 
 const links = [
-  { href: "/#how-it-works", label: "How it works" },
+  { href: "/how-it-works", label: "How it works" },
   { href: "/#features", label: "Product" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/#testimonials", label: "Customers" },
+  { href: "/integrations", label: "Integrations" },
   { href: "/#faq", label: "FAQ" },
 ];
 
