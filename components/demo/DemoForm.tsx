@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { submitLead } from "@/app/actions/lead";
+import { CalendlyInline } from "@/components/demo/CalendlyInline";
 import {
   bandLabels,
   COUNTRIES,
@@ -94,7 +95,7 @@ function CheckMark() {
   );
 }
 
-function QualifiedScreen({ email }: { email: string }) {
+function QualifiedScreen({ name, email }: { name: string; email: string }) {
   const wa = whatsappLink(
     "Hi! I just booked a Roazr demo — looking forward to it.",
   );
@@ -105,34 +106,29 @@ function QualifiedScreen({ email }: { email: string }) {
         You&rsquo;re a fit.
       </h2>
       <p className="mx-auto mt-3 max-w-md text-[15px] leading-relaxed text-muted">
-        Based on your numbers, Roazr can move your ROAS meaningfully. Lock in
-        your walkthrough — it takes 20 minutes and we&rsquo;ll use your real
+        Based on your numbers, Roazr can move your ROAS meaningfully. Pick a
+        time below — it takes 20 minutes and we&rsquo;ll use your real
         campaigns.
       </p>
 
+      {site.schedulerUrl ? (
+        <CalendlyInline
+          url={site.schedulerUrl}
+          prefill={{ name, email }}
+          className="mt-8"
+        />
+      ) : (
+        <div className="panel mx-auto mt-8 w-full max-w-md p-5 text-left">
+          <p className="text-[14.5px] leading-relaxed text-muted-strong">
+            Our team will reach out{" "}
+            <span className="text-foreground">within 24 hours</span> on WhatsApp
+            and at <span className="text-foreground">{email}</span> to schedule
+            your walkthrough.
+          </p>
+        </div>
+      )}
+
       <div className="mt-8 flex flex-col items-center gap-3">
-        {site.schedulerUrl ? (
-          <a
-            href={site.schedulerUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary btn-lg"
-          >
-            Pick a time now
-            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
-        ) : (
-          <div className="panel w-full max-w-md p-5 text-left">
-            <p className="text-[14.5px] leading-relaxed text-muted-strong">
-              Our team will reach out{" "}
-              <span className="text-foreground">within 24 hours</span> on
-              WhatsApp and at <span className="text-foreground">{email}</span>{" "}
-              to schedule your walkthrough.
-            </p>
-          </div>
-        )}
         {wa && (
           <a
             href={wa}
@@ -304,7 +300,8 @@ export function DemoForm() {
     }
   };
 
-  if (result === "qualified") return <QualifiedScreen email={data.email.trim()} />;
+  if (result === "qualified")
+    return <QualifiedScreen name={data.name.trim()} email={data.email.trim()} />;
   if (result === "unqualified") return <UnqualifiedScreen />;
 
   const selectCurrency = (code: CurrencyCode) =>

@@ -68,7 +68,9 @@ export default function DataDeletionPage() {
         <ul>
           <li>
             Send an email to{" "}
-            <a href="mailto:privacy@roazr.com">privacy@roazr.com</a>
+            <a href="mailto:privacy@roazr.com?subject=Delete%20my%20data">
+              privacy@roazr.com
+            </a>
           </li>
           <li>
             Use the subject line: <strong>Delete my data</strong>

@@ -26,8 +26,13 @@ export const site = {
   signupUrl: "https://app.roazr.com/signup",
   /** Returning-user sign in. */
   signinUrl: "https://app.roazr.com",
-  /** PLACEHOLDER — booking link for qualified demo leads. */
-  schedulerUrl: "",
+  /**
+   * Calendly booking link for qualified demo leads, embedded inline on the
+   * qualified screen. The query params strip the duplicate event blurb (the
+   * page already says what the call is) and the GDPR banner.
+   */
+  schedulerUrl:
+    "https://calendly.com/etin-marketing/onboarding?hide_event_type_details=1&hide_gdpr_banner=1",
   /** PLACEHOLDER — WhatsApp business number, digits only. */
   whatsappNumber: "",
   /**
