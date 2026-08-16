@@ -52,28 +52,18 @@ export function Hero() {
 
       <div className="container-x relative">
         <div className="mx-auto max-w-3xl text-center">
-          <Enter delay={0}>
-            <p className="kicker justify-center">
-              Revenue attribution, end to end
-            </p>
-          </Enter>
-
           <Enter delay={0.08}>
-            <h1 className="mt-5 text-balance text-[2.6rem] font-semibold leading-[1.04] tracking-[-0.035em] sm:text-6xl lg:text-[4.4rem]">
-              Every sale,
-              <br />
-              <span className="glow-text bg-gradient-to-r from-accent-strong via-accent to-[var(--grad-tail)] bg-clip-text text-transparent">
-                fed back to your ads.
-              </span>
+            <h1 className="text-balance text-[2.6rem] font-semibold leading-[1.04] tracking-[-0.035em] sm:text-6xl lg:text-[4.4rem]">
+              Roazr Grow your Ad ROI, or you don’t pay.
             </h1>
           </Enter>
 
           <Enter delay={0.16}>
             <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted sm:text-lg">
-              Roazr matches every sale (website checkout, card, bank transfer,
-              booked call, or WhatsApp chat) to the exact ad that caused it,
-              then feeds Meta and Snapchat real buyers, not clicks. Full
-              attribution, built for how you actually sell.
+              Connect your business to Roazr. It tracks sales from your website,
+              WhatsApp and bank transfers, matches them to the ads that brought
+              the customers, and sends the purchase data back to Meta. This helps
+              Meta optimize for real buyers and reduce your cost per customer.
             </p>
           </Enter>
 
