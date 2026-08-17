@@ -9,7 +9,7 @@ export const contentType = "image/png";
 
 export default async function OgImage() {
   const mark = await readFile(
-    join(process.cwd(), "public/brand/roazr-mark.png"),
+    join(process.cwd(), "public/brand/roazr-mark-dark.png"),
   );
   const markSrc = `data:image/png;base64,${mark.toString("base64")}`;
   return new ImageResponse(
@@ -29,7 +29,7 @@ export default async function OgImage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-          {/* Real brand mark — rounded corners are baked into the PNG. */}
+          {/* Dark-mode version of the Roazr brand mark. */}
           <img src={markSrc} width={56} height={56} alt="" />
           <div style={{ fontSize: 40, fontWeight: 700, letterSpacing: -1 }}>
             roazr

@@ -41,6 +41,29 @@ export const metadata: Metadata = {
     title: `${site.name} · ${site.tagline}`,
     description: site.description,
   },
+  icons: {
+    icon: [
+      {
+        url: "/brand/roazr-mark-light.png",
+        media: "(prefers-color-scheme: light)",
+        type: "image/png",
+        sizes: "108x108",
+      },
+      {
+        url: "/brand/roazr-mark-dark.png",
+        media: "(prefers-color-scheme: dark)",
+        type: "image/png",
+        sizes: "108x108",
+      },
+    ],
+    apple: [
+      {
+        url: "/brand/roazr-mark-light.png",
+        type: "image/png",
+        sizes: "108x108",
+      },
+    ],
+  },
   robots: {
     index: true,
     follow: true,

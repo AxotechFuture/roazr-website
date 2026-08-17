@@ -54,7 +54,9 @@ export function Hero() {
         <div className="mx-auto max-w-3xl text-center">
           <Enter delay={0.08}>
             <h1 className="text-balance text-[2.6rem] font-semibold leading-[1.04] tracking-[-0.035em] sm:text-6xl lg:text-[4.4rem]">
-              Roazr Grows Your Ad ROI, or You Don’t Pay.
+              Roazr Grows Your Ad ROI.
+              <br />
+              Or You Don’t Pay.
             </h1>
           </Enter>
 

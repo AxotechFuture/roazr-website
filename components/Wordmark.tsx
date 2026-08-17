@@ -1,21 +1,26 @@
 import Image from "next/image";
 
-/**
- * The real Roazr brand mark — a forest-green rounded tile with a mint
- * wave. Canonical asset lives in the app repo (rendered on the app's
- * sidebar and auth screen from ucarecdn); this is a local copy at
- * public/brand/roazr-mark.png. The rounded corners and hairline keyline
- * are baked into the PNG — no extra styling needed.
- */
+/** Theme-aware Roazr brand mark. */
 export function Mark({ size = 26 }: { size?: number }) {
   return (
-    <Image
-      src="/brand/roazr-mark.png"
-      alt=""
-      aria-hidden="true"
-      width={size}
-      height={size}
-    />
+    <span className="inline-flex shrink-0">
+      <Image
+        src="/brand/roazr-mark-dark.png"
+        alt=""
+        aria-hidden="true"
+        width={size}
+        height={size}
+        className="roazr-mark-dark"
+      />
+      <Image
+        src="/brand/roazr-mark-light.png"
+        alt=""
+        aria-hidden="true"
+        width={size}
+        height={size}
+        className="roazr-mark-light"
+      />
+    </span>
   );
 }
 
