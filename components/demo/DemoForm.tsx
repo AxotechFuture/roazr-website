@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Script from "next/script";
 import { useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { submitLead } from "@/app/actions/lead";
@@ -94,7 +95,7 @@ function CheckMark() {
   );
 }
 
-function QualifiedScreen({ email }: { email: string }) {
+function QualifiedScreen() {
   const wa = whatsappLink(
     "Hi! I just booked a Roazr demo. Looking forward to it.",
   );
@@ -111,28 +112,17 @@ function QualifiedScreen({ email }: { email: string }) {
       </p>
 
       <div className="mt-8 flex flex-col items-center gap-3">
-        {site.schedulerUrl ? (
-          <a
-            href={site.schedulerUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary btn-lg"
-          >
-            Pick a time now
-            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
-        ) : (
-          <div className="panel w-full max-w-md p-5 text-left">
-            <p className="text-[14.5px] leading-relaxed text-muted-strong">
-              Our team will reach out{" "}
-              <span className="text-foreground">within 24 hours</span> on
-              WhatsApp and at <span className="text-foreground">{email}</span>{" "}
-              to schedule your walkthrough.
-            </p>
-          </div>
-        )}
+        <div className="w-full overflow-hidden rounded-xl border border-line bg-surface">
+          <div
+            className="calendly-inline-widget h-[700px] min-w-[320px]"
+            data-url="https://calendly.com/etin-marketing/onboarding?hide_event_type_details=1&hide_gdpr_banner=1"
+          />
+        </div>
+        <Script
+          id="calendly-inline-widget"
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="afterInteractive"
+        />
         {wa && (
           <a
             href={wa}
@@ -304,7 +294,7 @@ export function DemoForm() {
     }
   };
 
-  if (result === "qualified") return <QualifiedScreen email={data.email.trim()} />;
+  if (result === "qualified") return <QualifiedScreen />;
   if (result === "unqualified") return <UnqualifiedScreen />;
 
   const selectCurrency = (code: CurrencyCode) =>

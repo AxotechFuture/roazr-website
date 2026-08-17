@@ -26,10 +26,10 @@ export function Mark({ size = 26 }: { size?: number }) {
 
 export function Wordmark({ compact = false }: { compact?: boolean }) {
   return (
-    <span className="inline-flex items-center gap-2.5 select-none">
-      <Mark />
+    <span className="inline-flex items-center gap-1.5 select-none">
+      <Mark size={22} />
       {!compact && (
-        <span className="text-[1.15rem] font-semibold tracking-tight text-foreground">
+        <span className="text-[1.25rem] font-semibold tracking-tight text-foreground">
           roazr
         </span>
       )}

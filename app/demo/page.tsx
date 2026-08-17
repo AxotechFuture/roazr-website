@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { DemoForm } from "@/components/demo/DemoForm";
+
+const roazrCallBookingScript = `(function(e,t){
+  e.RoazrID="3310bd4f-2411-4e1f-aacc-0fb92f394011";
+  e.RoazrFunnel="4dd5b566-ef5c-4738-9528-b2a986716cb5";
+  (function(){var s=t.createElement("script");s.async=true;s.src="https://app.roazr.com/scripts/call-booking.js";s.setAttribute("data-roazr-step","call_booking");t.head.appendChild(s);})();
+})(window,document);`;
 
 export const metadata: Metadata = {
   title: "Book a demo",
@@ -27,6 +34,9 @@ const agenda = [
 export default function DemoPage() {
   return (
     <>
+      <Script id="roazr-call-booking-tracker" strategy="afterInteractive">
+        {roazrCallBookingScript}
+      </Script>
       <Nav />
       <main className="relative flex-1 overflow-hidden">
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
