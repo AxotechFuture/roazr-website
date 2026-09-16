@@ -194,6 +194,10 @@ function ProductVisual({ type }: { type: string }) {
   );
 }
 
+function TextArrow() {
+  return <span className={styles.textArrow} aria-hidden="true">↗︎</span>;
+}
+
 export function RoazrHome() {
   const storyRef = useRef<HTMLElement>(null);
   const [slide, setSlide] = useState(0);
@@ -264,7 +268,7 @@ export function RoazrHome() {
                   <div className={styles.productTop}>
                     <h3>{card.title}</h3>
                     <div><b>{card.eyebrow}</b><p>{card.body}</p></div>
-                    <a href={card.href}>{card.action} ↗</a>
+                    <a href={card.href}>{card.action} <TextArrow /></a>
                   </div>
                   <div className={styles.productScene}><ProductVisual type={card.visual} /></div>
                 </article>
@@ -298,7 +302,7 @@ export function RoazrHome() {
             {statements.map(([title, body], i) => (
               <article className={`${styles.statement} ${styles[`statement${i + 1}`]}`} key={title}>
                 <div><span>0{i + 1}</span><h3>{title}</h3><p>{body}</p></div>
-                <a href={i === 2 ? site.signupUrl : "/how-it-works"}>{i === 2 ? "Start free" : "See how it works"} ↗</a>
+                <a href={i === 2 ? site.signupUrl : "/how-it-works"}>{i === 2 ? "Start free" : "See how it works"} <TextArrow /></a>
               </article>
             ))}
           </div>
@@ -329,7 +333,7 @@ export function RoazrHome() {
             <div><h4>Product</h4><Link href="/how-it-works">How it works</Link><Link href="/integrations">Integrations</Link><Link href="/pricing">Pricing</Link><a href={site.signupUrl}>Start free</a></div>
             <div><h4>Company</h4><a href={`mailto:${site.emails.hello}`}>Contact</a><Link href="/demo">Book a demo</Link><Link href="/#system">Product</Link></div>
             <div><h4>Legal</h4><Link href="/privacy-policy">Privacy policy</Link><Link href="/terms-of-service">Terms of service</Link><Link href="/data-deletion">Data deletion</Link></div>
-            <div><h4>What Roazr does</h4><p>Roazr connects ads, funnel activity, leads and recorded sales so businesses can see which campaigns produced revenue.</p><a className={styles.footerCta} href={site.signupUrl}>Start 14-day free trial ↗</a></div>
+            <div><h4>What Roazr does</h4><p>Roazr connects ads, funnel activity, leads and recorded sales so businesses can see which campaigns produced revenue.</p><a className={styles.footerCta} href={site.signupUrl}>Start 14-day free trial <TextArrow /></a></div>
           </div>
           <div className={styles.giant}>ROAZR</div>
           <div className={styles.fine}><span>© {new Date().getFullYear()} Etin Media, Inc.</span><span>Every sale, fed back to your ads.</span></div>
