@@ -1,16 +1,5 @@
 import Script from "next/script";
-import { Nav } from "@/components/Nav";
-import { Footer } from "@/components/Footer";
-import { Hero } from "@/components/hero/Hero";
-import { LogoStrip } from "@/components/sections/LogoStrip";
-import { Problem } from "@/components/sections/Problem";
-import { HowItWorks } from "@/components/sections/HowItWorks";
-import { Features } from "@/components/sections/Features";
-import { CtaBand } from "@/components/sections/CtaBand";
-import { FactStrip } from "@/components/sections/FactStrip";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { Faq } from "@/components/sections/Faq";
-import { FinalCta } from "@/components/sections/FinalCta";
+import { RoazrHome } from "@/components/home/RoazrHome";
 
 const roazrLandingScript = `(function(e,t){
   e.RoazrID="3310bd4f-2411-4e1f-aacc-0fb92f394011";
@@ -24,20 +13,7 @@ export default function Home() {
       <Script id="roazr-landing-tracker" strategy="afterInteractive">
         {roazrLandingScript}
       </Script>
-      <Nav />
-      <main>
-        <Hero />
-        <LogoStrip />
-        <Problem />
-        <HowItWorks />
-        <Features />
-        <CtaBand />
-        <Testimonials />
-        <Faq />
-        <FinalCta />
-        <FactStrip />
-      </main>
-      <Footer />
+      <RoazrHome />
     </>
   );
 }
